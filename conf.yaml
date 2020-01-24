@@ -1,0 +1,18 @@
+#Nombre de spout
+spout.count : 2
+#Nombre de bolt splitter
+splitter.count : 1
+#Nombre de bolt counter
+counter.count : 1
+
+# Nombre de tache (généralement 1 tache = 1 component(spout, bolt))
+spout.task : 2
+splitter.task : 1
+counter.task : 1
+
+# Ne pas changer / nombre de bolt reporter
+reporter.count : 1
+
+# Nombre de worker
+# storm config overrides
+topology.workers : 1
