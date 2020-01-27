@@ -94,8 +94,9 @@ builder.setBolt(COUNT_ID, new CountBolt(), cntBoltNum).setNumTasks(countTask).fi
 builder.setBolt(REPORT_ID, new ReportBolt(), rptBoltNum).shuffleGrouping(COUNT_ID);
 ```
 - Création des classe Java définissant les spouts et les bolts.
-
-// todo
+    Chaque spout et bolt hérite d'une classe définie par Storm. 
+    Les spouts doivent contenir au moins les fonctions : open, nextTuple et declareOutputFields. 
+    Les Bolts eux doivent avoir : prepare, execute, declareOutputFields.
 
 - Les jars associés à Storm ne doivent pas être compilé pour créer le jar de votre topologie.
     Dans les dépendances du projet, passer les jars relatifs à Storm en "Provided"
@@ -110,6 +111,34 @@ builder.setBolt(REPORT_ID, new ReportBolt(), rptBoltNum).shuffleGrouping(COUNT_I
     `Build Artifacts`
     
 ## MISE EN PLACE DE MÉTRIQUE
+
+Trois métriques ont été mises en place pour pouvoir comparer les différentes configuration du cluster (composantes de la topologie et nombre de worker).
+Ces métriques sont implémentés au niveaux du code des spouts et des bolts, elles fonctionnes comme des compteurs:
+On instantie la métrique, lors de l'appel du spout:
+```java
+[...]
+private transient CountMetric spoutMetric;
+    @Override
+    public void open(Map<String, Object> conf, TopologyContext context, SpoutOutputCollector collector) {
+        this.collector = collector;
+        rand = new Random();
+        spoutMetric = new CountMetric();
+        context.registerMetric("spout_count", spoutMetric, 1);
+    }
+```
+
+On incrémente la métrique dès que le spout envoi une phrase:
+```java
+ public void nextTuple() {
+[...]
+        final String sentence = sentences[rand.nextInt(sentences.length)];
+        LOG.debug("Emitting tuple: {}", sentence);
+        collector.emit(new Values(sentence));
+        spoutMetric.incr();
+    }
+```
+
+Le même type de métrique est implémenté au niveau des bolts (nombre de mots compté et de phrase coupée en mot).
 
 ## RÉSULTATS
 
@@ -154,4 +183,15 @@ Il y à de légère différence de 1 à 4 spout, la performance décroît de man
 <p>
 <img src="imgs/Spout constant à 2, Influence des bolts.png"/>
 </p>
+
+### Etude de l'influence du nombre de worker
+
+Cette fois ci, nous allons étudié l'influence du nombre de worker sur une topologie fixée.
+Nous avons pris les meilleurs résultats de la partie 1, à savoir 4 bolts et 1 spout.
+Cette fois la machine qui effectuera les tests possède: 
+- 6 CPU (x2 Thread par CPU)
+- 9 GB sont alloués à docker.
+
+
+
 

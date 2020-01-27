@@ -16,7 +16,6 @@ public class CountBolt extends BaseBasicBolt {
     public static final String FIELDS_WORD = "word";
     public static final String FIELDS_COUNT = "count";
     private transient CountMetric countMetric;
-
     Map<String, Integer> counts = new HashMap<>();
 
     @Override

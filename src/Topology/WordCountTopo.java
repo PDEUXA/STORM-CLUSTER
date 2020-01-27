@@ -16,6 +16,9 @@ public class WordCountTopo {
     public static final String TOPOLOGY_NAME = "WordCountTopo";
 
     // Config settings
+    public static final String METRIC_COUNT = "metric.count";
+    public static int metricCount = 1;
+
     public static final String SPOUT_NUM = "spout.count";
     public static final String SPLIT_NUM = "splitter.count";
     public static final String COUNT_NUM = "counter.count";
@@ -32,6 +35,8 @@ public class WordCountTopo {
     public static final int DEFAULT_SPOUT_TASK = 1;
     public static final int DEFAULT_SPLIT_TASK= 1;
     public static final int DEFAULT_COUNT_TASK = 1;
+    public static final int DEFAULT_METRIC_COUNT = 1;
+
 
     static StormTopology getTopology(Map<String, Object> config) {
 
@@ -42,14 +47,14 @@ public class WordCountTopo {
         final int spoutTask = helper.getInt(config, SPOUT_TASK, DEFAULT_SPOUT_TASK);
         final int splitTask = helper.getInt(config, SPLIT_TASK, DEFAULT_SPLIT_TASK);
         final int countTask = helper.getInt(config, COUNT_TASK, DEFAULT_COUNT_TASK);
-
+        metricCount = helper.getInt(config, METRIC_COUNT, DEFAULT_METRIC_COUNT);
 
 
         TopologyBuilder builder = new TopologyBuilder();
         builder.setSpout(SPOUT_ID, new RandomSentenceSpout(), spoutNum).setNumTasks(spoutTask);
         builder.setBolt(SPLIT_ID, new SplitBolt(), spBoltNum).setNumTasks(splitTask).localOrShuffleGrouping(SPOUT_ID);
         builder.setBolt(COUNT_ID, new CountBolt(), cntBoltNum).setNumTasks(countTask).fieldsGrouping(SPLIT_ID, new Fields(SplitBolt.FIELDS));
-        builder.setBolt(REPORT_ID, new ReportBolt(), rptBoltNum).shuffleGrouping(COUNT_ID);
+        builder.setBolt(REPORT_ID, new ReportBolt(), rptBoltNum).globalGrouping(COUNT_ID);
         return builder.createTopology();
     }
 
@@ -70,7 +75,7 @@ public class WordCountTopo {
         topoConf.put(Config.TOPOLOGY_STATS_SAMPLE_RATE, 0.0005);
         topoConf.put(Config.TOPOLOGY_MAX_SPOUT_PENDING, 1);
         topoConf.putAll(Utils.readCommandLineOpts());
-        topoConf.registerMetricsConsumer(org.apache.storm.metric.LoggingMetricsConsumer.class, 1);
+        topoConf.registerMetricsConsumer(org.apache.storm.metric.LoggingMetricsConsumer.class, metricCount);
 
         if (args.length > 2) {
             System.err.println("args: [runDurationSec]  [optionalConfFile]");

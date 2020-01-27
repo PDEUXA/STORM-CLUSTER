@@ -13,6 +13,8 @@ counter.task : 1
 # Ne pas changer / nombre de bolt reporter
 reporter.count : 1
 
+
 # Nombre de worker
 # storm config overrides
 topology.workers : 1
+metric.count : 1
