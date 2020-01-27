@@ -122,7 +122,8 @@ Les différents tests sont testés avec l'allocation de ressource suivant pour d
 - 3 CPU
 - 2 GB de RAM (+swap de 1GB)
 
-#### __Influence du nombre de spout__
+#### Influence du nombre de spout
+
 Nous avons dans premier temps fixé le nombre de bolt à 2 (1 counter et 1 spliter), et augmenter le nombre de spout (1, 2, 4, 8, 16, 32, 64, 128).
 Chaque test s'est déroulé sur 4 minutes.
 Les metriques utilisés sont le nombre de mots générés, et le nombre de mots comptés.
@@ -140,7 +141,8 @@ Nous avons donc fixé le nombre de spout à 1, et progressivement augmenté le n
 <img src="imgs/Spout constant à 1, Influence des bolts.png"/>
 </p>
 
-Nous observons aussi un overheard lorsque le nombre de bolts augmente. Néanmoins pour 1 spout fixé on observe de meilleurs performances, lorsqu'il y a 4 bolts (2 splitter et 2 counter).
+Nous observons aussi un overheard lorsque le nombre de bolts augmente. 
+<p>Néanmoins pour 1 spout fixé on observe de meilleurs performances, lorsqu'il y a 4 bolts (2 splitter et 2 counter).</p>
 Afin de vérifier l'optimalité du nombre de spout, nous avons fixé le nombre de bolt (soit 4: 2+2), et augmenter le nombre de spout:
 
 <p>
