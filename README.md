@@ -1,6 +1,6 @@
 # STORM DOCKER CLUSTER
 
-## LANCEMENT DES DOCKERS
+## DEMARRER SON CLUSTER
 
 Pour pouvoir utiliser Apache Storm, il nous faut:
 - un nimbus, qui va jouer le rôle de master,
@@ -29,7 +29,7 @@ docker run -d -p 8080:8080 --restart always --net haginet --name ui --link nimbu
 ```
 Les containers seront directement reliés entre eux (via link) et partageront un repertoire commun avec l'host.
 
-## LANCER LA CONSOLE DU NIMBUS
+## LANCER SA TOPOLOGIE
 1. Aller dans la console bash du Nimbus avec le commande suivante:
 ```bash
 docker exec -it nimbus bash
@@ -79,3 +79,55 @@ Sur votre navigateur `localhost:8080`.
 
 `/logs/worker-artifacts/.../worker.log`
 
+## CREER SA TOPOLOGIE
+
+Les étapes sont effectuées avec IntelliJ:
+- Création d'une classe Java contenant l'instanciation de la topologie:
+```java
+TopologyBuilder builder = new TopologyBuilder();
+// dans set spout on défini le spout et le nombre de composant et de tâche (setNumTasks)
+builder.setSpout(SPOUT_ID, new RandomSentenceSpout(), spoutNum).setNumTasks(spoutTask);
+// le bolt est lié ou spout précédent avec un localOrShuffleGrouping
+builder.setBolt(SPLIT_ID, new SplitBolt(), spBoltNum).setNumTasks(splitTask).localOrShuffleGrouping(SPOUT_ID);
+// le bolt est lié ou spout précédent avec un fieldsGrouping
+builder.setBolt(COUNT_ID, new CountBolt(), cntBoltNum).setNumTasks(countTask).fieldsGrouping(SPLIT_ID, new Fields(SplitBolt.FIELDS));
+builder.setBolt(REPORT_ID, new ReportBolt(), rptBoltNum).shuffleGrouping(COUNT_ID);
+```
+- Création des classe Java definissant les spouts et les bolts.
+
+// todo
+
+- Les jars associés à Storm ne doivent pas être compilé pour créer le jar de votre topologie.
+    Dans les dépendancies du projet, passer les jars relatifs à Storm en "Provided"
+- Pour créer le jar de votre topologie: 
+
+    `Project settings --> artifact`
+    
+    `+/add (from module with dependencies)`
+    
+    `Build project`
+    
+    `Build Artifacts`
+    
+## MISE EN PLACE DE METRIQUE
+
+## RESULTATS
+
+Le but est de tester les performances de Storm sur le une topologie de type "word count".
+Storm est testé via des dockers.
+
+Le premier plan d'expérience à pour but de tester l'impact du nombre de spout et bolt de la topologie.
+Les différents tests sont testés avec l'allocation de ressource suivant pour docker:
+- 3 CPU
+- 2 GB de RAM (+swap de 1GB)
+
+Nous avons dans premier temps fixé le nombre de bolt à 2 (1 counter et 1 spliter), et augmenter le nombre de spout (1, 2, 4, 8, 16, 32, 64, 128).
+Chaque test s'est déroulé sur 4 minutes.
+Les metriques utilisés sont le nombre de mots générés, et le nombre de mots comptés.
+<img src="imgs/Bolt et Storm constant à 1, Influence des spouts.jpeg" width="200" height="200" />
+
+
+
+On peut voir que le nombre d'instances de spout genère un overhead conséquant, car à chaque instance un peu de mémoire est alloué. Réduisant fortement les perfomances. Ainsi sur notre machines seulement 2 spouts suffisent à avoir une performance optimale.
+Néanmoins l'interface de storm nous indique, que la capacité de nos bolts est proche du maximum. Il faut donc augmenter le nombre de bolts.
+Nous avons donc fixé le nombre de spout à XX, et progressivement augmenté le nombre de bolts (le nombre de splitter étant identique au nombre de counter) -> (2,4,8)
