@@ -41,9 +41,8 @@ public class RandomSentenceSpout extends BaseRichSpout {
         final String sentence = sentences[rand.nextInt(sentences.length)];
 
         LOG.debug("Emitting tuple: {}", sentence);
-
-        collector.emit(new Values(sentence));
         spoutMetric.incr();
+        collector.emit(new Values(sentence));
 
     }
 

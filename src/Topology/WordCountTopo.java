@@ -75,7 +75,7 @@ public class WordCountTopo {
         topoConf.put(Config.TOPOLOGY_STATS_SAMPLE_RATE, 0.0005);
         topoConf.put(Config.TOPOLOGY_MAX_SPOUT_PENDING, 1);
         topoConf.putAll(Utils.readCommandLineOpts());
-        topoConf.registerMetricsConsumer(org.apache.storm.metric.LoggingMetricsConsumer.class, metricCount);
+        topoConf.registerMetricsConsumer(org.apache.storm.metric.LoggingMetricsConsumer.class, 1);
 
         if (args.length > 2) {
             System.err.println("args: [runDurationSec]  [optionalConfFile]");

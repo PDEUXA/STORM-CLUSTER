@@ -192,6 +192,6 @@ Cette fois la machine qui effectuera les tests possède:
 - 6 CPU (x2 Thread par CPU)
 - 9 GB sont alloués à docker.
 
-
+foizejofezifhpauozefh
 
 
