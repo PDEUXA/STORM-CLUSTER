@@ -124,11 +124,26 @@ Les différents tests sont testés avec l'allocation de ressource suivant pour d
 Nous avons dans premier temps fixé le nombre de bolt à 2 (1 counter et 1 spliter), et augmenter le nombre de spout (1, 2, 4, 8, 16, 32, 64, 128).
 Chaque test s'est déroulé sur 4 minutes.
 Les metriques utilisés sont le nombre de mots générés, et le nombre de mots comptés.
+
+
+
+On peut voir que le nombre d'instances de spout genère un overhead conséquant, car à chaque instance un peu de mémoire est alloué, rréduisant fortement les perfomances. Ainsi sur notre machines seulement 1 spout suffis à avoir une performance optimale.
+Néanmoins l'interface de storm nous indique, que la capacité de nos bolts est proche du maximum. Il faut donc augmenter le nombre de bolts.
+Nous avons donc fixé le nombre de spout à 1, et progressivement augmenté le nombre de bolts (le nombre de splitter étant identique au nombre de counter) -> (2, 4, 8, 16, 32, 64)
 <p>
-<img src="imgs/Bolt et Storm constant à 1, Influence des spouts.jpeg"/>
+<img src="imgs/Spout constant à 1, Influence des bolts.png"/>
 </p>
 
+Nous observons aussi un overheard lorsque le nombre de bolts augmente. Néanmoins pour 1 spout fixé on observe de meilleurs performances, lorsqu'il y a 4 bolts (2 splitter et 2 counter).
+Afin de vérifier l'optimalité du nombre de spout, nous avons fixé le nombre de bolt (soit 4: 2+2), et augmenter le nombre de spout:
 
-On peut voir que le nombre d'instances de spout genère un overhead conséquant, car à chaque instance un peu de mémoire est alloué. Réduisant fortement les perfomances. Ainsi sur notre machines seulement 2 spouts suffisent à avoir une performance optimale.
-Néanmoins l'interface de storm nous indique, que la capacité de nos bolts est proche du maximum. Il faut donc augmenter le nombre de bolts.
-Nous avons donc fixé le nombre de spout à XX, et progressivement augmenté le nombre de bolts (le nombre de splitter étant identique au nombre de counter) -> (2,4,8)
+<p>
+<img src="imgs/Spout constant à 2, Influence des bolts.png"/>
+</p>
+
+Il y à de légère différence de 1 à 4 spout, la perfomance décroit de manière significative à partir de 4 spouts. Dans un dernier temps, nous allons vérifier que notre nombre de bolts n'est pas limitant dans la performance, nous testons donc avec 2 spout constants, la variation du nombre de bolts.
+
+<p>
+<img src="imgs/Spout constant à 2, Influence des bolts.png"/>
+</p>
+
