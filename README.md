@@ -1,6 +1,6 @@
 # STORM DOCKER CLUSTER
 
-## DEMARRER SON CLUSTER
+## DÉMARRER SON CLUSTER
 
 Pour pouvoir utiliser Apache Storm, il nous faut:
 - un nimbus, qui va jouer le rôle de master,
@@ -9,7 +9,7 @@ Pour pouvoir utiliser Apache Storm, il nous faut:
 
 Ainsi nous devons, à minima, lancer au moins trois conteneurs (le 4ème est l'interface Storm (UI)):
 
-Executer le script en changeant le PATH (vers le jar)
+Exécuter le script en changeant le PATH (vers le jar)
 ```bash
 # METTRE LE CHEMIN VERS LE JAR DE VOTRE TOPOLOGIE
 SHARED=/Users/p2a/Desktop/docker-spark-cluster/Storm/examples/
@@ -34,7 +34,7 @@ Les containers seront directement reliés entre eux (via link) et partageront un
 ```bash
 docker exec -it nimbus bash
 ```
-2. Aller dans le répétoire partagé (à partir du Nimbus):
+2. Aller dans le répertoire partagé (à partir du Nimbus):
 ```bash
 cd /root/jars/
 ```
@@ -82,7 +82,7 @@ Sur votre navigateur `localhost:8080`.
 ## CREER SA TOPOLOGIE
 
 Les étapes sont effectuées avec IntelliJ:
-- Création d'une classe Java contenant l'instanciation de la topologie:
+- Création d'une classe Java contenant l'instantiation de la topologie:
 ```java
 TopologyBuilder builder = new TopologyBuilder();
 // dans set spout on défini le spout et le nombre de composant et de tâche (setNumTasks)
@@ -93,12 +93,12 @@ builder.setBolt(SPLIT_ID, new SplitBolt(), spBoltNum).setNumTasks(splitTask).loc
 builder.setBolt(COUNT_ID, new CountBolt(), cntBoltNum).setNumTasks(countTask).fieldsGrouping(SPLIT_ID, new Fields(SplitBolt.FIELDS));
 builder.setBolt(REPORT_ID, new ReportBolt(), rptBoltNum).shuffleGrouping(COUNT_ID);
 ```
-- Création des classe Java definissant les spouts et les bolts.
+- Création des classe Java définissant les spouts et les bolts.
 
 // todo
 
 - Les jars associés à Storm ne doivent pas être compilé pour créer le jar de votre topologie.
-    Dans les dépendancies du projet, passer les jars relatifs à Storm en "Provided"
+    Dans les dépendances du projet, passer les jars relatifs à Storm en "Provided"
 - Pour créer le jar de votre topologie: 
 
     `Project settings --> artifact`
@@ -109,9 +109,9 @@ builder.setBolt(REPORT_ID, new ReportBolt(), rptBoltNum).shuffleGrouping(COUNT_I
     
     `Build Artifacts`
     
-## MISE EN PLACE DE METRIQUE
+## MISE EN PLACE DE MÉTRIQUE
 
-## RESULTATS
+## RÉSULTATS
 
 Le but est de tester les performances de Storm sur le une topologie de type "word count".
 Storm est testé via des dockers.
@@ -126,13 +126,13 @@ Les différents tests sont testés avec l'allocation de ressource suivant pour d
 
 Nous avons dans premier temps fixé le nombre de bolt à 2 (1 counter et 1 spliter), et augmenter le nombre de spout (1, 2, 4, 8, 16, 32, 64, 128).
 Chaque test s'est déroulé sur 4 minutes.
-Les metriques utilisés sont le nombre de mots générés, et le nombre de mots comptés.
+Les métriques utilisés sont le nombre de mots générés, et le nombre de mots comptés.
 <p>
 <img src="imgs/Bolt et Storm constant à 1, Influence des spouts.jpeg"/>
 </p>
 
 
-On peut voir que le nombre d'instances de spout genère un overhead conséquant, car à chaque instance un peu de mémoire est alloué, rréduisant fortement les perfomances. Ainsi sur notre machines seulement 1 spout suffis à avoir une performance optimale.
+On peut voir que le nombre d'instances de spout engendre un overhead conséquent, car à chaque instance un peu de mémoire est alloué, réduisant fortement les performances. Ainsi sur notre machines seulement 1 spout suffis à avoir une performance optimale.
 Néanmoins l'interface de storm nous indique, que la capacité de nos bolts est proche du maximum. Il faut donc augmenter le nombre de bolts.
 
 #### Influence du nombre de bolt
@@ -142,14 +142,14 @@ Nous avons donc fixé le nombre de spout à 1, et progressivement augmenté le n
 </p>
 
 Nous observons aussi un overheard lorsque le nombre de bolts augmente. 
-<p>Néanmoins pour 1 spout fixé on observe de meilleurs performances, lorsqu'il y a 4 bolts (2 splitter et 2 counter).</p>
+Néanmoins pour 1 spout fixé on observe de meilleurs performances, lorsqu'il y a 4 bolts (2 splitter et 2 counter).
 Afin de vérifier l'optimalité du nombre de spout, nous avons fixé le nombre de bolt (soit 4: 2+2), et augmenter le nombre de spout:
 
 <p>
 <img src="imgs/Spout constant à 2, Influence des bolts.png"/>
 </p>
 
-Il y à de légère différence de 1 à 4 spout, la perfomance décroit de manière significative à partir de 4 spouts. Dans un dernier temps, nous allons vérifier que notre nombre de bolts n'est pas limitant dans la performance, nous testons donc avec 2 spout constants, la variation du nombre de bolts.
+Il y à de légère différence de 1 à 4 spout, la performance décroît de manière significative à partir de 4 spouts. Dans un dernier temps, nous allons vérifier que notre nombre de bolts n'est pas limitant dans la performance, nous testons donc avec 2 spout constants, la variation du nombre de bolts.
 
 <p>
 <img src="imgs/Spout constant à 2, Influence des bolts.png"/>
