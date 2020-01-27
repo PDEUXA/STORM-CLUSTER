@@ -122,7 +122,7 @@ Les différents tests sont testés avec l'allocation de ressource suivant pour d
 - 3 CPU
 - 2 GB de RAM (+swap de 1GB)
 
-#### Influence du nombre de spout
+#### __Influence du nombre de spout__
 Nous avons dans premier temps fixé le nombre de bolt à 2 (1 counter et 1 spliter), et augmenter le nombre de spout (1, 2, 4, 8, 16, 32, 64, 128).
 Chaque test s'est déroulé sur 4 minutes.
 Les metriques utilisés sont le nombre de mots générés, et le nombre de mots comptés.
