@@ -124,8 +124,9 @@ Les différents tests sont testés avec l'allocation de ressource suivant pour d
 Nous avons dans premier temps fixé le nombre de bolt à 2 (1 counter et 1 spliter), et augmenter le nombre de spout (1, 2, 4, 8, 16, 32, 64, 128).
 Chaque test s'est déroulé sur 4 minutes.
 Les metriques utilisés sont le nombre de mots générés, et le nombre de mots comptés.
-<img src="imgs/Bolt et Storm constant à 1, Influence des spouts.jpeg" width="200" height="200" />
-
+<p>
+<img src="imgs/Bolt et Storm constant à 1, Influence des spouts.jpeg"/>
+</p>
 
 
 On peut voir que le nombre d'instances de spout genère un overhead conséquant, car à chaque instance un peu de mémoire est alloué. Réduisant fortement les perfomances. Ainsi sur notre machines seulement 2 spouts suffisent à avoir une performance optimale.
