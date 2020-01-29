@@ -147,7 +147,7 @@ Storm est testé via des dockers.
 
 ### Etude de la composition de la topologie
 Le premier plan d'expérience à pour but de tester l'impact du nombre de spout et bolt de la topologie.
-Les différents tests sont testés avec l'allocation de ressource suivant pour docker:
+Les différents tests sont testés avec l'allocation de ressource suivante pour docker:
 - 3 CPU
 - 2 GB de RAM (+swap de 1GB)
 
@@ -193,8 +193,8 @@ CCette fois la machine qui effectuera les tests possède:
 Nous avons abordé différents aspect:
 - Augmentation du nombre de worker sur 1 superviseur (sur une topologie fixe 4 bolts, 2 spouts).
 - Augmentation du nombre de worker sur 1 superviseur (sur une topologie dynamique 4 bolts, 2 spouts par worker).
-- Augmentation du nombre de CPU aloué sur 1 superviseur (topologie fixe).
-- Augmentation du nombre de CPU aloué sur 1 superviseur (topologie dynamique).
+- Augmentation du nombre de CPU alloué sur 1 superviseur (topologie fixe).
+- Augmentation du nombre de CPU alloué sur 1 superviseur (topologie dynamique).
 - Augmentation du nombre de superviseur (1superviseur = 1 CPU = 1 worker), sur une topologie fixe.
 - Augmentation du nombre de superviseur (1superviseur = 1 CPU = 1 worker), sur une topologie dynamique.
 
@@ -218,7 +218,7 @@ En revanche l'un compte plus que l'autre.</p>
 </p>
 
 <p> Au final, en ne tenant pas compte du test sur 4 workers, on peut en conclure, que plus le nombre de worker augmente, plus le WordCount est inefficace.
- La surcouche amenée par des workers supplémentaire est sans doute plus important.</p>
+ La sur-couche amenée par des workers supplémentaire est sans doute plus important.</p>
 <p>
 <img src="imgs/WORKERS COMP.png"/>
 </p>
@@ -232,7 +232,7 @@ On peut observer un léger speedup. Il n'y à pas de différence entre 4 et 6 CP
 </p>
 
 Dans le cas d'une topologie dynamique. On observe la même aberration à partir de 4 CPU (pic d'activité).
-Nous avons comparé avec 2 superviseurs (6CPU + 4CPU respectivement, avec 10 workers). On n'observe pas de pic, et les performances sont légèrements meilleurs qu'avec 1 CPU.
+Nous avons comparé avec 2 superviseurs (6CPU + 4CPU respectivement, avec 10 workers). On n'observe pas de pic, et les performances sont légèrement meilleurs qu'avec 1 CPU.
 De manière générale, on observe pas de speedup en augmentant le nombre de CPU sur une topologie dynamique. En effet il y à encore plus de Bolts et de Spout à gérer.
 <p>
 <img src="imgs/Topologie dyn CPU augmentation sur 1 superviseur.png"/>
@@ -248,7 +248,7 @@ En enlevant cette courbe rouge, on observe bien un speedup (topologie dynamique)
 <img src="imgs/SUPERVISOR 1 CPU STACK DYNAMIC.png"/>
 </p>
 
-Dans le cas d'une topologie statique:s
+Dans le cas d'une topologie statique:
 <p>
 <img src="imgs/SUPERVISOR 1 CPU STACK STATIC.png"/>
 </p>
@@ -258,4 +258,29 @@ Dans le cas d'une topologie statique:s
 
 
 ## Annexes
+### Portainer
 
+Afin de faciliter la gestion des dockers, nous nous sommes servi d'un container de gestion 'Portainer'. La facilité d'utilisation, nous invite à vous partager ceci:
+
+- Gestion de container:
+<p>
+https://pronto-core-cdn.prontomarketing.com/354/wp-content/uploads/sites/2/2018/12/Containers1.png
+</p>
+
+- Affichage de statistique sur les container
+<p>
+https://pronto-core-cdn.prontomarketing.com/354/wp-content/uploads/sites/2/2018/12/containers3.png
+</p>
+
+- Et bien plus.... pour lancer le container :
+https://www.portainer.io/installation/
+
+ou
+```bash
+docker volume create portainer_data
+docker run -d -p 8000:8000 -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+```
+
+
+
+### Comparaison IO / CPU load
