@@ -186,12 +186,51 @@ Il y à de légère différence de 1 à 4 spout, la performance décroît de man
 
 ### Etude de l'influence du nombre de worker
 
-Cette fois ci, nous allons étudié l'influence du nombre de worker sur une topologie fixée.
-Nous avons pris les meilleurs résultats de la partie 1, à savoir 4 bolts et 1 spout.
-Cette fois la machine qui effectuera les tests possède: 
+CCette fois la machine qui effectuera les tests possède: 
 - 6 CPU (x2 Thread par CPU)
-- 9 GB sont alloués à docker.
+- +10 GB sont alloués à docker.
 
-foizejofezifhpauozefh
+Nous avons abordé différents aspect:
+- Augmentation du nombre de worker sur 1 superviseur (sur une topologie fixe 4 bolts, 2 spouts).
+- Augmentation du nombre de worker sur 1 superviseur (sur une topologie dynamique 4 bolts, 2 spouts par worker).
+- Augmentation du nombre de CPU aloué sur 1 superviseur (topologie fixe).
+- Augmentation du nombre de CPU aloué sur 1 superviseur (topologie dynamique).
+- Augmentation du nombre de superviseur (1superviseur = 1 CPU = 1 worker), sur une topologie fixe.
+- Augmentation du nombre de superviseur (1superviseur = 1 CPU = 1 worker), sur une topologie dynamique.
 
+####  Augmentation du nombre de worker sur 1 superviseur
+Le seul superviseur à accès à toute les ressources disponible.
+<p>
+<img src="imgs/2WORKERS ON 1 SUP.png"/>
+</p>
+<p>
+<img src="imgs/3WORKERS ON 1 SUP.png"/>
+</p>
+<p>
+<img src="imgs/4WORKERS ON 1 SUP.png"/>
+</p>
+
+<p>
+<img src="imgs/WORKERS COMP.png"/>
+</p>
+
+####  Augmentation du nombre de CPU aloué sur 1 superviseur
+
+<p>
+<img src="imgs/Topologie fixe CPU augmentation sur 1 superviseur.png"/>
+</p>
+
+<p>
+<img src="imgs/Topologie dyn CPU augmentation sur 1 superviseur.png"/>
+</p>
+
+####  Augmentation du nombre de superviseur
+
+<p>
+<img src="imgs/SUPERVISOR 1 CPU STACK DYNAMIC.png"/>
+</p>
+
+<p>
+<img src="imgs/SUPERVISOR 1 CPU STACK STATIC.png"/>
+</p>
 

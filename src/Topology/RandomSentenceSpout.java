@@ -33,7 +33,7 @@ public class RandomSentenceSpout extends BaseRichSpout {
 
     @Override
     public void nextTuple() {
-        //Utils.sleep(10);
+        Utils.sleep(100);
         String[] sentences = new String[]{
                 sentence("the cow jumped over the moon"), sentence("an apple a day keeps the"),
                 sentence("four score and seven years ago"), sentence("snow white and the seven dwarfs"), sentence("i am at two with nature")

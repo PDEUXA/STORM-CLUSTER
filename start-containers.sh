@@ -1,6 +1,6 @@
 
 # METTRE LE CHEMIN VERS LE JAR DE VOTRE TOPOLOGIE
-SHARED=/Users/p2a/Desktop/docker-spark-cluster/Storm/examples/
+SHARED=/Users/p2a/IdeaProjects/
 
 docker network create haginet
 

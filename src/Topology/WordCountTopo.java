@@ -5,6 +5,7 @@ import org.apache.storm.generated.StormTopology;
 import org.apache.storm.topology.TopologyBuilder;
 import org.apache.storm.tuple.Fields;
 import org.apache.storm.utils.Utils;
+
 import java.util.Map;
 import Utils.helper;
 
@@ -23,9 +24,13 @@ public class WordCountTopo {
     public static final String SPLIT_NUM = "splitter.count";
     public static final String COUNT_NUM = "counter.count";
     public static final String REPO_NUM = "reporter.count";
+
     public static final String SPOUT_TASK = "spout.task";
     public static final String SPLIT_TASK = "splitter.task";
     public static final String COUNT_TASK = "counter.task";
+
+    public static final String TOPO_DOUBL = "topology.doubler";
+    public static final String WORKER_COUNT = "topology.workers";
 
     public static final int DEFAULT_SPOUT_NUM = 4;
     public static final int DEFAULT_SPLIT_BOLT_NUM = 2;
@@ -40,15 +45,19 @@ public class WordCountTopo {
 
     static StormTopology getTopology(Map<String, Object> config) {
 
-        final int spoutNum = helper.getInt(config, SPOUT_NUM, DEFAULT_SPOUT_NUM);
-        final int spBoltNum = helper.getInt(config, SPLIT_NUM, DEFAULT_SPLIT_BOLT_NUM);
-        final int cntBoltNum = helper.getInt(config, COUNT_NUM, DEFAULT_COUNT_BOLT_NUM);
-        final int rptBoltNum = helper.getInt(config, REPO_NUM, DEFAULT_REPO_BOLT_NUM);
-        final int spoutTask = helper.getInt(config, SPOUT_TASK, DEFAULT_SPOUT_TASK);
-        final int splitTask = helper.getInt(config, SPLIT_TASK, DEFAULT_SPLIT_TASK);
-        final int countTask = helper.getInt(config, COUNT_TASK, DEFAULT_COUNT_TASK);
-        metricCount = helper.getInt(config, METRIC_COUNT, DEFAULT_METRIC_COUNT);
+        int workersNum = 1;
+        final int topoDoubler = helper.getInt(config, TOPO_DOUBL, 0);
+        if (topoDoubler == 1) {
+            workersNum = helper.getInt(config, WORKER_COUNT, 1);
+        }
 
+        final int spoutNum = helper.getInt(config, SPOUT_NUM, DEFAULT_SPOUT_NUM) * workersNum;
+        final int spBoltNum = helper.getInt(config, SPLIT_NUM, DEFAULT_SPLIT_BOLT_NUM)* workersNum;
+        final int cntBoltNum = helper.getInt(config, COUNT_NUM, DEFAULT_COUNT_BOLT_NUM)* workersNum;
+        final int rptBoltNum = helper.getInt(config, REPO_NUM, DEFAULT_REPO_BOLT_NUM);
+        final int spoutTask = helper.getInt(config, SPOUT_TASK, DEFAULT_SPOUT_TASK)* workersNum;
+        final int splitTask = helper.getInt(config, SPLIT_TASK, DEFAULT_SPLIT_TASK)* workersNum;
+        final int countTask = helper.getInt(config, COUNT_TASK, DEFAULT_COUNT_TASK)* workersNum;
 
         TopologyBuilder builder = new TopologyBuilder();
         builder.setSpout(SPOUT_ID, new RandomSentenceSpout(), spoutNum).setNumTasks(spoutTask);
@@ -59,6 +68,8 @@ public class WordCountTopo {
     }
 
     public static void main(String[] args) throws Exception {
+        System.out.println(metricCount);
+
         int runTime = -1;
         Config topoConf = new Config();
         if (args.length > 0) {
@@ -75,8 +86,10 @@ public class WordCountTopo {
         topoConf.put(Config.TOPOLOGY_STATS_SAMPLE_RATE, 0.0005);
         topoConf.put(Config.TOPOLOGY_MAX_SPOUT_PENDING, 1);
         topoConf.putAll(Utils.readCommandLineOpts());
-        topoConf.registerMetricsConsumer(org.apache.storm.metric.LoggingMetricsConsumer.class, 1);
-
+        metricCount = helper.getInt(topoConf, METRIC_COUNT, DEFAULT_METRIC_COUNT);
+        topoConf.registerMetricsConsumer(org.apache.storm.metric.LoggingMetricsConsumer.class, metricCount);
+        System.out.println("METRIC COUNT:");
+        System.out.println(metricCount);
         if (args.length > 2) {
             System.err.println("args: [runDurationSec]  [optionalConfFile]");
             return;
