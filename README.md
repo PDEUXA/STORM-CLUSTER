@@ -264,12 +264,12 @@ Afin de faciliter la gestion des dockers, nous nous sommes servi d'un container 
 
 - Gestion de container:
 <p>
-https://pronto-core-cdn.prontomarketing.com/354/wp-content/uploads/sites/2/2018/12/Containers1.png
+<img src="https://pronto-core-cdn.prontomarketing.com/354/wp-content/uploads/sites/2/2018/12/Containers1.png">
 </p>
 
 - Affichage de statistique sur les container
 <p>
-https://pronto-core-cdn.prontomarketing.com/354/wp-content/uploads/sites/2/2018/12/containers3.png
+<img src="https://pronto-core-cdn.prontomarketing.com/354/wp-content/uploads/sites/2/2018/12/containers3.png">
 </p>
 
 - Et bien plus.... pour lancer le container :
