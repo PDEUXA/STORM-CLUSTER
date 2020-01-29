@@ -200,6 +200,7 @@ Nous avons abordé différents aspect:
 
 ####  Augmentation du nombre de worker sur 1 superviseur
 Le seul superviseur à accès à toute les ressources disponible.
+Nous sommes sur une topologie dynamique, à savoir que plus le nombre de worker augmente, plus la topologie grossie.
 <p>2 workers, on peut voir qu'ils possèdent la même cadence au niveau du Bolt Split et Spout Count.
 En revanche l'un compte plus que l'autre.</p>
 <p>
@@ -222,23 +223,39 @@ En revanche l'un compte plus que l'autre.</p>
 <img src="imgs/WORKERS COMP.png"/>
 </p>
 
-####  Augmentation du nombre de CPU aloué sur 1 superviseur
-
+####  Augmentation du nombre de CPU alloué sur 1 superviseur
+Dans le cas d'une topologie statique (Bolts et Spouts fixés quelque soit le nombre de worker).
+Nous avons augmenté le nombre de CPU alloué (via Docker) au superviseur (Container), de 1 à 6 GPU.
+On peut observer un léger speedup. Il n'y à pas de différence entre 4 et 6 CPUs (car certains sont utilisés pour l'hôte et Docker)
 <p>
 <img src="imgs/Topologie fixe CPU augmentation sur 1 superviseur.png"/>
 </p>
 
+Dans le cas d'une topologie dynamique. On observe la même aberration à partir de 4 CPU (pic d'activité).
+Nous avons comparé avec 2 superviseurs (6CPU + 4CPU respectivement, avec 10 workers). On n'observe pas de pic, et les performances sont légèrements meilleurs qu'avec 1 CPU.
+De manière générale, on observe pas de speedup en augmentant le nombre de CPU sur une topologie dynamique. En effet il y à encore plus de Bolts et de Spout à gérer.
 <p>
 <img src="imgs/Topologie dyn CPU augmentation sur 1 superviseur.png"/>
 </p>
 
 ####  Augmentation du nombre de superviseur
-
+Nous avons pour cette partie, créé plusieurs container superviseur, en allouant à chaque fois 1 CPU.
+Ceci est censé représenté le cas ou on ajoute plusieurs machine à notre cluster.
+Encore une fois, à partir de 4 CPU, les résultats n'ont plus de sens. En effet à 4 CPU (courbe rouge), on peut voir que le nombre de phrase généré par le spout est d'environ 4200. Tandis que le nombre de mot compté est de plus de 40 000. 
+Malheureusement chaque phrase comporte 6 mots.
+En enlevant cette courbe rouge, on observe bien un speedup (topologie dynamique).
 <p>
 <img src="imgs/SUPERVISOR 1 CPU STACK DYNAMIC.png"/>
 </p>
 
+Dans le cas d'une topologie statique:s
 <p>
 <img src="imgs/SUPERVISOR 1 CPU STACK STATIC.png"/>
 </p>
+
+## Conclusion
+
+
+
+## Annexes
 
