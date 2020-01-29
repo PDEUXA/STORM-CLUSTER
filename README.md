@@ -200,16 +200,24 @@ Nous avons abordé différents aspect:
 
 ####  Augmentation du nombre de worker sur 1 superviseur
 Le seul superviseur à accès à toute les ressources disponible.
+<p>2 workers, on peut voir qu'ils possèdent la même cadence au niveau du Bolt Split et Spout Count.
+En revanche l'un compte plus que l'autre.</p>
 <p>
 <img src="imgs/2WORKERS ON 1 SUP.png"/>
 </p>
+
+<p>3 workers, on retrouve la même tendance au niveau du comptage.</p>
 <p>
 <img src="imgs/3WORKERS ON 1 SUP.png"/>
 </p>
+
+<p>4 workers, on retrouve une tendance similaire, on observe un pic d'activité vers 220 secondes. Ce peut s'expliquer par le fait que le superviseur possède toutes les ressources de la machine (hormis la surcouche de l'OS et de Docker), et donc qu'il alloue dynamiquement les ressources. 4 CPUs semblent être la limite de notre machines (4 CPUS pour le superviseur, 2 CPUS pour le reste(OS hôte, Docker, Containers (Nimbus, Zookeeper, UI)).</p>
 <p>
 <img src="imgs/4WORKERS ON 1 SUP.png"/>
 </p>
 
+<p> Au final, en ne tenant pas compte du test sur 4 workers, on peut en conclure, que plus le nombre de worker augmente, plus le WordCount est inefficace.
+ La surcouche amenée par des workers supplémentaire est sans doute plus important.</p>
 <p>
 <img src="imgs/WORKERS COMP.png"/>
 </p>
