@@ -148,94 +148,104 @@ Storm est testé via des dockers.
 ### Etude de la composition de la topologie
 Le premier plan d'expérience à pour but de tester l'impact du nombre de spout et bolt de la topologie.
 Les différents tests sont testés avec l'allocation de ressource suivante pour docker:
-- 3 CPU
-- 2 GB de RAM (+swap de 1GB)
+- 1 CPU sur 1 superviseur 
+
 
 #### Influence du nombre de spout
 
 Nous avons dans premier temps fixé le nombre de bolt à 2 (1 counter et 1 spliter), et augmenter le nombre de spout (1, 2, 4, 8, 16, 32, 64, 128).
-Chaque test s'est déroulé sur 4 minutes.
+Chaque test s'est déroulé sur 12 minutes.
 Les métriques utilisés sont le nombre de mots générés, et le nombre de mots comptés.
 <p>
-<img src="imgs/Bolt et Storm constant à 1, Influence des spouts.jpeg"/>
+<img src="imgs/Bolts and spout impact/SPOUTIMPACT.png"/>
 </p>
 
 
-On peut voir que le nombre d'instances de spout engendre un overhead conséquent, car à chaque instance un peu de mémoire est alloué, réduisant fortement les performances. Ainsi sur notre machines seulement 1 spout suffis à avoir une performance optimale.
-Néanmoins l'interface de storm nous indique, que la capacité de nos bolts est proche du maximum. Il faut donc augmenter le nombre de bolts.
+Le nombre de spout à un impact sur le nombre de mots générés et donc le nombre de mots comptés.
+Quand le nombre de spout est important, les logs sont saturés au bout de 2 minutes, et Storm n'écrit plus dans les fichiers logs.
 
 #### Influence du nombre de bolt
-Nous avons donc fixé le nombre de spout à 1, et progressivement augmenté le nombre de bolts (le nombre de splitter étant identique au nombre de counter) -> (2, 4, 8, 16, 32, 64)
+Nous avons fixé le nombre de spout à 1, et progressivement augmenté le nombre de bolts (le nombre de splitter étant identique au nombre de counter) -> (2, 4, 8, 16, 32, 64)
 <p>
-<img src="imgs/Spout constant à 1, Influence des bolts.png"/>
+<img src="imgs/Bolts and spout impact/BOLTSIMPACT.png"/>
+</p>
+Comme attendu, plus on augmente le nombre de bolts, plus l'overhead est conséquent, et donc la performance diminue. 2 Bolts semblent aisement pouvoir compter les mots générés pour une grande quantité de spouts. Il est normal que si on augmente le nombre de bolts, les performances diminuent.
+
+Nous avons ensuite chercher à trouver le nombre de spout que 4 bolts peuvent gérer, ceci dans le but d'avoir une topologie assez grosse afin de pouvoir tester la scalibilité avec différents worker et superviseur.
+<p>
+<img src="imgs/Bolts and spout impact/BOLTSIMPACTwith2SPOUT.png"/>
+</p>
+//////////////////::TODO again bizarre: 800 000 MOTS
+<p>
+<img src="imgs/Bolts and spout impact/SPOUTIMPACTwith4bolts.png"/>
 </p>
 
-Nous observons aussi un overheard lorsque le nombre de bolts augmente. 
-Néanmoins pour 1 spout fixé on observe de meilleurs performances, lorsqu'il y a 4 bolts (2 splitter et 2 counter).
-Afin de vérifier l'optimalité du nombre de spout, nous avons fixé le nombre de bolt (soit 4: 2+2), et augmenter le nombre de spout:
+Nous décidons de partir sur 4 spout et 4 bolts (2x2) pour la suite des tests. Cette topologie nous permettra de répartir suffisament de composants par worker, sans saturer les logs.
+Nous avons aussi enregistré l'utilisation des différents ressources au niveau des containers (sur une topologie 4 BOLTS, et 16 Spouts).
 
 <p>
-<img src="imgs/Spout constant à 2, Influence des bolts.png"/>
+<img src="imgs/Resources usage docker/nimbus.png"/>
 </p>
-
-Il y à de légère différence de 1 à 4 spout, la performance décroît de manière significative à partir de 4 spouts. Dans un dernier temps, nous allons vérifier que notre nombre de bolts n'est pas limitant dans la performance, nous testons donc avec 2 spout constants, la variation du nombre de bolts.
-
 <p>
-<img src="imgs/Spout constant à 2, Influence des bolts.png"/>
+<img src="imgs/Resources usage docker/zookeeper.png"/>
+</p>
+<p>
+<img src="imgs/Resources usage docker/supervisor.png"/>
+</p>
+<p>
+<img src="imgs/Resources usage docker/ui.png"/>
 </p>
 
 ### Etude de l'influence du nombre de worker
 
-CCette fois la machine qui effectuera les tests possède: 
+Cette fois la machine qui effectuera les tests possède: 
 - 6 CPU (x2 Thread par CPU)
 - +10 GB sont alloués à docker.
 
 Nous avons abordé différents aspect:
 - Augmentation du nombre de worker sur 1 superviseur (sur une topologie fixe 4 bolts, 2 spouts).
 - Augmentation du nombre de worker sur 1 superviseur (sur une topologie dynamique 4 bolts, 2 spouts par worker).
-- Augmentation du nombre de CPU alloué sur 1 superviseur (topologie fixe).
-- Augmentation du nombre de CPU alloué sur 1 superviseur (topologie dynamique).
 - Augmentation du nombre de superviseur (1superviseur = 1 CPU = 1 worker), sur une topologie fixe.
 - Augmentation du nombre de superviseur (1superviseur = 1 CPU = 1 worker), sur une topologie dynamique.
 
 ####  Augmentation du nombre de worker sur 1 superviseur
-Le seul superviseur à accès à toute les ressources disponible.
-Nous sommes sur une topologie dynamique, à savoir que plus le nombre de worker augmente, plus la topologie grossie.
+Le seul superviseur à accès à 1 CPU.
+Nous sommes sur une topologie dynamique (à savoir que plus le nombre de worker augmente, plus la topologie grossie.
+)
 <p>2 workers, on peut voir qu'ils possèdent la même cadence au niveau du Bolt Split et Spout Count.
-En revanche l'un compte plus que l'autre.</p>
+En revanche l'un compte plus que l'autre. On peut voir aussi que Storm, effectue des paliers, ceci est peut être dû à un fonctionnement par Batch</p>
+
 <p>
-<img src="imgs/2WORKERS ON 1 SUP.png"/>
+<img src="imgs/Worker impact/Dynamique/WORKERSIMPACTdyna2.png"/>
 </p>
 
 <p>3 workers, on retrouve la même tendance au niveau du comptage.</p>
 <p>
-<img src="imgs/3WORKERS ON 1 SUP.png"/>
+<img src="imgs/Worker impact/Dynamique/WORKERSIMPACTdyna3.png"/>
 </p>
 
-<p>4 workers, on retrouve une tendance similaire, on observe un pic d'activité vers 220 secondes. Ce peut s'expliquer par le fait que le superviseur possède toutes les ressources de la machine (hormis la surcouche de l'OS et de Docker), et donc qu'il alloue dynamiquement les ressources. 4 CPUs semblent être la limite de notre machines (4 CPUS pour le superviseur, 2 CPUS pour le reste(OS hôte, Docker, Containers (Nimbus, Zookeeper, UI)).</p>
+<p>4 workers, on retrouve une tendance similaire</p>
 <p>
-<img src="imgs/4WORKERS ON 1 SUP.png"/>
+<img src="imgs/Worker impact/Dynamique/WORKERSIMPACTdyna4.png"/>
 </p>
 
-<p> Au final, en ne tenant pas compte du test sur 4 workers, on peut en conclure, que plus le nombre de worker augmente, plus le WordCount est inefficace.
- La sur-couche amenée par des workers supplémentaire est sans doute plus important.</p>
+<p> 
+On peut en conclure, que plus le nombre de worker augmente, plus le WordCount est efficace.
+</p>
 <p>
-<img src="imgs/WORKERS COMP.png"/>
+<img src="imgs/Worker impact/Dynamique/WORKERSIMPACTdyna.png"/>
 </p>
 
-####  Augmentation du nombre de CPU alloué sur 1 superviseur
-Dans le cas d'une topologie statique (Bolts et Spouts fixés quelque soit le nombre de worker).
-Nous avons augmenté le nombre de CPU alloué (via Docker) au superviseur (Container), de 1 à 6 GPU.
-On peut observer un léger speedup. Il n'y à pas de différence entre 4 et 6 CPUs (car certains sont utilisés pour l'hôte et Docker)
+La même chose avec une topologie statique (qui n'est pas fonction du nombre de worker).
+
+4 Workers (comparaison des workers sur une même tâche)
 <p>
-<img src="imgs/Topologie fixe CPU augmentation sur 1 superviseur.png"/>
+<img src="imgs/Worker impact/Statique/WORKERSIMPACTstatique4.png"/>
 </p>
 
-Dans le cas d'une topologie dynamique. On observe la même aberration à partir de 4 CPU (pic d'activité).
-Nous avons comparé avec 2 superviseurs (6CPU + 4CPU respectivement, avec 10 workers). On n'observe pas de pic, et les performances sont légèrement meilleurs qu'avec 1 CPU.
-De manière générale, on observe pas de speedup en augmentant le nombre de CPU sur une topologie dynamique. En effet il y à encore plus de Bolts et de Spout à gérer.
+Comparaison de 1,2,3 et 4 worker.
 <p>
-<img src="imgs/Topologie dyn CPU augmentation sur 1 superviseur.png"/>
+<img src="imgs/Worker impact/Statique/WORKERSIMPACTstatique4=.png"/>
 </p>
 
 ####  Augmentation du nombre de superviseur
