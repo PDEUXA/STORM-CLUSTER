@@ -245,14 +245,12 @@ La même chose avec une topologie statique (qui n'est pas fonction du nombre de 
 
 Comparaison de 1,2,3 et 4 worker.
 <p>
-<img src="imgs/Worker impact/Statique/WORKERSIMPACTstatique4=.png"/>
+<img src="imgs/Worker impact/Statique/WORKERSIMPACTstatique.png"/>
 </p>
 
 ####  Augmentation du nombre de superviseur
 Nous avons pour cette partie, créé plusieurs container superviseur, en allouant à chaque fois 1 CPU.
 Ceci est censé représenté le cas ou on ajoute plusieurs machine à notre cluster.
-Encore une fois, à partir de 4 CPU, les résultats n'ont plus de sens. En effet à 4 CPU (courbe rouge), on peut voir que le nombre de phrase généré par le spout est d'environ 4200. Tandis que le nombre de mot compté est de plus de 40 000. 
-Malheureusement chaque phrase comporte 6 mots.
 En enlevant cette courbe rouge, on observe bien un speedup (topologie dynamique).
 <p>
 <img src="imgs/SUPERVISOR 1 CPU STACK DYNAMIC.png"/>
