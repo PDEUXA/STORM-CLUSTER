@@ -213,7 +213,10 @@ Le seul superviseur à accès à 1 CPU.
 Nous sommes sur une topologie dynamique (à savoir que plus le nombre de worker augmente, plus la topologie grossie.
 )
 <p>2 workers, on peut voir qu'ils possèdent la même cadence au niveau du Bolt Split et Spout Count.
-En revanche l'un compte plus que l'autre. On peut voir aussi que Storm, effectue des paliers, ceci est peut être dû à un fonctionnement par Batch</p>
+En revanche l'un compte plus que l'autre. 
+On peut voir aussi que Storm, effectue des paliers, 
+ceci est peut être dû à un fonctionnement par Batch. Une question importante
+est pourquoi on ne voit pas ce palier pour 1 worker.</p>
 
 <p>
 <img src="imgs/Worker impact/Dynamique/WORKERSIMPACTdyna2.png"/>
