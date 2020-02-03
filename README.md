@@ -57,13 +57,15 @@ builder.setBolt(REPORT_ID, new ReportBolt(), rptBoltNum).shuffleGrouping(COUNT_I
     Les spouts doivent contenir au moins les fonctions : open, nextTuple et declareOutputFields. 
     Les Bolts eux doivent avoir : prepare, execute, declareOutputFields.
 </p>
-<p> Dans notre cas, afin de limiter l'emission de tuples par le spout, celui est mis en pause à chaque émission:
+Dans notre cas, afin de limiter l'emission de tuples par le spout, 
+celui est mis en pause à chaque émission:
+</p>
 ```java
 [...]
 public void nextTuple() {
         Utils.sleep(100);
 ```
-</p>
+
 
 
 - Les jars associés à Storm ne doivent pas être compilé pour créer le jar de votre topologie.
