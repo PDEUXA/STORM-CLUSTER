@@ -60,6 +60,7 @@ builder.setBolt(REPORT_ID, new ReportBolt(), rptBoltNum).shuffleGrouping(COUNT_I
 Dans notre cas, afin de limiter l'emission de tuples par le spout, 
 celui est mis en pause à chaque émission:
 </p>
+
 ```java
 [...]
 public void nextTuple() {
