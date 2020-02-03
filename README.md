@@ -348,7 +348,7 @@ Par conséquent, il y a plus de coordination entre les différents superviseurs.
 
 Dans le cas d'une topologie dynamique, on observe un speed-up quand le nombre de superviseurs augmente.
 <p>
-<img src="imgs/Superviseur impact/SUPERVISORIMPACTdynamique.png.png"/>
+<img src="imgs/Superviseur impact/SUPERVISORIMPACTdynamique.png"/>
 </p>
 
 ## Conclusion
