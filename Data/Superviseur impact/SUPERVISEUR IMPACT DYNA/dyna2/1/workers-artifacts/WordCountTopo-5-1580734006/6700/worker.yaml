@@ -1,0 +1,4 @@
+worker-id: 1939e588-0ff0-4b62-bb35-5e77a4afb04a
+logs.users: [null]
+logs.groups: []
+topology.submitter.user: storm

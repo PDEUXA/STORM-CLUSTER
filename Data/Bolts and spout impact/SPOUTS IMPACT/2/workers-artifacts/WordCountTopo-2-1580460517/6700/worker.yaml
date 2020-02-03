@@ -1,0 +1,4 @@
+worker-id: eefb28c7-ac75-4448-8025-6523799c73de
+logs.users: [null]
+logs.groups: []
+topology.submitter.user: storm

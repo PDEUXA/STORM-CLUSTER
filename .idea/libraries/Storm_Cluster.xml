@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Storm Cluster">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/Storm_Cluster_jar/Storm Cluster.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

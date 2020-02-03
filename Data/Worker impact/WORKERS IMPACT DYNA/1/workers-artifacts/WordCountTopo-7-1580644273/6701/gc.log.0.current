@@ -1,0 +1,23 @@
+OpenJDK 64-Bit Server VM (25.242-b08) for linux-amd64 JRE (1.8.0_242-b08), built on Jan 16 2020 07:33:50 by "openjdk" with gcc 4.4.7 20120313 (Red Hat 4.4.7-23)
+Memory: 4k page, physical 12279180k(849780k free), swap 2097148k(2095612k free)
+CommandLine flags: -XX:GCLogFileSize=1048576 -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=artifacts/heapdump -XX:InitialHeapSize=196466880 -XX:MaxHeapSize=536870912 -XX:NumberOfGCLogFiles=10 -XX:+PrintGC -XX:+PrintGCDateStamps -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:+UseGCLogFileRotation 
+2020-02-02T11:51:37.520+0000: 13.102: [GC (Allocation Failure) 2020-02-02T11:51:37.520+0000: 13.102: [DefNew: 51328K->6399K(57728K), 0.1063110 secs] 51328K->9869K(186112K), 0.1064581 secs] [Times: user=0.01 sys=0.00, real=0.11 secs] 
+2020-02-02T11:51:40.813+0000: 16.394: [Full GC (Metadata GC Threshold) 2020-02-02T11:51:40.813+0000: 16.394: [Tenured: 3469K->12694K(128384K), 0.2018997 secs] 34062K->12694K(186112K), [Metaspace: 20779K->20779K(1067008K)], 0.2020036 secs] [Times: user=0.02 sys=0.00, real=0.20 secs] 
+2020-02-02T11:52:29.813+0000: 65.394: [GC (Allocation Failure) 2020-02-02T11:52:29.813+0000: 65.394: [DefNew: 51456K->5028K(57856K), 0.0101642 secs] 64150K->17723K(186240K), 0.0102778 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] 
+2020-02-02T11:53:45.214+0000: 140.796: [GC (Allocation Failure) 2020-02-02T11:53:45.214+0000: 140.796: [DefNew: 56484K->640K(57856K), 0.0096133 secs] 69179K->15234K(186240K), 0.0097101 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] 
+2020-02-02T11:55:10.818+0000: 226.399: [GC (Allocation Failure) 2020-02-02T11:55:10.818+0000: 226.399: [DefNew: 52096K->697K(57856K), 0.0956985 secs] 66690K->15291K(186240K), 0.0957874 secs] [Times: user=0.01 sys=0.00, real=0.10 secs] 
+2020-02-02T11:56:28.716+0000: 304.298: [GC (Allocation Failure) 2020-02-02T11:56:28.716+0000: 304.298: [DefNew: 52153K->548K(57856K), 0.0033039 secs] 66747K->15141K(186240K), 0.0033884 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+2020-02-02T11:57:48.417+0000: 383.999: [GC (Allocation Failure) 2020-02-02T11:57:48.417+0000: 383.999: [DefNew: 52004K->657K(57856K), 0.0961291 secs] 66597K->15251K(186240K), 0.0962251 secs] [Times: user=0.00 sys=0.00, real=0.10 secs] 
+2020-02-02T11:59:09.015+0000: 464.597: [GC (Allocation Failure) 2020-02-02T11:59:09.016+0000: 464.597: [DefNew: 52113K->776K(57856K), 0.0975600 secs] 66707K->15370K(186240K), 0.0976839 secs] [Times: user=0.01 sys=0.00, real=0.10 secs] 
+2020-02-02T12:00:29.615+0000: 545.196: [GC (Allocation Failure) 2020-02-02T12:00:29.615+0000: 545.196: [DefNew: 52232K->934K(57856K), 0.1010615 secs] 66826K->15527K(186240K), 0.1011648 secs] [Times: user=0.01 sys=0.00, real=0.10 secs] 
+2020-02-02T12:01:56.716+0000: 632.297: [GC (Allocation Failure) 2020-02-02T12:01:56.716+0000: 632.297: [DefNew: 52390K->1156K(57856K), 0.0971169 secs] 66983K->15750K(186240K), 0.0973104 secs] [Times: user=0.00 sys=0.00, real=0.10 secs] 
+2020-02-02T12:03:14.416+0000: 709.998: [GC (Allocation Failure) 2020-02-02T12:03:14.417+0000: 709.998: [DefNew: 52612K->645K(57856K), 0.0038459 secs] 67206K->15239K(186240K), 0.0039237 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] 
+Heap
+ def new generation   total 57856K, used 5904K [0x00000000e0000000, 0x00000000e3ec0000, 0x00000000eaaa0000)
+  eden space 51456K,  10% used [0x00000000e0000000, 0x00000000e0522af8, 0x00000000e3240000)
+  from space 6400K,  10% used [0x00000000e3880000, 0x00000000e39216b8, 0x00000000e3ec0000)
+  to   space 6400K,   0% used [0x00000000e3240000, 0x00000000e3240000, 0x00000000e3880000)
+ tenured generation   total 128384K, used 14593K [0x00000000eaaa0000, 0x00000000f2800000, 0x0000000100000000)
+   the space 128384K,  11% used [0x00000000eaaa0000, 0x00000000eb8e0758, 0x00000000eb8e0800, 0x00000000f2800000)
+ Metaspace       used 26583K, capacity 27164K, committed 27520K, reserved 1073152K
+  class space    used 3199K, capacity 3351K, committed 3456K, reserved 1048576K

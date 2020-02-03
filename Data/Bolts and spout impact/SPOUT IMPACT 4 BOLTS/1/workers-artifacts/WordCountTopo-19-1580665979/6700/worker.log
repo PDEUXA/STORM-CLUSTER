@@ -1,0 +1,335 @@
+2020-02-02 17:53:04.829 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-02 17:53:04.927 o.a.s.d.w.LogConfigManager main [INFO] Started with log levels: {=INFO, STDERR=INFO, STDOUT=INFO, org.apache.storm.metric.LoggingMetricsConsumer=INFO}
+2020-02-02 17:53:04.936 o.a.s.d.w.Worker main [INFO] Launching worker for WordCountTopo-19-1580665979 on ec5ad333-e684-472d-bc50-7e349afca792-172.18.0.2:6700 with id 3501fd34-a585-437c-8b2b-53bd77d1b879 and conf {storm.messaging.netty.min_wait_ms=100, topology.backpressure.wait.strategy=org.apache.storm.policy.WaitStrategyProgressive, storm.resource.isolation.plugin=org.apache.storm.container.cgroup.CgroupManager, storm.zookeeper.auth.user=null, storm.messaging.netty.buffer_size=5242880, storm.exhibitor.port=8080, topology.bolt.wait.progressive.level1.count=1, pacemaker.auth.method=NONE, ui.filter=null, worker.profiler.enabled=false, executor.metrics.frequency.secs=60, supervisor.thrift.threads=16, ui.http.creds.plugin=org.apache.storm.security.auth.DefaultHttpCredentialsPlugin, supervisor.supervisors.commands=[], supervisor.queue.size=128, logviewer.cleanup.age.mins=10080, topology.tuple.serializer=org.apache.storm.serialization.types.ListDelegateSerializer, storm.cgroup.memory.enforcement.enable=false, drpc.port=3772, topology.max.spout.pending=null, topology.transfer.buffer.size=1000, nimbus.worker.heartbeats.recovery.strategy.class=org.apache.storm.nimbus.TimeOutWorkerHeartbeatsRecoveryStrategy, worker.metrics={CGroupMemory=org.apache.storm.metric.cgroup.CGroupMemoryUsage, CGroupMemoryLimit=org.apache.storm.metric.cgroup.CGroupMemoryLimit, CGroupCpu=org.apache.storm.metric.cgroup.CGroupCpu, CGroupCpuGuarantee=org.apache.storm.metric.cgroup.CGroupCpuGuarantee}, logviewer.port=8000, worker.childopts=-Xmx%HEAP-MEM%m -XX:+PrintGCDetails -Xloggc:artifacts/gc.log -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 -XX:GCLogFileSize=1M -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=artifacts/heapdump, topology.component.cpu.pcore.percent=10.0, storm.daemon.metrics.reporter.plugins=[org.apache.storm.daemon.metrics.reporters.JmxPreparableReporter], blacklist.scheduler.resume.time.secs=1800, drpc.childopts=-Xmx768m, nimbus.task.launch.secs=120, logviewer.childopts=-Xmx128m, storm.supervisor.hard.memory.limit.overage.mb=2024, storm.zookeeper.servers=[zookeeper], storm.messaging.transport=org.apache.storm.messaging.netty.Context, storm.messaging.netty.authentication=false, topology.localityaware.higher.bound=0.8, storm.cgroup.memory.limit.tolerance.margin.mb=0.0, storm.cgroup.hierarchy.name=storm, storm.metricprocessor.class=org.apache.storm.metricstore.NimbusMetricProcessor, topology.kryo.factory=org.apache.storm.serialization.DefaultKryoFactory, nimbus.assignments.service.threads=10, worker.heap.memory.mb=768, storm.network.topography.plugin=org.apache.storm.networktopography.DefaultRackDNSToSwitchMapping, supervisor.slots.ports=[6700, 6701, 6702, 6703], topology.stats.sample.rate=0.05, storm.local.dir=/data, topology.backpressure.wait.park.microsec=100, topology.ras.constraint.max.state.search=10000, topology.testing.always.try.serialize=false, nimbus.assignments.service.thread.queue.size=100, storm.principal.tolocal=org.apache.storm.security.auth.DefaultPrincipalToLocal, java.library.path=/usr/local/lib:/opt/local/lib:/usr/lib:/usr/lib64, nimbus.local.assignments.backend.class=org.apache.storm.assignments.InMemoryAssignmentBackend, worker.gc.childopts=, storm.group.mapping.service.cache.duration.secs=120, topology.multilang.serializer=org.apache.storm.multilang.JsonSerializer, drpc.request.timeout.secs=600, nimbus.blobstore.class=org.apache.storm.blobstore.LocalFsBlobStore, topology.state.synchronization.timeout.secs=60, topology.bolt.wait.progressive.level2.count=1000, topology.worker.shared.thread.pool.size=4, topology.executor.receive.buffer.size=32768, pacemaker.servers=[], supervisor.monitor.frequency.secs=3, storm.nimbus.retry.times=5, topology.transfer.batch.size=1, transactional.zookeeper.port=null, storm.auth.simple-white-list.users=[], topology.scheduler.strategy=org.apache.storm.scheduler.resource.strategies.scheduling.DefaultResourceAwareStrategy, storm.zookeeper.port=2181, storm.zookeeper.retry.intervalceiling.millis=30000, storm.cluster.state.store=org.apache.storm.cluster.ZKStateStorageFactory, nimbus.thrift.port=6627, blacklist.scheduler.tolerance.count=3, nimbus.thrift.threads=64, supervisor.supervisors=[], nimbus.seeds=[nimbus], storm.cluster.metrics.consumer.publish.interval.secs=60, logviewer.filter.params=null, topology.min.replication.count=1, nimbus.blobstore.expiration.secs=600, storm.group.mapping.service=org.apache.storm.security.auth.ShellBasedGroupsMapping, storm.nimbus.retry.interval.millis=2000, topology.max.task.parallelism=null, topology.backpressure.wait.progressive.level2.count=1000, drpc.https.keystore.password=, resource.aware.scheduler.constraint.max.state.search=100000, supervisor.heartbeat.frequency.secs=5, nimbus.credential.renewers.freq.secs=600, storm.supervisor.medium.memory.grace.period.ms=30000, storm.thrift.transport=org.apache.storm.security.auth.SimpleTransportPlugin, storm.cgroup.hierarchy.dir=/cgroup/storm_resources, storm.zookeeper.auth.password=null, ui.port=8080, drpc.authorizer.acl.strict=false, topology.message.timeout.secs=30, topology.error.throttle.interval.secs=10, topology.backpressure.check.millis=50, drpc.https.keystore.type=JKS, supervisor.memory.capacity.mb=4096.0, storm.metricstore.class=org.apache.storm.metricstore.rocksdb.RocksDbStore, drpc.authorizer.acl.filename=drpc-auth-acl.yaml, topology.builtin.metrics.bucket.size.secs=60, topology.spout.wait.park.microsec=100, storm.local.mode.zmq=false, pacemaker.client.max.threads=2, ui.header.buffer.bytes=4096, topology.shellbolt.max.pending=100, topology.serialized.message.size.metrics=false, drpc.max_buffer_size=1048576, drpc.disable.http.binding=true, storm.codedistributor.class=org.apache.storm.codedistributor.LocalFileSystemCodeDistributor, worker.profiler.childopts=-XX:+UnlockCommercialFeatures -XX:+FlightRecorder, nimbus.supervisor.timeout.secs=60, storm.supervisor.cgroup.rootdir=storm, topology.worker.max.heap.size.mb=768.0, storm.zookeeper.root=/storm, topology.disable.loadaware.messaging=false, storm.supervisor.hard.memory.limit.multiplier=2.0, nimbus.topology.validator=org.apache.storm.nimbus.DefaultTopologyValidator, worker.heartbeat.frequency.secs=1, storm.messaging.netty.max_wait_ms=1000, topology.backpressure.wait.progressive.level1.count=1, topology.max.error.report.per.interval=5, nimbus.thrift.max_buffer_size=1048576, storm.metricstore.rocksdb.location=storm_rocks, storm.supervisor.low.memory.threshold.mb=1024, pacemaker.max.threads=50, ui.pagination=20, ui.disable.http.binding=true, supervisor.blobstore.download.max_retries=3, topology.enable.message.timeouts=true, logviewer.disable.http.binding=true, storm.messaging.netty.transfer.batch.size=262144, topology.spout.wait.progressive.level2.count=0, blacklist.scheduler.strategy=org.apache.storm.scheduler.blacklist.strategies.DefaultBlacklistStrategy, storm.metricstore.rocksdb.retention_hours=240, supervisor.run.worker.as.user=false, storm.messaging.netty.client_worker_threads=1, topology.tasks=null, supervisor.thrift.socket.timeout.ms=5000, storm.group.mapping.service.params=null, drpc.http.port=3774, transactional.zookeeper.root=/transactional, supervisor.blobstore.download.thread.count=5, logviewer.filter=null, pacemaker.kerberos.users=[], topology.spout.wait.strategy=org.apache.storm.policy.WaitStrategyProgressive, storm.blobstore.inputstream.buffer.size.bytes=65536, supervisor.worker.heartbeats.max.timeout.secs=600, supervisor.worker.timeout.secs=30, topology.worker.receiver.thread.count=1, logviewer.max.sum.worker.logs.size.mb=4096, topology.executor.overflow.limit=0, topology.batch.flush.interval.millis=1, nimbus.file.copy.expiration.secs=600, pacemaker.port=6699, topology.worker.logwriter.childopts=-Xmx64m, drpc.http.creds.plugin=org.apache.storm.security.auth.DefaultHttpCredentialsPlugin, nimbus.topology.blobstore.deletion.delay.ms=300000, storm.blobstore.acl.validation.enabled=false, ui.filter.params=null, topology.workers=1, blacklist.scheduler.tolerance.time.secs=300, storm.supervisor.medium.memory.threshold.mb=1536, topology.environment=null, drpc.invocations.port=3773, storm.metricstore.rocksdb.create_if_missing=true, nimbus.cleanup.inbox.freq.secs=600, client.blobstore.class=org.apache.storm.blobstore.NimbusBlobStore, topology.fall.back.on.java.serialization=true, storm.nimbus.retry.intervalceiling.millis=60000, storm.nimbus.zookeeper.acls.fixup=true, logviewer.appender.name=A1, ui.users=null, pacemaker.childopts=-Xmx1024m, storm.messaging.netty.server_worker_threads=1, scheduler.display.resource=false, ui.actions.enabled=true, storm.thrift.socket.timeout.ms=600000, storm.topology.classpath.beginning.enabled=false, storm.zookeeper.connection.timeout=15000, topology.tick.tuple.freq.secs=null, nimbus.inbox.jar.expiration.secs=3600, topology.debug=false, storm.zookeeper.retry.interval=1000, storm.messaging.netty.buffer.high.watermark=16777216, storm.blobstore.dependency.jar.upload.chunk.size.bytes=1048576, worker.log.level.reset.poll.secs=30, storm.exhibitor.poll.uripath=/exhibitor/v1/cluster/list, storm.zookeeper.retry.times=5, nimbus.code.sync.freq.secs=120, topology.component.resources.offheap.memory.mb=0.0, topology.spout.wait.progressive.level1.count=0, topology.state.checkpoint.interval.ms=1000, topology.priority=29, supervisor.localizer.cleanup.interval.ms=30000, storm.health.check.dir=healthchecks, supervisor.cpu.capacity=400.0, topology.backpressure.wait.progressive.level3.sleep.millis=1, storm.cgroup.resources=[cpu, memory], storm.worker.min.cpu.pcore.percent=0.0, topology.classpath=null, storm.nimbus.zookeeper.acls.check=true, num.stat.buckets=20, topology.spout.wait.progressive.level3.sleep.millis=1, supervisor.localizer.cache.target.size.mb=10240, topology.worker.childopts=null, drpc.https.port=-1, topology.bolt.wait.park.microsec=100, topology.max.replication.wait.time.sec=60, storm.cgroup.cgexec.cmd=/bin/cgexec, topology.acker.executors=null, topology.bolt.wait.progressive.level3.sleep.millis=1, supervisor.worker.start.timeout.secs=120, supervisor.worker.shutdown.sleep.secs=3, logviewer.max.per.worker.logs.size.mb=2048, topology.trident.batch.emit.interval.millis=500, task.heartbeat.frequency.secs=3, supervisor.enable=true, supervisor.thrift.max_buffer_size=1048576, supervisor.blobstore.class=org.apache.storm.blobstore.NimbusBlobStore, topology.producer.batch.size=1, drpc.worker.threads=64, resource.aware.scheduler.priority.strategy=org.apache.storm.scheduler.resource.strategies.priority.DefaultSchedulingPriorityStrategy, blacklist.scheduler.reporter=org.apache.storm.scheduler.blacklist.reporters.LogReporter, storm.messaging.netty.socket.backlog=500, storm.cgroup.inherit.cpuset.configs=false, nimbus.queue.size=100000, drpc.queue.size=128, ui.disable.spout.lag.monitoring=true, topology.eventlogger.executors=0, pacemaker.base.threads=10, nimbus.childopts=-Xmx1024m, storm.log.dir=/logs, topology.spout.recvq.skips=3, storm.resource.isolation.plugin.enable=false, nimbus.monitor.freq.secs=10, storm.supervisor.memory.limit.tolerance.margin.mb=128.0, storm.disable.symlinks=false, topology.localityaware.lower.bound=0.2, transactional.zookeeper.servers=null, nimbus.task.timeout.secs=30, logs.users=null, pacemaker.thrift.message.size.max=10485760, ui.host=0.0.0.0, supervisor.thrift.port=6628, topology.bolt.wait.strategy=org.apache.storm.policy.WaitStrategyProgressive, pacemaker.thread.timeout=10, storm.meta.serialization.delegate=org.apache.storm.serialization.GzipThriftSerializationDelegate, dev.zookeeper.path=/tmp/dev-storm-zookeeper, topology.skip.missing.kryo.registrations=false, drpc.invocations.threads=64, storm.zookeeper.session.timeout=20000, storm.metricstore.rocksdb.metadata_string_cache_capacity=4000, storm.workers.artifacts.dir=workers-artifacts, topology.component.resources.onheap.memory.mb=128.0, storm.log4j2.conf.dir=log4j2, storm.cluster.mode=distributed, ui.childopts=-Xmx768m, task.refresh.poll.secs=10, supervisor.childopts=-Xmx256m, task.credentials.poll.secs=30, storm.health.check.timeout.ms=5000, storm.blobstore.replication.factor=3, worker.profiler.command=flight.bash, storm.messaging.netty.buffer.low.watermark=8388608}
+2020-02-02 17:53:04.939 o.a.s.s.u.o.l.s.c.SysOutOverSLF4JInitialiser main [WARN] Your logging framework class org.apache.logging.slf4j.Log4jLogger is not known - if it needs access to the standard println methods on the console you will need to register it by calling registerLoggingSystemPackage
+2020-02-02 17:53:04.941 o.a.s.s.u.o.l.s.c.SysOutOverSLF4J main [INFO] Replaced standard System.out and System.err PrintStreams with SLF4JPrintStreams
+2020-02-02 17:53:04.942 o.a.s.s.u.o.l.s.c.SysOutOverSLF4J main [INFO] Redirected System.out and System.err to SLF4J for this context
+2020-02-02 17:53:05.033 o.a.s.s.o.a.c.u.Compatibility main [INFO] Running in ZooKeeper 3.4.x compatibility mode
+2020-02-02 17:53:05.033 o.a.s.s.o.a.c.u.Compatibility main [INFO] Using emulated InjectSessionExpiration
+2020-02-02 17:53:05.047 o.a.s.z.ClientZookeeper main [INFO] Starting ZK Curator
+2020-02-02 17:53:05.047 o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl main [INFO] Starting
+2020-02-02 17:53:05.051 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:zookeeper.version=3.4.14-4c25d480e66aadd371de8bd2fd8da255ac140bcf, built on 03/06/2019 16:18 GMT
+2020-02-02 17:53:05.051 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:host.name=dd89390d11b4
+2020-02-02 17:53:05.051 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.version=1.8.0_242
+2020-02-02 17:53:05.051 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.vendor=Oracle Corporation
+2020-02-02 17:53:05.051 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.home=/usr/local/openjdk-8
+2020-02-02 17:53:05.052 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.class.path=/apache-storm-2.1.0/lib-worker/asm-5.0.3.jar:/apache-storm-2.1.0/lib-worker/storm-shaded-deps-2.1.0.jar:/apache-storm-2.1.0/lib-worker/metrics-graphite-3.2.6.jar:/apache-storm-2.1.0/lib-worker/slf4j-api-1.7.26.jar:/apache-storm-2.1.0/lib-worker/minlog-1.3.0.jar:/apache-storm-2.1.0/lib-worker/log4j-over-slf4j-1.7.26.jar:/apache-storm-2.1.0/lib-worker/log4j-slf4j-impl-2.11.2.jar:/apache-storm-2.1.0/lib-worker/log4j-api-2.11.2.jar:/apache-storm-2.1.0/lib-worker/log4j-core-2.11.2.jar:/apache-storm-2.1.0/lib-worker/storm-client-2.1.0.jar:/apache-storm-2.1.0/lib-worker/metrics-core-3.2.6.jar:/apache-storm-2.1.0/lib-worker/reflectasm-1.10.1.jar:/apache-storm-2.1.0/lib-worker/jaxb-api-2.3.0.jar:/apache-storm-2.1.0/lib-worker/javax.annotation-api-1.3.2.jar:/apache-storm-2.1.0/lib-worker/kryo-3.0.3.jar:/apache-storm-2.1.0/lib-worker/objenesis-2.1.jar:/apache-storm-2.1.0/extlib/*:/conf:/data/supervisor/stormdist/WordCountTopo-19-1580665979/stormjar.jar
+2020-02-02 17:53:05.052 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.library.path=/data/supervisor/stormdist/WordCountTopo-19-1580665979/resources/Linux-amd64:/data/supervisor/stormdist/WordCountTopo-19-1580665979/resources:/usr/local/lib:/opt/local/lib:/usr/lib:/usr/lib64
+2020-02-02 17:53:05.052 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.io.tmpdir=/data/workers/3501fd34-a585-437c-8b2b-53bd77d1b879/tmp
+2020-02-02 17:53:05.052 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.compiler=<NA>
+2020-02-02 17:53:05.052 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:os.name=Linux
+2020-02-02 17:53:05.052 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:os.arch=amd64
+2020-02-02 17:53:05.052 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:os.version=5.3.0-28-generic
+2020-02-02 17:53:05.052 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:user.name=storm
+2020-02-02 17:53:05.052 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:user.home=/home/storm
+2020-02-02 17:53:05.052 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:user.dir=/data/workers/3501fd34-a585-437c-8b2b-53bd77d1b879
+2020-02-02 17:53:05.053 o.a.s.s.o.a.z.ZooKeeper main [INFO] Initiating client connection, connectString=zookeeper:2181 sessionTimeout=20000 watcher=org.apache.storm.shade.org.apache.curator.ConnectionState@2474f125
+2020-02-02 17:53:05.062 o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl main [INFO] Default schema
+2020-02-02 17:53:05.064 o.a.s.s.o.a.z.ClientCnxn main-SendThread(zookeeper:2181) [INFO] Opening socket connection to server zookeeper/172.18.0.5:2181. Will not attempt to authenticate using SASL (unknown error)
+2020-02-02 17:53:05.117 o.a.s.s.o.a.z.ClientCnxn main-SendThread(zookeeper:2181) [INFO] Socket connection established to zookeeper/172.18.0.5:2181, initiating session
+2020-02-02 17:53:05.121 o.a.s.s.o.a.z.ClientCnxn main-SendThread(zookeeper:2181) [INFO] Session establishment complete on server zookeeper/172.18.0.5:2181, sessionid = 0x100000033e3008f, negotiated timeout = 20000
+2020-02-02 17:53:05.125 o.a.s.s.o.a.c.f.s.ConnectionStateManager main-EventThread [INFO] State change: CONNECTED
+2020-02-02 17:53:05.147 o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl Curator-Framework-0 [INFO] backgroundOperationsLoop exiting
+2020-02-02 17:53:05.150 o.a.s.s.o.a.z.ZooKeeper main [INFO] Session: 0x100000033e3008f closed
+2020-02-02 17:53:05.150 o.a.s.s.o.a.z.ClientCnxn main-EventThread [INFO] EventThread shut down for session: 0x100000033e3008f
+2020-02-02 17:53:05.151 o.a.s.z.ClientZookeeper main [INFO] Starting ZK Curator
+2020-02-02 17:53:05.151 o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl main [INFO] Starting
+2020-02-02 17:53:05.152 o.a.s.s.o.a.z.ZooKeeper main [INFO] Initiating client connection, connectString=zookeeper:2181/storm sessionTimeout=20000 watcher=org.apache.storm.shade.org.apache.curator.ConnectionState@3e6104fc
+2020-02-02 17:53:05.152 o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl main [INFO] Default schema
+2020-02-02 17:53:05.152 o.a.s.s.o.a.z.ClientCnxn main-SendThread(zookeeper:2181) [INFO] Opening socket connection to server zookeeper/172.18.0.5:2181. Will not attempt to authenticate using SASL (unknown error)
+2020-02-02 17:53:05.153 o.a.s.s.o.a.z.ClientCnxn main-SendThread(zookeeper:2181) [INFO] Socket connection established to zookeeper/172.18.0.5:2181, initiating session
+2020-02-02 17:53:05.154 o.a.s.s.o.a.z.ClientCnxn main-SendThread(zookeeper:2181) [INFO] Session establishment complete on server zookeeper/172.18.0.5:2181, sessionid = 0x100000033e30090, negotiated timeout = 20000
+2020-02-02 17:53:05.154 o.a.s.s.o.a.c.f.s.ConnectionStateManager main-EventThread [INFO] State change: CONNECTED
+2020-02-02 17:53:05.164 o.a.s.m.StormMetricRegistry main [INFO] Starting metrics reporters...
+2020-02-02 17:53:05.166 o.a.s.s.a.ClientAuthUtils main [INFO] Got AutoCreds []
+2020-02-02 17:53:05.217 o.a.s.d.w.WorkerState main [INFO] Reading assignments
+2020-02-02 17:53:05.246 o.a.s.m.TransportFactory main [INFO] Storm peer transport plugin:org.apache.storm.messaging.netty.Context
+2020-02-02 17:53:05.423 o.a.s.d.w.WorkerState main [INFO] Registering IConnectionCallbacks for ec5ad333-e684-472d-bc50-7e349afca792-172.18.0.2:6700
+2020-02-02 17:53:05.445 o.a.s.m.n.Server main [INFO] Create Netty Server Netty-server-localhost-6700, buffer_size: 5242880, maxWorkers: 1
+2020-02-02 17:53:05.720 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-02 17:53:05.745 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-02 17:53:05.821 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-02 17:53:05.834 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-02 17:53:05.926 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-02 17:53:05.938 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-02 17:53:05.950 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-02 17:53:06.029 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-02 17:53:06.040 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-02 17:53:06.049 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-02 17:53:06.120 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-02 17:53:06.133 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-02 17:53:06.137 o.a.s.e.Executor main [INFO] Loading executor tasks __system:[-1, -1]
+2020-02-02 17:53:06.137 o.a.s.e.Executor main [INFO] Finished loading executor __system:[-1, -1]
+2020-02-02 17:53:06.138 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[8, 8]
+2020-02-02 17:53:06.138 o.a.s.e.Executor main [INFO] Finished loading executor spout:[8, 8]
+2020-02-02 17:53:06.138 o.a.s.e.Executor main [INFO] Loading executor tasks splitter:[6, 6]
+2020-02-02 17:53:06.138 o.a.s.e.Executor main [INFO] Finished loading executor splitter:[6, 6]
+2020-02-02 17:53:06.138 o.a.s.e.Executor main [INFO] Loading executor tasks counter:[4, 4]
+2020-02-02 17:53:06.138 o.a.s.e.Executor main [INFO] Finished loading executor counter:[4, 4]
+2020-02-02 17:53:06.139 o.a.s.e.Executor main [INFO] Loading executor tasks __metrics_org.apache.storm.metric.LoggingMetricsConsumer:[2, 2]
+2020-02-02 17:53:06.139 o.a.s.e.Executor main [INFO] Finished loading executor __metrics_org.apache.storm.metric.LoggingMetricsConsumer:[2, 2]
+2020-02-02 17:53:06.139 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[10, 10]
+2020-02-02 17:53:06.139 o.a.s.e.Executor main [INFO] Finished loading executor spout:[10, 10]
+2020-02-02 17:53:06.139 o.a.s.e.Executor main [INFO] Loading executor tasks splitter:[7, 7]
+2020-02-02 17:53:06.140 o.a.s.e.Executor main [INFO] Finished loading executor splitter:[7, 7]
+2020-02-02 17:53:06.140 o.a.s.e.Executor main [INFO] Loading executor tasks reporter:[5, 5]
+2020-02-02 17:53:06.140 o.a.s.e.Executor main [INFO] Finished loading executor reporter:[5, 5]
+2020-02-02 17:53:06.140 o.a.s.e.Executor main [INFO] Loading executor tasks counter:[3, 3]
+2020-02-02 17:53:06.140 o.a.s.e.Executor main [INFO] Finished loading executor counter:[3, 3]
+2020-02-02 17:53:06.140 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[11, 11]
+2020-02-02 17:53:06.141 o.a.s.e.Executor main [INFO] Finished loading executor spout:[11, 11]
+2020-02-02 17:53:06.141 o.a.s.e.Executor main [INFO] Loading executor tasks __acker:[1, 1]
+2020-02-02 17:53:06.141 o.a.s.e.Executor main [INFO] Finished loading executor __acker:[1, 1]
+2020-02-02 17:53:06.141 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[9, 9]
+2020-02-02 17:53:06.142 o.a.s.e.Executor main [INFO] Finished loading executor spout:[9, 9]
+2020-02-02 17:53:06.146 o.a.s.d.w.Worker main [INFO] Flush tuple will be generated every 1 millis
+2020-02-02 17:53:06.146 o.a.s.d.w.Worker main [INFO] BackPressure change checking is disabled as there is only one worker
+2020-02-02 17:53:06.148 o.a.s.d.w.Worker main [INFO] Worker has topology config {storm.messaging.netty.min_wait_ms=100, topology.backpressure.wait.strategy=org.apache.storm.policy.WaitStrategyProgressive, topology.submitter.principal=, storm.resource.isolation.plugin=org.apache.storm.container.cgroup.CgroupManager, storm.zookeeper.auth.user=null, storm.messaging.netty.buffer_size=5242880, topology.name=WordCountTopo, storm.exhibitor.port=8080, topology.bolt.wait.progressive.level1.count=1, pacemaker.auth.method=NONE, splitter.task=2, ui.filter=null, worker.profiler.enabled=false, executor.metrics.frequency.secs=60, storm.id=WordCountTopo-19-1580665979, supervisor.thrift.threads=16, ui.http.creds.plugin=org.apache.storm.security.auth.DefaultHttpCredentialsPlugin, supervisor.supervisors.commands=[], supervisor.queue.size=128, logviewer.cleanup.age.mins=10080, topology.tuple.serializer=org.apache.storm.serialization.types.ListDelegateSerializer, storm.cgroup.memory.enforcement.enable=false, drpc.port=3772, topology.max.spout.pending=1, topology.transfer.buffer.size=1000, nimbus.worker.heartbeats.recovery.strategy.class=org.apache.storm.nimbus.TimeOutWorkerHeartbeatsRecoveryStrategy, worker.metrics={CGroupMemoryLimit=org.apache.storm.metric.cgroup.CGroupMemoryLimit, CGroupMemory=org.apache.storm.metric.cgroup.CGroupMemoryUsage, CGroupCpu=org.apache.storm.metric.cgroup.CGroupCpu, CGroupCpuGuarantee=org.apache.storm.metric.cgroup.CGroupCpuGuarantee}, logviewer.port=8000, worker.childopts=-Xmx%HEAP-MEM%m -XX:+PrintGCDetails -Xloggc:artifacts/gc.log -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 -XX:GCLogFileSize=1M -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=artifacts/heapdump, topology.component.cpu.pcore.percent=10.0, storm.daemon.metrics.reporter.plugins=[org.apache.storm.daemon.metrics.reporters.JmxPreparableReporter], blacklist.scheduler.resume.time.secs=1800, drpc.childopts=-Xmx768m, nimbus.task.launch.secs=120, logviewer.childopts=-Xmx128m, storm.supervisor.hard.memory.limit.overage.mb=2024, storm.zookeeper.servers=[zookeeper], storm.messaging.transport=org.apache.storm.messaging.netty.Context, storm.messaging.netty.authentication=false, topology.localityaware.higher.bound=0.8, storm.cgroup.memory.limit.tolerance.margin.mb=0.0, storm.cgroup.hierarchy.name=storm, storm.metricprocessor.class=org.apache.storm.metricstore.NimbusMetricProcessor, topology.kryo.factory=org.apache.storm.serialization.DefaultKryoFactory, nimbus.assignments.service.threads=10, reporter.count=1, worker.heap.memory.mb=768, storm.network.topography.plugin=org.apache.storm.networktopography.DefaultRackDNSToSwitchMapping, supervisor.slots.ports=[6700, 6701, 6702, 6703], spout.count=4, topology.stats.sample.rate=5.0E-4, storm.local.dir=/data, topology.backpressure.wait.park.microsec=100, topology.ras.constraint.max.state.search=10000, topology.testing.always.try.serialize=false, nimbus.assignments.service.thread.queue.size=100, storm.principal.tolocal=org.apache.storm.security.auth.DefaultPrincipalToLocal, java.library.path=/usr/local/lib:/opt/local/lib:/usr/lib:/usr/lib64, nimbus.local.assignments.backend.class=org.apache.storm.assignments.InMemoryAssignmentBackend, worker.gc.childopts=, storm.group.mapping.service.cache.duration.secs=120, topology.multilang.serializer=org.apache.storm.multilang.JsonSerializer, topology.kryo.register={}, drpc.request.timeout.secs=600, nimbus.blobstore.class=org.apache.storm.blobstore.LocalFsBlobStore, topology.state.synchronization.timeout.secs=60, metric.count=1, topology.bolt.wait.progressive.level2.count=1000, topology.kryo.decorators=[], topology.worker.shared.thread.pool.size=4, topology.submitter.user=storm, topology.executor.receive.buffer.size=32768, pacemaker.servers=[], supervisor.monitor.frequency.secs=3, storm.nimbus.retry.times=5, topology.transfer.batch.size=1, transactional.zookeeper.port=null, storm.auth.simple-white-list.users=[], topology.scheduler.strategy=org.apache.storm.scheduler.resource.strategies.scheduling.DefaultResourceAwareStrategy, storm.zookeeper.port=2181, storm.zookeeper.retry.intervalceiling.millis=30000, storm.cluster.state.store=org.apache.storm.cluster.ZKStateStorageFactory, nimbus.thrift.port=6627, blacklist.scheduler.tolerance.count=3, nimbus.thrift.threads=64, supervisor.supervisors=[], nimbus.seeds=[nimbus], storm.cluster.metrics.consumer.publish.interval.secs=60, logviewer.filter.params=null, topology.min.replication.count=1, nimbus.blobstore.expiration.secs=600, storm.group.mapping.service=org.apache.storm.security.auth.ShellBasedGroupsMapping, storm.nimbus.retry.interval.millis=2000, topology.max.task.parallelism=null, topology.backpressure.wait.progressive.level2.count=1000, drpc.https.keystore.password=, resource.aware.scheduler.constraint.max.state.search=100000, supervisor.heartbeat.frequency.secs=5, splitter.count=2, nimbus.credential.renewers.freq.secs=600, storm.supervisor.medium.memory.grace.period.ms=30000, storm.thrift.transport=org.apache.storm.security.auth.SimpleTransportPlugin, storm.cgroup.hierarchy.dir=/cgroup/storm_resources, storm.zookeeper.auth.password=null, ui.port=8080, drpc.authorizer.acl.strict=false, topology.message.timeout.secs=30, topology.error.throttle.interval.secs=10, topology.backpressure.check.millis=50, drpc.https.keystore.type=JKS, supervisor.memory.capacity.mb=4096.0, storm.metricstore.class=org.apache.storm.metricstore.rocksdb.RocksDbStore, topology.doubler=1, drpc.authorizer.acl.filename=drpc-auth-acl.yaml, topology.builtin.metrics.bucket.size.secs=60, topology.spout.wait.park.microsec=100, storm.local.mode.zmq=false, pacemaker.client.max.threads=2, ui.header.buffer.bytes=4096, counter.count=2, topology.shellbolt.max.pending=100, topology.serialized.message.size.metrics=false, topology.metrics.consumer.register=[{argument=null, class=org.apache.storm.metric.LoggingMetricsConsumer, parallelism.hint=1}], drpc.max_buffer_size=1048576, drpc.disable.http.binding=true, storm.codedistributor.class=org.apache.storm.codedistributor.LocalFileSystemCodeDistributor, worker.profiler.childopts=-XX:+UnlockCommercialFeatures -XX:+FlightRecorder, nimbus.supervisor.timeout.secs=60, storm.supervisor.cgroup.rootdir=storm, topology.worker.max.heap.size.mb=768.0, storm.zookeeper.root=/storm, topology.disable.loadaware.messaging=true, storm.supervisor.hard.memory.limit.multiplier=2.0, nimbus.topology.validator=org.apache.storm.nimbus.DefaultTopologyValidator, worker.heartbeat.frequency.secs=1, storm.messaging.netty.max_wait_ms=1000, topology.backpressure.wait.progressive.level1.count=1, topology.max.error.report.per.interval=5, spout.task=4, nimbus.thrift.max_buffer_size=1048576, storm.metricstore.rocksdb.location=storm_rocks, storm.supervisor.low.memory.threshold.mb=1024, pacemaker.max.threads=50, ui.pagination=20, ui.disable.http.binding=true, supervisor.blobstore.download.max_retries=3, topology.enable.message.timeouts=true, logviewer.disable.http.binding=true, storm.messaging.netty.transfer.batch.size=262144, topology.spout.wait.progressive.level2.count=0, blacklist.scheduler.strategy=org.apache.storm.scheduler.blacklist.strategies.DefaultBlacklistStrategy, storm.metricstore.rocksdb.retention_hours=240, supervisor.run.worker.as.user=false, storm.messaging.netty.client_worker_threads=1, topology.tasks=null, supervisor.thrift.socket.timeout.ms=5000, storm.group.mapping.service.params=null, drpc.http.port=3774, transactional.zookeeper.root=/transactional, supervisor.blobstore.download.thread.count=5, logviewer.filter=null, pacemaker.kerberos.users=[], topology.spout.wait.strategy=org.apache.storm.policy.WaitStrategyProgressive, storm.blobstore.inputstream.buffer.size.bytes=65536, supervisor.worker.heartbeats.max.timeout.secs=600, supervisor.worker.timeout.secs=30, topology.worker.receiver.thread.count=1, logviewer.max.sum.worker.logs.size.mb=4096, topology.executor.overflow.limit=0, topology.batch.flush.interval.millis=1, nimbus.file.copy.expiration.secs=600, pacemaker.port=6699, topology.worker.logwriter.childopts=-Xmx64m, drpc.http.creds.plugin=org.apache.storm.security.auth.DefaultHttpCredentialsPlugin, nimbus.topology.blobstore.deletion.delay.ms=300000, storm.blobstore.acl.validation.enabled=false, ui.filter.params=null, topology.workers=1, blacklist.scheduler.tolerance.time.secs=300, storm.supervisor.medium.memory.threshold.mb=1536, topology.environment=null, drpc.invocations.port=3773, storm.metricstore.rocksdb.create_if_missing=true, nimbus.cleanup.inbox.freq.secs=600, client.blobstore.class=org.apache.storm.blobstore.NimbusBlobStore, topology.fall.back.on.java.serialization=true, storm.nimbus.retry.intervalceiling.millis=60000, storm.nimbus.zookeeper.acls.fixup=true, logviewer.appender.name=A1, ui.users=null, pacemaker.childopts=-Xmx1024m, storm.messaging.netty.server_worker_threads=1, scheduler.display.resource=false, ui.actions.enabled=true, storm.thrift.socket.timeout.ms=600000, storm.topology.classpath.beginning.enabled=false, storm.zookeeper.connection.timeout=15000, topology.tick.tuple.freq.secs=null, nimbus.inbox.jar.expiration.secs=3600, topology.debug=false, storm.zookeeper.retry.interval=1000, storm.messaging.netty.buffer.high.watermark=16777216, storm.blobstore.dependency.jar.upload.chunk.size.bytes=1048576, worker.log.level.reset.poll.secs=30, storm.exhibitor.poll.uripath=/exhibitor/v1/cluster/list, storm.zookeeper.retry.times=5, nimbus.code.sync.freq.secs=120, topology.component.resources.offheap.memory.mb=0.0, topology.spout.wait.progressive.level1.count=0, topology.state.checkpoint.interval.ms=1000, topology.priority=29, supervisor.localizer.cleanup.interval.ms=30000, storm.health.check.dir=healthchecks, supervisor.cpu.capacity=400.0, topology.backpressure.wait.progressive.level3.sleep.millis=1, storm.cgroup.resources=[cpu, memory], storm.worker.min.cpu.pcore.percent=0.0, topology.classpath=null, storm.nimbus.zookeeper.acls.check=true, num.stat.buckets=20, topology.spout.wait.progressive.level3.sleep.millis=1, supervisor.localizer.cache.target.size.mb=10240, topology.worker.childopts=null, drpc.https.port=-1, topology.bolt.wait.park.microsec=0, topology.max.replication.wait.time.sec=60, storm.cgroup.cgexec.cmd=/bin/cgexec, topology.users=[null], topology.acker.executors=null, topology.bolt.wait.progressive.level3.sleep.millis=1, supervisor.worker.start.timeout.secs=120, supervisor.worker.shutdown.sleep.secs=3, logviewer.max.per.worker.logs.size.mb=2048, topology.trident.batch.emit.interval.millis=500, task.heartbeat.frequency.secs=3, supervisor.enable=true, supervisor.thrift.max_buffer_size=1048576, supervisor.blobstore.class=org.apache.storm.blobstore.NimbusBlobStore, topology.producer.batch.size=1000, drpc.worker.threads=64, resource.aware.scheduler.priority.strategy=org.apache.storm.scheduler.resource.strategies.priority.DefaultSchedulingPriorityStrategy, blacklist.scheduler.reporter=org.apache.storm.scheduler.blacklist.reporters.LogReporter, storm.messaging.netty.socket.backlog=500, storm.cgroup.inherit.cpuset.configs=false, nimbus.queue.size=100000, drpc.queue.size=128, ui.disable.spout.lag.monitoring=true, topology.eventlogger.executors=0, pacemaker.base.threads=10, nimbus.childopts=-Xmx1024m, storm.log.dir=/logs, topology.spout.recvq.skips=3, storm.zookeeper.superACL=null, storm.resource.isolation.plugin.enable=false, nimbus.monitor.freq.secs=10, storm.supervisor.memory.limit.tolerance.margin.mb=128.0, storm.disable.symlinks=false, counter.task=2, topology.localityaware.lower.bound=0.2, transactional.zookeeper.servers=null, nimbus.task.timeout.secs=30, logs.users=null, pacemaker.thrift.message.size.max=10485760, ui.host=0.0.0.0, supervisor.thrift.port=6628, topology.bolt.wait.strategy=org.apache.storm.policy.WaitStrategyPark, pacemaker.thread.timeout=10, storm.meta.serialization.delegate=org.apache.storm.serialization.GzipThriftSerializationDelegate, dev.zookeeper.path=/tmp/dev-storm-zookeeper, topology.skip.missing.kryo.registrations=false, drpc.invocations.threads=64, storm.zookeeper.session.timeout=20000, storm.metricstore.rocksdb.metadata_string_cache_capacity=4000, storm.workers.artifacts.dir=workers-artifacts, topology.component.resources.onheap.memory.mb=128.0, storm.log4j2.conf.dir=log4j2, storm.cluster.mode=distributed, ui.childopts=-Xmx768m, task.refresh.poll.secs=10, supervisor.childopts=-Xmx256m, task.credentials.poll.secs=30, storm.health.check.timeout.ms=5000, storm.blobstore.replication.factor=3, worker.profiler.command=flight.bash, storm.messaging.netty.buffer.low.watermark=8388608}
+2020-02-02 17:53:06.213 o.a.s.d.w.Worker main [INFO] Worker 3501fd34-a585-437c-8b2b-53bd77d1b879 for storm WordCountTopo-19-1580665979 on ec5ad333-e684-472d-bc50-7e349afca792-172.18.0.2:6700  has finished loading
+2020-02-02 17:53:06.214 o.a.s.d.w.Worker main [INFO] Adding shutdown hook with kill in 3 secs
+2020-02-02 17:53:06.219 o.a.s.d.w.WorkerState refresh-active-timer [INFO] All connections are ready for worker ec5ad333-e684-472d-bc50-7e349afca792-172.18.0.2:6700 with id 3501fd34-a585-437c-8b2b-53bd77d1b879
+2020-02-02 17:53:06.219 o.a.s.e.b.BoltExecutor Thread-13-__system-executor[-1, -1] [INFO] Preparing bolt __system:[-1]
+2020-02-02 17:53:06.220 o.a.s.e.s.SpoutExecutor Thread-22-spout-executor[11, 11] [INFO] Opening spout spout:[11]
+2020-02-02 17:53:06.220 o.a.s.e.s.SpoutExecutor Thread-18-spout-executor[10, 10] [INFO] Opening spout spout:[10]
+2020-02-02 17:53:06.220 o.a.s.e.b.BoltExecutor Thread-23-__acker-executor[1, 1] [INFO] Preparing bolt __acker:[1]
+2020-02-02 17:53:06.219 o.a.s.e.s.SpoutExecutor Thread-14-spout-executor[8, 8] [INFO] Opening spout spout:[8]
+2020-02-02 17:53:06.220 o.a.s.e.b.BoltExecutor Thread-15-splitter-executor[6, 6] [INFO] Preparing bolt splitter:[6]
+2020-02-02 17:53:06.221 o.a.s.e.b.BoltExecutor Thread-20-reporter-executor[5, 5] [INFO] Preparing bolt reporter:[5]
+2020-02-02 17:53:06.221 o.a.s.e.b.BoltExecutor Thread-21-counter-executor[3, 3] [INFO] Preparing bolt counter:[3]
+2020-02-02 17:53:06.221 o.a.s.e.b.BoltExecutor Thread-19-splitter-executor[7, 7] [INFO] Preparing bolt splitter:[7]
+2020-02-02 17:53:06.221 o.a.s.e.s.SpoutExecutor Thread-24-spout-executor[9, 9] [INFO] Opening spout spout:[9]
+2020-02-02 17:53:06.222 o.a.s.e.b.BoltExecutor Thread-17-__metrics_org.apache.storm.metric.LoggingMetricsConsumer-executor[2, 2] [INFO] Preparing bolt __metrics_org.apache.storm.metric.LoggingMetricsConsumer:[2]
+2020-02-02 17:53:06.222 o.a.s.e.b.BoltExecutor Thread-16-counter-executor[4, 4] [INFO] Preparing bolt counter:[4]
+2020-02-02 17:53:06.224 o.a.s.e.s.SpoutExecutor Thread-22-spout-executor[11, 11] [INFO] Opened spout spout:[11]
+2020-02-02 17:53:06.224 o.a.s.e.s.SpoutExecutor Thread-14-spout-executor[8, 8] [INFO] Opened spout spout:[8]
+2020-02-02 17:53:06.224 o.a.s.e.s.SpoutExecutor Thread-24-spout-executor[9, 9] [INFO] Opened spout spout:[9]
+2020-02-02 17:53:06.224 o.a.s.e.s.SpoutExecutor Thread-18-spout-executor[10, 10] [INFO] Opened spout spout:[10]
+2020-02-02 17:53:06.225 o.a.s.e.b.BoltExecutor Thread-23-__acker-executor[1, 1] [INFO] Prepared bolt __acker:[1]
+2020-02-02 17:53:06.225 o.a.s.e.b.BoltExecutor Thread-19-splitter-executor[7, 7] [INFO] Prepared bolt splitter:[7]
+2020-02-02 17:53:06.225 o.a.s.e.b.BoltExecutor Thread-21-counter-executor[3, 3] [INFO] Prepared bolt counter:[3]
+2020-02-02 17:53:06.225 o.a.s.e.b.BoltExecutor Thread-20-reporter-executor[5, 5] [INFO] Prepared bolt reporter:[5]
+2020-02-02 17:53:06.225 o.a.s.e.b.BoltExecutor Thread-15-splitter-executor[6, 6] [INFO] Prepared bolt splitter:[6]
+2020-02-02 17:53:06.225 o.a.s.e.b.BoltExecutor Thread-16-counter-executor[4, 4] [INFO] Prepared bolt counter:[4]
+2020-02-02 17:53:06.226 o.a.s.e.b.BoltExecutor Thread-17-__metrics_org.apache.storm.metric.LoggingMetricsConsumer-executor[2, 2] [INFO] Prepared bolt __metrics_org.apache.storm.metric.LoggingMetricsConsumer:[2]
+2020-02-02 17:53:06.226 o.a.s.e.s.SpoutExecutor Thread-22-spout-executor[11, 11] [INFO] Activating spout spout:[11]
+2020-02-02 17:53:06.226 o.a.s.e.s.SpoutExecutor Thread-18-spout-executor[10, 10] [INFO] Activating spout spout:[10]
+2020-02-02 17:53:06.226 o.a.s.e.s.SpoutExecutor Thread-14-spout-executor[8, 8] [INFO] Activating spout spout:[8]
+2020-02-02 17:53:06.226 o.a.s.e.s.SpoutExecutor Thread-24-spout-executor[9, 9] [INFO] Activating spout spout:[9]
+2020-02-02 17:53:06.314 o.a.s.m.c.CGroupMetricsBase Thread-13-__system-executor[-1, -1] [WARN] CGroupMemoryLimit is disabled /cgroup/storm_resources does not exist
+2020-02-02 17:53:06.316 o.a.s.m.c.CGroupMetricsBase Thread-13-__system-executor[-1, -1] [WARN] CGroupMemoryUsage is disabled /cgroup/storm_resources does not exist
+2020-02-02 17:53:06.318 o.a.s.m.c.CGroupMetricsBase Thread-13-__system-executor[-1, -1] [WARN] CGroupCpu is disabled /cgroup/storm_resources does not exist
+2020-02-02 17:53:06.414 o.a.s.m.c.CGroupMetricsBase Thread-13-__system-executor[-1, -1] [WARN] CGroupCpuGuarantee is disabled /cgroup/storm_resources does not exist
+2020-02-02 17:53:06.414 o.a.s.e.b.BoltExecutor Thread-13-__system-executor[-1, -1] [INFO] Prepared bolt __system:[-1]
+2020-02-02 18:05:00.014 o.a.s.e.s.SpoutExecutor Thread-18-spout-executor[10, 10] [INFO] Deactivating spout spout:[10]
+2020-02-02 18:05:00.017 o.a.s.e.s.SpoutExecutor Thread-24-spout-executor[9, 9] [INFO] Deactivating spout spout:[9]
+2020-02-02 18:05:00.017 o.a.s.e.s.SpoutExecutor Thread-14-spout-executor[8, 8] [INFO] Deactivating spout spout:[8]
+2020-02-02 18:05:00.017 o.a.s.e.s.SpoutExecutor Thread-22-spout-executor[11, 11] [INFO] Deactivating spout spout:[11]
+2020-02-02 18:05:01.516 o.a.s.d.w.Worker Thread-26 [INFO] Shutting down worker WordCountTopo-19-1580665979 ec5ad333-e684-472d-bc50-7e349afca792-172.18.0.2 6700
+2020-02-02 18:05:01.517 o.a.s.u.Utils Thread-25 [INFO] Halting after 3 seconds
+2020-02-02 18:05:01.517 o.a.s.d.w.Worker Thread-26 [INFO] Terminating messaging context
+2020-02-02 18:05:01.517 o.a.s.d.w.Worker Thread-26 [INFO] Shutting down executors
+2020-02-02 18:05:01.517 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shutting down executor __system:[-1, -1]
+2020-02-02 18:05:01.613 o.a.s.u.Utils Thread-13-__system-executor[-1, -1] [INFO] Async loop interrupted!
+2020-02-02 18:05:01.613 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shut down executor __system:[-1, -1]
+2020-02-02 18:05:01.613 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shutting down executor spout:[8, 8]
+2020-02-02 18:05:01.614 o.a.s.u.Utils Thread-14-spout-executor[8, 8] [INFO] Async loop interrupted!
+2020-02-02 18:05:01.614 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shut down executor spout:[8, 8]
+2020-02-02 18:05:01.614 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shutting down executor splitter:[6, 6]
+2020-02-02 18:05:01.614 o.a.s.u.Utils Thread-15-splitter-executor[6, 6] [INFO] Async loop interrupted!
+2020-02-02 18:05:01.615 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shut down executor splitter:[6, 6]
+2020-02-02 18:05:01.615 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shutting down executor counter:[4, 4]
+2020-02-02 18:05:01.615 o.a.s.u.Utils Thread-16-counter-executor[4, 4] [INFO] Async loop interrupted!
+2020-02-02 18:05:01.615 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shut down executor counter:[4, 4]
+2020-02-02 18:05:01.615 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shutting down executor __metrics_org.apache.storm.metric.LoggingMetricsConsumer:[2, 2]
+2020-02-02 18:05:01.615 o.a.s.u.Utils Thread-17-__metrics_org.apache.storm.metric.LoggingMetricsConsumer-executor[2, 2] [INFO] Async loop interrupted!
+2020-02-02 18:05:01.616 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shut down executor __metrics_org.apache.storm.metric.LoggingMetricsConsumer:[2, 2]
+2020-02-02 18:05:01.617 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shutting down executor spout:[10, 10]
+2020-02-02 18:05:01.617 o.a.s.u.Utils Thread-18-spout-executor[10, 10] [INFO] Async loop interrupted!
+2020-02-02 18:05:01.617 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shut down executor spout:[10, 10]
+2020-02-02 18:05:01.617 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shutting down executor splitter:[7, 7]
+2020-02-02 18:05:01.618 o.a.s.u.Utils Thread-19-splitter-executor[7, 7] [INFO] Async loop interrupted!
+2020-02-02 18:05:01.618 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shut down executor splitter:[7, 7]
+2020-02-02 18:05:01.618 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shutting down executor reporter:[5, 5]
+2020-02-02 18:05:01.619 o.a.s.u.Utils Thread-20-reporter-executor[5, 5] [INFO] Async loop interrupted!
+2020-02-02 18:05:01.620 T.ReportBolt Thread-26 [INFO] --- FINAL COUNTS ---
+2020-02-02 18:05:01.620 T.ReportBolt Thread-26 [INFO] --------------
+2020-02-02 18:05:01.620 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shut down executor reporter:[5, 5]
+2020-02-02 18:05:01.620 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shutting down executor counter:[3, 3]
+2020-02-02 18:05:01.620 o.a.s.u.Utils Thread-21-counter-executor[3, 3] [INFO] Async loop interrupted!
+2020-02-02 18:05:01.621 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shut down executor counter:[3, 3]
+2020-02-02 18:05:01.621 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shutting down executor spout:[11, 11]
+2020-02-02 18:05:01.621 o.a.s.u.Utils Thread-22-spout-executor[11, 11] [INFO] Async loop interrupted!
+2020-02-02 18:05:01.621 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shut down executor spout:[11, 11]
+2020-02-02 18:05:01.621 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shutting down executor __acker:[1, 1]
+2020-02-02 18:05:01.621 o.a.s.u.Utils Thread-23-__acker-executor[1, 1] [INFO] Async loop interrupted!
+2020-02-02 18:05:01.621 o.a.s.d.Acker Thread-26 [INFO] Acker: cleanup successfully
+2020-02-02 18:05:01.621 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shut down executor __acker:[1, 1]
+2020-02-02 18:05:01.621 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shutting down executor spout:[9, 9]
+2020-02-02 18:05:01.621 o.a.s.u.Utils Thread-24-spout-executor[9, 9] [INFO] Async loop interrupted!
+2020-02-02 18:05:01.622 o.a.s.e.ExecutorShutdown Thread-26 [INFO] Shut down executor spout:[9, 9]
+2020-02-02 18:05:01.622 o.a.s.d.w.Worker Thread-26 [INFO] Shut down executors
+2020-02-02 18:05:01.622 o.a.s.d.w.Worker Thread-26 [INFO] Shutting down transfer thread
+2020-02-02 18:05:04.519 o.a.s.u.Utils Thread-25 [WARN] Forcing Halt... "SIGTERM handler" (DAEMON)
+   lock: java.lang.Thread@294aba23 owner: null
+   java.lang.Thread.State: WAITING
+        at java.lang.Object.wait(Native Method)
+        at java.lang.Thread.join(Thread.java:1252)
+        at java.lang.Thread.join(Thread.java:1326)
+        at java.lang.ApplicationShutdownHooks.runHooks(ApplicationShutdownHooks.java:107)
+        at java.lang.ApplicationShutdownHooks$1.run(ApplicationShutdownHooks.java:46)
+        at java.lang.Shutdown.runHooks(Shutdown.java:123)
+        at java.lang.Shutdown.sequence(Shutdown.java:167)
+        at java.lang.Shutdown.exit(Shutdown.java:212)
+        at java.lang.Terminator$1.handle(Terminator.java:52)
+        at sun.misc.Signal$1.run(Signal.java:212)
+        at java.lang.Thread.run(Thread.java:748)
+
+"DestroyJavaVM" 
+   lock: null owner: null
+   java.lang.Thread.State: RUNNABLE
+
+"Thread-25" (DAEMON)
+   lock: null owner: null
+   java.lang.Thread.State: RUNNABLE
+        at java.lang.Thread.dumpThreads(Native Method)
+        at java.lang.Thread.getAllStackTraces(Thread.java:1610)
+        at org.apache.storm.utils.Utils.threadDump(Utils.java:1232)
+        at org.apache.storm.utils.Utils.lambda$addShutdownHookWithDelayedForceKill$0(Utils.java:342)
+        at org.apache.storm.utils.Utils$$Lambda$53/899068489.run(Unknown Source)
+        at java.lang.Thread.run(Thread.java:748)
+
+"metric/stat timer" (DAEMON)
+   lock: java.util.TaskQueue@68e7bc38 owner: null
+   java.lang.Thread.State: WAITING
+        at java.lang.Object.wait(Native Method)
+        at java.lang.Object.wait(Object.java:502)
+        at java.util.TimerThread.mainLoop(Timer.java:526)
+        at java.util.TimerThread.run(Timer.java:505)
+
+"main-SendThread(zookeeper:2181)" (DAEMON)
+   lock: null owner: null
+   java.lang.Thread.State: RUNNABLE
+        at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+        at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+        at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+        at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+        at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+        at org.apache.storm.shade.org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:349)
+        at org.apache.storm.shade.org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+
+"Signal Dispatcher" (DAEMON)
+   lock: null owner: null
+   java.lang.Thread.State: RUNNABLE
+
+"Thread-26" 
+   lock: org.apache.storm.shade.io.netty.util.concurrent.DefaultPromise@6cd8357b owner: null
+   java.lang.Thread.State: WAITING
+        at java.lang.Object.wait(Native Method)
+        at java.lang.Object.wait(Object.java:502)
+        at org.apache.storm.shade.io.netty.util.concurrent.DefaultPromise.awaitUninterruptibly(DefaultPromise.java:253)
+        at org.apache.storm.shade.io.netty.util.concurrent.DefaultPromise.awaitUninterruptibly(DefaultPromise.java:33)
+        at org.apache.storm.messaging.netty.Context.term(Context.java:86)
+        at org.apache.storm.daemon.worker.Worker.shutdown(Worker.java:495)
+        at org.apache.storm.daemon.worker.Worker$$Lambda$52/1159329398.run(Unknown Source)
+        at org.apache.storm.utils.Utils.lambda$addShutdownHookWithDelayedForceKill$1(Utils.java:352)
+        at org.apache.storm.utils.Utils$$Lambda$54/1680794780.run(Unknown Source)
+        at java.lang.Thread.run(Thread.java:748)
+
+"main-EventThread" (DAEMON)
+   lock: java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@315c0823 owner: null
+   java.lang.Thread.State: WAITING
+        at sun.misc.Unsafe.park(Native Method)
+        at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+        at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+        at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+        at org.apache.storm.shade.org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:504)
+
+"Finalizer" (DAEMON)
+   lock: java.lang.ref.ReferenceQueue$Lock@4dcac00f owner: null
+   java.lang.Thread.State: WAITING
+        at java.lang.Object.wait(Native Method)
+        at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+        at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
+        at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:216)
+
+"Curator-Framework-0" (DAEMON)
+   lock: java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@2de53f40 owner: null
+   java.lang.Thread.State: WAITING
+        at sun.misc.Unsafe.park(Native Method)
+        at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+        at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+        at java.util.concurrent.DelayQueue.take(DelayQueue.java:211)
+        at java.util.concurrent.DelayQueue.take(DelayQueue.java:70)
+        at org.apache.storm.shade.org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:938)
+        at org.apache.storm.shade.org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:66)
+        at org.apache.storm.shade.org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:346)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+        at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+        at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+        at java.lang.Thread.run(Thread.java:748)
+
+"Curator-ConnectionStateManager-0" (DAEMON)
+   lock: java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1c82909e owner: null
+   java.lang.Thread.State: TIMED_WAITING
+        at sun.misc.Unsafe.park(Native Method)
+        at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+        at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+        at java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:418)
+        at org.apache.storm.shade.org.apache.curator.framework.state.ConnectionStateManager.processEvents(ConnectionStateManager.java:272)
+        at org.apache.storm.shade.org.apache.curator.framework.state.ConnectionStateManager.access$000(ConnectionStateManager.java:44)
+        at org.apache.storm.shade.org.apache.curator.framework.state.ConnectionStateManager$1.call(ConnectionStateManager.java:133)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+        at java.lang.Thread.run(Thread.java:748)
+
+"Log4j2-TF-6-Scheduled-1" (DAEMON)
+   lock: java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@49d1f94a owner: null
+   java.lang.Thread.State: TIMED_WAITING
+        at sun.misc.Unsafe.park(Native Method)
+        at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+        at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+        at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+        at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+        at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+        at java.lang.Thread.run(Thread.java:748)
+
+"client-worker-1" 
+   lock: null owner: null
+   java.lang.Thread.State: RUNNABLE
+        at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+        at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+        at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+        at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+        at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+        at org.apache.storm.shade.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+        at org.apache.storm.shade.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:753)
+        at org.apache.storm.shade.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:408)
+        at org.apache.storm.shade.io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+        at java.lang.Thread.run(Thread.java:748)
+
+"globalEventExecutor-1-3" 
+   lock: java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@621fd748 owner: null
+   java.lang.Thread.State: TIMED_WAITING
+        at sun.misc.Unsafe.park(Native Method)
+        at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+        at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+        at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+        at org.apache.storm.shade.io.netty.util.concurrent.GlobalEventExecutor.takeTask(GlobalEventExecutor.java:92)
+        at org.apache.storm.shade.io.netty.util.concurrent.GlobalEventExecutor$TaskRunner.run(GlobalEventExecutor.java:245)
+        at org.apache.storm.shade.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+        at java.lang.Thread.run(Thread.java:748)
+
+"Reference Handler" (DAEMON)
+   lock: java.lang.ref.Reference$Lock@1c06d485 owner: null
+   java.lang.Thread.State: WAITING
+        at java.lang.Object.wait(Native Method)
+        at java.lang.Object.wait(Object.java:502)
+        at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+        at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+

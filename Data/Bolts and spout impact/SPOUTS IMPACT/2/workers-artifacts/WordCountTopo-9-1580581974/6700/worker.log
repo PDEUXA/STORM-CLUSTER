@@ -1,0 +1,691 @@
+2020-02-01 18:33:05.049 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:05.150 o.a.s.d.w.LogConfigManager main [INFO] Started with log levels: {=INFO, STDERR=INFO, STDOUT=INFO, org.apache.storm.metric.LoggingMetricsConsumer=INFO}
+2020-02-01 18:33:05.161 o.a.s.d.w.Worker main [INFO] Launching worker for WordCountTopo-1-1580581974 on 32b8fb66-fb60-4548-997f-9dc548e4f909-172.18.0.6:6700 with id 929a28e4-4427-4027-96ec-0cddeb6e5e20 and conf {storm.messaging.netty.min_wait_ms=100, topology.backpressure.wait.strategy=org.apache.storm.policy.WaitStrategyProgressive, storm.resource.isolation.plugin=org.apache.storm.container.cgroup.CgroupManager, storm.zookeeper.auth.user=null, storm.messaging.netty.buffer_size=5242880, storm.exhibitor.port=8080, topology.bolt.wait.progressive.level1.count=1, pacemaker.auth.method=NONE, ui.filter=null, worker.profiler.enabled=false, executor.metrics.frequency.secs=60, supervisor.thrift.threads=16, ui.http.creds.plugin=org.apache.storm.security.auth.DefaultHttpCredentialsPlugin, supervisor.supervisors.commands=[], supervisor.queue.size=128, logviewer.cleanup.age.mins=10080, topology.tuple.serializer=org.apache.storm.serialization.types.ListDelegateSerializer, storm.cgroup.memory.enforcement.enable=false, drpc.port=3772, topology.max.spout.pending=null, topology.transfer.buffer.size=1000, nimbus.worker.heartbeats.recovery.strategy.class=org.apache.storm.nimbus.TimeOutWorkerHeartbeatsRecoveryStrategy, worker.metrics={CGroupMemory=org.apache.storm.metric.cgroup.CGroupMemoryUsage, CGroupMemoryLimit=org.apache.storm.metric.cgroup.CGroupMemoryLimit, CGroupCpu=org.apache.storm.metric.cgroup.CGroupCpu, CGroupCpuGuarantee=org.apache.storm.metric.cgroup.CGroupCpuGuarantee}, logviewer.port=8000, worker.childopts=-Xmx%HEAP-MEM%m -XX:+PrintGCDetails -Xloggc:artifacts/gc.log -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 -XX:GCLogFileSize=1M -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=artifacts/heapdump, topology.component.cpu.pcore.percent=10.0, storm.daemon.metrics.reporter.plugins=[org.apache.storm.daemon.metrics.reporters.JmxPreparableReporter], blacklist.scheduler.resume.time.secs=1800, drpc.childopts=-Xmx768m, nimbus.task.launch.secs=120, logviewer.childopts=-Xmx128m, storm.supervisor.hard.memory.limit.overage.mb=2024, storm.zookeeper.servers=[zookeeper], storm.messaging.transport=org.apache.storm.messaging.netty.Context, storm.messaging.netty.authentication=false, topology.localityaware.higher.bound=0.8, storm.cgroup.memory.limit.tolerance.margin.mb=0.0, storm.cgroup.hierarchy.name=storm, storm.metricprocessor.class=org.apache.storm.metricstore.NimbusMetricProcessor, topology.kryo.factory=org.apache.storm.serialization.DefaultKryoFactory, nimbus.assignments.service.threads=10, worker.heap.memory.mb=768, storm.network.topography.plugin=org.apache.storm.networktopography.DefaultRackDNSToSwitchMapping, supervisor.slots.ports=[6700, 6701, 6702, 6703], topology.stats.sample.rate=0.05, storm.local.dir=/data, topology.backpressure.wait.park.microsec=100, topology.ras.constraint.max.state.search=10000, topology.testing.always.try.serialize=false, nimbus.assignments.service.thread.queue.size=100, storm.principal.tolocal=org.apache.storm.security.auth.DefaultPrincipalToLocal, java.library.path=/usr/local/lib:/opt/local/lib:/usr/lib:/usr/lib64, nimbus.local.assignments.backend.class=org.apache.storm.assignments.InMemoryAssignmentBackend, worker.gc.childopts=, storm.group.mapping.service.cache.duration.secs=120, topology.multilang.serializer=org.apache.storm.multilang.JsonSerializer, drpc.request.timeout.secs=600, nimbus.blobstore.class=org.apache.storm.blobstore.LocalFsBlobStore, topology.state.synchronization.timeout.secs=60, topology.bolt.wait.progressive.level2.count=1000, topology.worker.shared.thread.pool.size=4, topology.executor.receive.buffer.size=32768, pacemaker.servers=[], supervisor.monitor.frequency.secs=3, storm.nimbus.retry.times=5, topology.transfer.batch.size=1, transactional.zookeeper.port=null, storm.auth.simple-white-list.users=[], topology.scheduler.strategy=org.apache.storm.scheduler.resource.strategies.scheduling.DefaultResourceAwareStrategy, storm.zookeeper.port=2181, storm.zookeeper.retry.intervalceiling.millis=30000, storm.cluster.state.store=org.apache.storm.cluster.ZKStateStorageFactory, nimbus.thrift.port=6627, blacklist.scheduler.tolerance.count=3, nimbus.thrift.threads=64, supervisor.supervisors=[], nimbus.seeds=[nimbus], storm.cluster.metrics.consumer.publish.interval.secs=60, logviewer.filter.params=null, topology.min.replication.count=1, nimbus.blobstore.expiration.secs=600, storm.group.mapping.service=org.apache.storm.security.auth.ShellBasedGroupsMapping, storm.nimbus.retry.interval.millis=2000, topology.max.task.parallelism=null, topology.backpressure.wait.progressive.level2.count=1000, drpc.https.keystore.password=, resource.aware.scheduler.constraint.max.state.search=100000, supervisor.heartbeat.frequency.secs=5, nimbus.credential.renewers.freq.secs=600, storm.supervisor.medium.memory.grace.period.ms=30000, storm.thrift.transport=org.apache.storm.security.auth.SimpleTransportPlugin, storm.cgroup.hierarchy.dir=/cgroup/storm_resources, storm.zookeeper.auth.password=null, ui.port=8080, drpc.authorizer.acl.strict=false, topology.message.timeout.secs=30, topology.error.throttle.interval.secs=10, topology.backpressure.check.millis=50, drpc.https.keystore.type=JKS, supervisor.memory.capacity.mb=4096.0, storm.metricstore.class=org.apache.storm.metricstore.rocksdb.RocksDbStore, drpc.authorizer.acl.filename=drpc-auth-acl.yaml, topology.builtin.metrics.bucket.size.secs=60, topology.spout.wait.park.microsec=100, storm.local.mode.zmq=false, pacemaker.client.max.threads=2, ui.header.buffer.bytes=4096, topology.shellbolt.max.pending=100, topology.serialized.message.size.metrics=false, drpc.max_buffer_size=1048576, drpc.disable.http.binding=true, storm.codedistributor.class=org.apache.storm.codedistributor.LocalFileSystemCodeDistributor, worker.profiler.childopts=-XX:+UnlockCommercialFeatures -XX:+FlightRecorder, nimbus.supervisor.timeout.secs=60, storm.supervisor.cgroup.rootdir=storm, topology.worker.max.heap.size.mb=768.0, storm.zookeeper.root=/storm, topology.disable.loadaware.messaging=false, storm.supervisor.hard.memory.limit.multiplier=2.0, nimbus.topology.validator=org.apache.storm.nimbus.DefaultTopologyValidator, worker.heartbeat.frequency.secs=1, storm.messaging.netty.max_wait_ms=1000, topology.backpressure.wait.progressive.level1.count=1, topology.max.error.report.per.interval=5, nimbus.thrift.max_buffer_size=1048576, storm.metricstore.rocksdb.location=storm_rocks, storm.supervisor.low.memory.threshold.mb=1024, pacemaker.max.threads=50, ui.pagination=20, ui.disable.http.binding=true, supervisor.blobstore.download.max_retries=3, topology.enable.message.timeouts=true, logviewer.disable.http.binding=true, storm.messaging.netty.transfer.batch.size=262144, topology.spout.wait.progressive.level2.count=0, blacklist.scheduler.strategy=org.apache.storm.scheduler.blacklist.strategies.DefaultBlacklistStrategy, storm.metricstore.rocksdb.retention_hours=240, supervisor.run.worker.as.user=false, storm.messaging.netty.client_worker_threads=1, topology.tasks=null, supervisor.thrift.socket.timeout.ms=5000, storm.group.mapping.service.params=null, drpc.http.port=3774, transactional.zookeeper.root=/transactional, supervisor.blobstore.download.thread.count=5, logviewer.filter=null, pacemaker.kerberos.users=[], topology.spout.wait.strategy=org.apache.storm.policy.WaitStrategyProgressive, storm.blobstore.inputstream.buffer.size.bytes=65536, supervisor.worker.heartbeats.max.timeout.secs=600, supervisor.worker.timeout.secs=30, topology.worker.receiver.thread.count=1, logviewer.max.sum.worker.logs.size.mb=4096, topology.executor.overflow.limit=0, topology.batch.flush.interval.millis=1, nimbus.file.copy.expiration.secs=600, pacemaker.port=6699, topology.worker.logwriter.childopts=-Xmx64m, drpc.http.creds.plugin=org.apache.storm.security.auth.DefaultHttpCredentialsPlugin, nimbus.topology.blobstore.deletion.delay.ms=300000, storm.blobstore.acl.validation.enabled=false, ui.filter.params=null, topology.workers=1, blacklist.scheduler.tolerance.time.secs=300, storm.supervisor.medium.memory.threshold.mb=1536, topology.environment=null, drpc.invocations.port=3773, storm.metricstore.rocksdb.create_if_missing=true, nimbus.cleanup.inbox.freq.secs=600, client.blobstore.class=org.apache.storm.blobstore.NimbusBlobStore, topology.fall.back.on.java.serialization=true, storm.nimbus.retry.intervalceiling.millis=60000, storm.nimbus.zookeeper.acls.fixup=true, logviewer.appender.name=A1, ui.users=null, pacemaker.childopts=-Xmx1024m, storm.messaging.netty.server_worker_threads=1, scheduler.display.resource=false, ui.actions.enabled=true, storm.thrift.socket.timeout.ms=600000, storm.topology.classpath.beginning.enabled=false, storm.zookeeper.connection.timeout=15000, topology.tick.tuple.freq.secs=null, nimbus.inbox.jar.expiration.secs=3600, topology.debug=false, storm.zookeeper.retry.interval=1000, storm.messaging.netty.buffer.high.watermark=16777216, storm.blobstore.dependency.jar.upload.chunk.size.bytes=1048576, worker.log.level.reset.poll.secs=30, storm.exhibitor.poll.uripath=/exhibitor/v1/cluster/list, storm.zookeeper.retry.times=5, nimbus.code.sync.freq.secs=120, topology.component.resources.offheap.memory.mb=0.0, topology.spout.wait.progressive.level1.count=0, topology.state.checkpoint.interval.ms=1000, topology.priority=29, supervisor.localizer.cleanup.interval.ms=30000, storm.health.check.dir=healthchecks, supervisor.cpu.capacity=400.0, topology.backpressure.wait.progressive.level3.sleep.millis=1, storm.cgroup.resources=[cpu, memory], storm.worker.min.cpu.pcore.percent=0.0, topology.classpath=null, storm.nimbus.zookeeper.acls.check=true, num.stat.buckets=20, topology.spout.wait.progressive.level3.sleep.millis=1, supervisor.localizer.cache.target.size.mb=10240, topology.worker.childopts=null, drpc.https.port=-1, topology.bolt.wait.park.microsec=100, topology.max.replication.wait.time.sec=60, storm.cgroup.cgexec.cmd=/bin/cgexec, topology.acker.executors=null, topology.bolt.wait.progressive.level3.sleep.millis=1, supervisor.worker.start.timeout.secs=120, supervisor.worker.shutdown.sleep.secs=3, logviewer.max.per.worker.logs.size.mb=2048, topology.trident.batch.emit.interval.millis=500, task.heartbeat.frequency.secs=3, supervisor.enable=true, supervisor.thrift.max_buffer_size=1048576, supervisor.blobstore.class=org.apache.storm.blobstore.NimbusBlobStore, topology.producer.batch.size=1, drpc.worker.threads=64, resource.aware.scheduler.priority.strategy=org.apache.storm.scheduler.resource.strategies.priority.DefaultSchedulingPriorityStrategy, blacklist.scheduler.reporter=org.apache.storm.scheduler.blacklist.reporters.LogReporter, storm.messaging.netty.socket.backlog=500, storm.cgroup.inherit.cpuset.configs=false, nimbus.queue.size=100000, drpc.queue.size=128, ui.disable.spout.lag.monitoring=true, topology.eventlogger.executors=0, pacemaker.base.threads=10, nimbus.childopts=-Xmx1024m, storm.log.dir=/logs, topology.spout.recvq.skips=3, storm.resource.isolation.plugin.enable=false, nimbus.monitor.freq.secs=10, storm.supervisor.memory.limit.tolerance.margin.mb=128.0, storm.disable.symlinks=false, topology.localityaware.lower.bound=0.2, transactional.zookeeper.servers=null, nimbus.task.timeout.secs=30, logs.users=null, pacemaker.thrift.message.size.max=10485760, ui.host=0.0.0.0, supervisor.thrift.port=6628, topology.bolt.wait.strategy=org.apache.storm.policy.WaitStrategyProgressive, pacemaker.thread.timeout=10, storm.meta.serialization.delegate=org.apache.storm.serialization.GzipThriftSerializationDelegate, dev.zookeeper.path=/tmp/dev-storm-zookeeper, topology.skip.missing.kryo.registrations=false, drpc.invocations.threads=64, storm.zookeeper.session.timeout=20000, storm.metricstore.rocksdb.metadata_string_cache_capacity=4000, storm.workers.artifacts.dir=workers-artifacts, topology.component.resources.onheap.memory.mb=128.0, storm.log4j2.conf.dir=log4j2, storm.cluster.mode=distributed, ui.childopts=-Xmx768m, task.refresh.poll.secs=10, supervisor.childopts=-Xmx256m, task.credentials.poll.secs=30, storm.health.check.timeout.ms=5000, storm.blobstore.replication.factor=3, worker.profiler.command=flight.bash, storm.messaging.netty.buffer.low.watermark=8388608}
+2020-02-01 18:33:05.163 o.a.s.s.u.o.l.s.c.SysOutOverSLF4JInitialiser main [WARN] Your logging framework class org.apache.logging.slf4j.Log4jLogger is not known - if it needs access to the standard println methods on the console you will need to register it by calling registerLoggingSystemPackage
+2020-02-01 18:33:05.166 o.a.s.s.u.o.l.s.c.SysOutOverSLF4J main [INFO] Replaced standard System.out and System.err PrintStreams with SLF4JPrintStreams
+2020-02-01 18:33:05.167 o.a.s.s.u.o.l.s.c.SysOutOverSLF4J main [INFO] Redirected System.out and System.err to SLF4J for this context
+2020-02-01 18:33:05.286 o.a.s.s.o.a.c.u.Compatibility main [INFO] Running in ZooKeeper 3.4.x compatibility mode
+2020-02-01 18:33:05.287 o.a.s.s.o.a.c.u.Compatibility main [INFO] Using emulated InjectSessionExpiration
+2020-02-01 18:33:05.345 o.a.s.z.ClientZookeeper main [INFO] Starting ZK Curator
+2020-02-01 18:33:05.345 o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl main [INFO] Starting
+2020-02-01 18:33:05.350 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:zookeeper.version=3.4.14-4c25d480e66aadd371de8bd2fd8da255ac140bcf, built on 03/06/2019 16:18 GMT
+2020-02-01 18:33:05.350 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:host.name=24540391c8bc
+2020-02-01 18:33:05.350 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.version=1.8.0_242
+2020-02-01 18:33:05.350 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.vendor=Oracle Corporation
+2020-02-01 18:33:05.350 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.home=/usr/local/openjdk-8
+2020-02-01 18:33:05.350 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.class.path=/apache-storm-2.1.0/lib-worker/asm-5.0.3.jar:/apache-storm-2.1.0/lib-worker/storm-shaded-deps-2.1.0.jar:/apache-storm-2.1.0/lib-worker/metrics-graphite-3.2.6.jar:/apache-storm-2.1.0/lib-worker/slf4j-api-1.7.26.jar:/apache-storm-2.1.0/lib-worker/minlog-1.3.0.jar:/apache-storm-2.1.0/lib-worker/log4j-over-slf4j-1.7.26.jar:/apache-storm-2.1.0/lib-worker/log4j-slf4j-impl-2.11.2.jar:/apache-storm-2.1.0/lib-worker/log4j-api-2.11.2.jar:/apache-storm-2.1.0/lib-worker/log4j-core-2.11.2.jar:/apache-storm-2.1.0/lib-worker/storm-client-2.1.0.jar:/apache-storm-2.1.0/lib-worker/metrics-core-3.2.6.jar:/apache-storm-2.1.0/lib-worker/reflectasm-1.10.1.jar:/apache-storm-2.1.0/lib-worker/jaxb-api-2.3.0.jar:/apache-storm-2.1.0/lib-worker/javax.annotation-api-1.3.2.jar:/apache-storm-2.1.0/lib-worker/kryo-3.0.3.jar:/apache-storm-2.1.0/lib-worker/objenesis-2.1.jar:/apache-storm-2.1.0/extlib/*:/conf:/data/supervisor/stormdist/WordCountTopo-1-1580581974/stormjar.jar
+2020-02-01 18:33:05.350 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.library.path=/data/supervisor/stormdist/WordCountTopo-1-1580581974/resources/Linux-amd64:/data/supervisor/stormdist/WordCountTopo-1-1580581974/resources:/usr/local/lib:/opt/local/lib:/usr/lib:/usr/lib64
+2020-02-01 18:33:05.350 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.io.tmpdir=/data/workers/929a28e4-4427-4027-96ec-0cddeb6e5e20/tmp
+2020-02-01 18:33:05.350 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:java.compiler=<NA>
+2020-02-01 18:33:05.350 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:os.name=Linux
+2020-02-01 18:33:05.350 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:os.arch=amd64
+2020-02-01 18:33:05.350 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:os.version=5.3.0-28-generic
+2020-02-01 18:33:05.351 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:user.name=storm
+2020-02-01 18:33:05.351 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:user.home=/home/storm
+2020-02-01 18:33:05.351 o.a.s.s.o.a.z.ZooKeeper main [INFO] Client environment:user.dir=/data/workers/929a28e4-4427-4027-96ec-0cddeb6e5e20
+2020-02-01 18:33:05.352 o.a.s.s.o.a.z.ZooKeeper main [INFO] Initiating client connection, connectString=zookeeper:2181 sessionTimeout=20000 watcher=org.apache.storm.shade.org.apache.curator.ConnectionState@2474f125
+2020-02-01 18:33:05.361 o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl main [INFO] Default schema
+2020-02-01 18:33:05.364 o.a.s.s.o.a.z.ClientCnxn main-SendThread(zookeeper:2181) [INFO] Opening socket connection to server zookeeper/172.18.0.2:2181. Will not attempt to authenticate using SASL (unknown error)
+2020-02-01 18:33:05.368 o.a.s.s.o.a.z.ClientCnxn main-SendThread(zookeeper:2181) [INFO] Socket connection established to zookeeper/172.18.0.2:2181, initiating session
+2020-02-01 18:33:05.373 o.a.s.s.o.a.z.ClientCnxn main-SendThread(zookeeper:2181) [INFO] Session establishment complete on server zookeeper/172.18.0.2:2181, sessionid = 0x100000038a80010, negotiated timeout = 20000
+2020-02-01 18:33:05.427 o.a.s.s.o.a.c.f.s.ConnectionStateManager main-EventThread [INFO] State change: CONNECTED
+2020-02-01 18:33:05.452 o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl Curator-Framework-0 [INFO] backgroundOperationsLoop exiting
+2020-02-01 18:33:05.454 o.a.s.s.o.a.z.ZooKeeper main [INFO] Session: 0x100000038a80010 closed
+2020-02-01 18:33:05.454 o.a.s.s.o.a.z.ClientCnxn main-EventThread [INFO] EventThread shut down for session: 0x100000038a80010
+2020-02-01 18:33:05.455 o.a.s.z.ClientZookeeper main [INFO] Starting ZK Curator
+2020-02-01 18:33:05.455 o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl main [INFO] Starting
+2020-02-01 18:33:05.456 o.a.s.s.o.a.z.ZooKeeper main [INFO] Initiating client connection, connectString=zookeeper:2181/storm sessionTimeout=20000 watcher=org.apache.storm.shade.org.apache.curator.ConnectionState@3e6104fc
+2020-02-01 18:33:05.456 o.a.s.s.o.a.c.f.i.CuratorFrameworkImpl main [INFO] Default schema
+2020-02-01 18:33:05.456 o.a.s.s.o.a.z.ClientCnxn main-SendThread(zookeeper:2181) [INFO] Opening socket connection to server zookeeper/172.18.0.2:2181. Will not attempt to authenticate using SASL (unknown error)
+2020-02-01 18:33:05.457 o.a.s.s.o.a.z.ClientCnxn main-SendThread(zookeeper:2181) [INFO] Socket connection established to zookeeper/172.18.0.2:2181, initiating session
+2020-02-01 18:33:05.459 o.a.s.s.o.a.z.ClientCnxn main-SendThread(zookeeper:2181) [INFO] Session establishment complete on server zookeeper/172.18.0.2:2181, sessionid = 0x100000038a80011, negotiated timeout = 20000
+2020-02-01 18:33:05.459 o.a.s.s.o.a.c.f.s.ConnectionStateManager main-EventThread [INFO] State change: CONNECTED
+2020-02-01 18:33:05.469 o.a.s.m.StormMetricRegistry main [INFO] Starting metrics reporters...
+2020-02-01 18:33:05.471 o.a.s.s.a.ClientAuthUtils main [INFO] Got AutoCreds []
+2020-02-01 18:33:05.479 o.a.s.d.w.WorkerState main [INFO] Reading assignments
+2020-02-01 18:33:05.556 o.a.s.m.TransportFactory main [INFO] Storm peer transport plugin:org.apache.storm.messaging.netty.Context
+2020-02-01 18:33:05.748 o.a.s.d.w.WorkerState main [INFO] Registering IConnectionCallbacks for 32b8fb66-fb60-4548-997f-9dc548e4f909-172.18.0.6:6700
+2020-02-01 18:33:05.772 o.a.s.m.n.Server main [INFO] Create Netty Server Netty-server-localhost-6700, buffer_size: 5242880, maxWorkers: 1
+2020-02-01 18:33:06.047 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.133 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.148 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.240 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.254 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.266 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.341 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.358 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.428 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.441 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.453 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.466 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.480 o.a.s.d.w.WorkerState refresh-active-timer [INFO] All connections are ready for worker 32b8fb66-fb60-4548-997f-9dc548e4f909-172.18.0.6:6700 with id 929a28e4-4427-4027-96ec-0cddeb6e5e20
+2020-02-01 18:33:06.542 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.555 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.637 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.648 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.660 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.670 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.736 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.747 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.760 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.827 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.840 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.854 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.870 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.940 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.950 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:06.963 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.037 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.045 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.056 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.064 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.072 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.138 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.146 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.155 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.166 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.239 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.248 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.255 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.265 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.327 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.338 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.346 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.353 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.361 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.432 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.441 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.450 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.458 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.467 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.530 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.542 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.560 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.568 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.575 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.636 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.644 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.651 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.658 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.665 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.735 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.742 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.749 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.758 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.765 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.771 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.834 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.841 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.847 o.a.s.v.ConfigValidation main [WARN] task.heartbeat.frequency.secs is a deprecated config please see class org.apache.storm.Config.TASK_HEARTBEAT_FREQUENCY_SECS for more information.
+2020-02-01 18:33:07.849 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[26, 26]
+2020-02-01 18:33:07.850 o.a.s.e.Executor main [INFO] Finished loading executor spout:[26, 26]
+2020-02-01 18:33:07.851 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[42, 42]
+2020-02-01 18:33:07.851 o.a.s.e.Executor main [INFO] Finished loading executor spout:[42, 42]
+2020-02-01 18:33:07.851 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[50, 50]
+2020-02-01 18:33:07.851 o.a.s.e.Executor main [INFO] Finished loading executor spout:[50, 50]
+2020-02-01 18:33:07.851 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[54, 54]
+2020-02-01 18:33:07.851 o.a.s.e.Executor main [INFO] Finished loading executor spout:[54, 54]
+2020-02-01 18:33:07.851 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[46, 46]
+2020-02-01 18:33:07.851 o.a.s.e.s.SpoutExecutor Thread-15-spout-executor[50, 50] [INFO] Opening spout spout:[50]
+2020-02-01 18:33:07.851 o.a.s.e.s.SpoutExecutor Thread-13-spout-executor[26, 26] [INFO] Opening spout spout:[26]
+2020-02-01 18:33:07.851 o.a.s.e.s.SpoutExecutor Thread-16-spout-executor[54, 54] [INFO] Opening spout spout:[54]
+2020-02-01 18:33:07.851 o.a.s.e.Executor main [INFO] Finished loading executor spout:[46, 46]
+2020-02-01 18:33:07.851 o.a.s.e.s.SpoutExecutor Thread-14-spout-executor[42, 42] [INFO] Opening spout spout:[42]
+2020-02-01 18:33:07.852 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[10, 10]
+2020-02-01 18:33:07.852 o.a.s.e.Executor main [INFO] Finished loading executor spout:[10, 10]
+2020-02-01 18:33:07.852 o.a.s.e.s.SpoutExecutor Thread-17-spout-executor[46, 46] [INFO] Opening spout spout:[46]
+2020-02-01 18:33:07.852 o.a.s.e.Executor main [INFO] Loading executor tasks __metrics_org.apache.storm.metric.LoggingMetricsConsumer:[2, 2]
+2020-02-01 18:33:07.852 o.a.s.e.Executor main [INFO] Finished loading executor __metrics_org.apache.storm.metric.LoggingMetricsConsumer:[2, 2]
+2020-02-01 18:33:07.852 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[6, 6]
+2020-02-01 18:33:07.852 o.a.s.e.s.SpoutExecutor Thread-18-spout-executor[10, 10] [INFO] Opening spout spout:[10]
+2020-02-01 18:33:07.853 o.a.s.e.Executor main [INFO] Finished loading executor spout:[6, 6]
+2020-02-01 18:33:07.853 o.a.s.e.b.BoltExecutor Thread-19-__metrics_org.apache.storm.metric.LoggingMetricsConsumer-executor[2, 2] [INFO] Preparing bolt __metrics_org.apache.storm.metric.LoggingMetricsConsumer:[2]
+2020-02-01 18:33:07.853 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[58, 58]
+2020-02-01 18:33:07.853 o.a.s.e.s.SpoutExecutor Thread-20-spout-executor[6, 6] [INFO] Opening spout spout:[6]
+2020-02-01 18:33:07.854 o.a.s.e.Executor main [INFO] Finished loading executor spout:[58, 58]
+2020-02-01 18:33:07.854 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[66, 66]
+2020-02-01 18:33:07.854 o.a.s.e.s.SpoutExecutor Thread-21-spout-executor[58, 58] [INFO] Opening spout spout:[58]
+2020-02-01 18:33:07.854 o.a.s.e.Executor main [INFO] Finished loading executor spout:[66, 66]
+2020-02-01 18:33:07.855 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[62, 62]
+2020-02-01 18:33:07.855 o.a.s.e.s.SpoutExecutor Thread-22-spout-executor[66, 66] [INFO] Opening spout spout:[66]
+2020-02-01 18:33:07.856 o.a.s.e.Executor main [INFO] Finished loading executor spout:[62, 62]
+2020-02-01 18:33:07.856 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[34, 34]
+2020-02-01 18:33:07.856 o.a.s.e.s.SpoutExecutor Thread-23-spout-executor[62, 62] [INFO] Opening spout spout:[62]
+2020-02-01 18:33:07.857 o.a.s.e.s.SpoutExecutor Thread-18-spout-executor[10, 10] [INFO] Opened spout spout:[10]
+2020-02-01 18:33:07.857 o.a.s.e.s.SpoutExecutor Thread-17-spout-executor[46, 46] [INFO] Opened spout spout:[46]
+2020-02-01 18:33:07.857 o.a.s.e.s.SpoutExecutor Thread-13-spout-executor[26, 26] [INFO] Opened spout spout:[26]
+2020-02-01 18:33:07.857 o.a.s.e.s.SpoutExecutor Thread-20-spout-executor[6, 6] [INFO] Opened spout spout:[6]
+2020-02-01 18:33:07.857 o.a.s.e.s.SpoutExecutor Thread-16-spout-executor[54, 54] [INFO] Opened spout spout:[54]
+2020-02-01 18:33:07.857 o.a.s.e.s.SpoutExecutor Thread-15-spout-executor[50, 50] [INFO] Opened spout spout:[50]
+2020-02-01 18:33:07.857 o.a.s.e.s.SpoutExecutor Thread-21-spout-executor[58, 58] [INFO] Opened spout spout:[58]
+2020-02-01 18:33:07.857 o.a.s.e.s.SpoutExecutor Thread-23-spout-executor[62, 62] [INFO] Opened spout spout:[62]
+2020-02-01 18:33:07.857 o.a.s.e.Executor main [INFO] Finished loading executor spout:[34, 34]
+2020-02-01 18:33:07.857 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[30, 30]
+2020-02-01 18:33:07.857 o.a.s.e.s.SpoutExecutor Thread-24-spout-executor[34, 34] [INFO] Opening spout spout:[34]
+2020-02-01 18:33:07.857 o.a.s.e.s.SpoutExecutor Thread-24-spout-executor[34, 34] [INFO] Opened spout spout:[34]
+2020-02-01 18:33:07.857 o.a.s.e.s.SpoutExecutor Thread-14-spout-executor[42, 42] [INFO] Opened spout spout:[42]
+2020-02-01 18:33:07.857 o.a.s.e.Executor main [INFO] Finished loading executor spout:[30, 30]
+2020-02-01 18:33:07.857 o.a.s.e.s.SpoutExecutor Thread-22-spout-executor[66, 66] [INFO] Opened spout spout:[66]
+2020-02-01 18:33:07.858 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[38, 38]
+2020-02-01 18:33:07.858 o.a.s.e.Executor main [INFO] Finished loading executor spout:[38, 38]
+2020-02-01 18:33:07.858 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[18, 18]
+2020-02-01 18:33:07.858 o.a.s.e.s.SpoutExecutor Thread-25-spout-executor[30, 30] [INFO] Opening spout spout:[30]
+2020-02-01 18:33:07.858 o.a.s.e.s.SpoutExecutor Thread-26-spout-executor[38, 38] [INFO] Opening spout spout:[38]
+2020-02-01 18:33:07.858 o.a.s.e.s.SpoutExecutor Thread-26-spout-executor[38, 38] [INFO] Opened spout spout:[38]
+2020-02-01 18:33:07.858 o.a.s.e.s.SpoutExecutor Thread-26-spout-executor[38, 38] [INFO] Activating spout spout:[38]
+2020-02-01 18:33:07.858 o.a.s.e.s.SpoutExecutor Thread-13-spout-executor[26, 26] [INFO] Activating spout spout:[26]
+2020-02-01 18:33:07.858 o.a.s.e.s.SpoutExecutor Thread-25-spout-executor[30, 30] [INFO] Opened spout spout:[30]
+2020-02-01 18:33:07.926 o.a.s.e.s.SpoutExecutor Thread-15-spout-executor[50, 50] [INFO] Activating spout spout:[50]
+2020-02-01 18:33:07.926 o.a.s.e.s.SpoutExecutor Thread-17-spout-executor[46, 46] [INFO] Activating spout spout:[46]
+2020-02-01 18:33:07.926 o.a.s.e.s.SpoutExecutor Thread-22-spout-executor[66, 66] [INFO] Activating spout spout:[66]
+2020-02-01 18:33:07.926 o.a.s.e.s.SpoutExecutor Thread-16-spout-executor[54, 54] [INFO] Activating spout spout:[54]
+2020-02-01 18:33:07.926 o.a.s.e.s.SpoutExecutor Thread-25-spout-executor[30, 30] [INFO] Activating spout spout:[30]
+2020-02-01 18:33:07.926 o.a.s.e.s.SpoutExecutor Thread-14-spout-executor[42, 42] [INFO] Activating spout spout:[42]
+2020-02-01 18:33:07.926 o.a.s.e.s.SpoutExecutor Thread-18-spout-executor[10, 10] [INFO] Activating spout spout:[10]
+2020-02-01 18:33:07.926 o.a.s.e.s.SpoutExecutor Thread-24-spout-executor[34, 34] [INFO] Activating spout spout:[34]
+2020-02-01 18:33:07.926 o.a.s.e.b.BoltExecutor Thread-19-__metrics_org.apache.storm.metric.LoggingMetricsConsumer-executor[2, 2] [INFO] Prepared bolt __metrics_org.apache.storm.metric.LoggingMetricsConsumer:[2]
+2020-02-01 18:33:07.927 o.a.s.e.s.SpoutExecutor Thread-23-spout-executor[62, 62] [INFO] Activating spout spout:[62]
+2020-02-01 18:33:07.926 o.a.s.e.Executor main [INFO] Finished loading executor spout:[18, 18]
+2020-02-01 18:33:07.927 o.a.s.e.s.SpoutExecutor Thread-21-spout-executor[58, 58] [INFO] Activating spout spout:[58]
+2020-02-01 18:33:07.926 o.a.s.e.s.SpoutExecutor Thread-20-spout-executor[6, 6] [INFO] Activating spout spout:[6]
+2020-02-01 18:33:07.927 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[14, 14]
+2020-02-01 18:33:07.927 o.a.s.e.s.SpoutExecutor Thread-27-spout-executor[18, 18] [INFO] Opening spout spout:[18]
+2020-02-01 18:33:07.927 o.a.s.e.s.SpoutExecutor Thread-27-spout-executor[18, 18] [INFO] Opened spout spout:[18]
+2020-02-01 18:33:07.927 o.a.s.e.Executor main [INFO] Finished loading executor spout:[14, 14]
+2020-02-01 18:33:07.927 o.a.s.e.s.SpoutExecutor Thread-27-spout-executor[18, 18] [INFO] Activating spout spout:[18]
+2020-02-01 18:33:07.927 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[22, 22]
+2020-02-01 18:33:07.927 o.a.s.e.s.SpoutExecutor Thread-29-spout-executor[14, 14] [INFO] Opening spout spout:[14]
+2020-02-01 18:33:07.928 o.a.s.e.s.SpoutExecutor Thread-29-spout-executor[14, 14] [INFO] Opened spout spout:[14]
+2020-02-01 18:33:07.928 o.a.s.e.s.SpoutExecutor Thread-29-spout-executor[14, 14] [INFO] Activating spout spout:[14]
+2020-02-01 18:33:07.928 o.a.s.e.Executor main [INFO] Finished loading executor spout:[22, 22]
+2020-02-01 18:33:07.928 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[35, 35]
+2020-02-01 18:33:07.929 o.a.s.e.Executor main [INFO] Finished loading executor spout:[35, 35]
+2020-02-01 18:33:07.928 o.a.s.e.s.SpoutExecutor Thread-30-spout-executor[22, 22] [INFO] Opening spout spout:[22]
+2020-02-01 18:33:07.929 o.a.s.e.s.SpoutExecutor Thread-30-spout-executor[22, 22] [INFO] Opened spout spout:[22]
+2020-02-01 18:33:07.929 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[43, 43]
+2020-02-01 18:33:07.929 o.a.s.e.s.SpoutExecutor Thread-30-spout-executor[22, 22] [INFO] Activating spout spout:[22]
+2020-02-01 18:33:07.929 o.a.s.e.s.SpoutExecutor Thread-31-spout-executor[35, 35] [INFO] Opening spout spout:[35]
+2020-02-01 18:33:07.929 o.a.s.e.s.SpoutExecutor Thread-31-spout-executor[35, 35] [INFO] Opened spout spout:[35]
+2020-02-01 18:33:07.930 o.a.s.e.s.SpoutExecutor Thread-31-spout-executor[35, 35] [INFO] Activating spout spout:[35]
+2020-02-01 18:33:07.930 o.a.s.e.Executor main [INFO] Finished loading executor spout:[43, 43]
+2020-02-01 18:33:07.930 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[39, 39]
+2020-02-01 18:33:07.930 o.a.s.e.s.SpoutExecutor Thread-32-spout-executor[43, 43] [INFO] Opening spout spout:[43]
+2020-02-01 18:33:07.931 o.a.s.e.s.SpoutExecutor Thread-32-spout-executor[43, 43] [INFO] Opened spout spout:[43]
+2020-02-01 18:33:07.931 o.a.s.e.s.SpoutExecutor Thread-32-spout-executor[43, 43] [INFO] Activating spout spout:[43]
+2020-02-01 18:33:07.933 o.a.s.e.Executor main [INFO] Finished loading executor spout:[39, 39]
+2020-02-01 18:33:07.933 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[19, 19]
+2020-02-01 18:33:07.933 o.a.s.e.s.SpoutExecutor Thread-33-spout-executor[39, 39] [INFO] Opening spout spout:[39]
+2020-02-01 18:33:07.933 o.a.s.e.s.SpoutExecutor Thread-33-spout-executor[39, 39] [INFO] Opened spout spout:[39]
+2020-02-01 18:33:07.933 o.a.s.e.Executor main [INFO] Finished loading executor spout:[19, 19]
+2020-02-01 18:33:07.933 o.a.s.e.s.SpoutExecutor Thread-33-spout-executor[39, 39] [INFO] Activating spout spout:[39]
+2020-02-01 18:33:07.933 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[15, 15]
+2020-02-01 18:33:07.933 o.a.s.e.s.SpoutExecutor Thread-34-spout-executor[19, 19] [INFO] Opening spout spout:[19]
+2020-02-01 18:33:07.933 o.a.s.e.Executor main [INFO] Finished loading executor spout:[15, 15]
+2020-02-01 18:33:07.934 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[11, 11]
+2020-02-01 18:33:07.934 o.a.s.e.s.SpoutExecutor Thread-34-spout-executor[19, 19] [INFO] Opened spout spout:[19]
+2020-02-01 18:33:07.933 o.a.s.e.s.SpoutExecutor Thread-35-spout-executor[15, 15] [INFO] Opening spout spout:[15]
+2020-02-01 18:33:07.934 o.a.s.e.s.SpoutExecutor Thread-34-spout-executor[19, 19] [INFO] Activating spout spout:[19]
+2020-02-01 18:33:07.934 o.a.s.e.s.SpoutExecutor Thread-35-spout-executor[15, 15] [INFO] Opened spout spout:[15]
+2020-02-01 18:33:07.934 o.a.s.e.Executor main [INFO] Finished loading executor spout:[11, 11]
+2020-02-01 18:33:07.934 o.a.s.e.Executor main [INFO] Loading executor tasks counter:[3, 3]
+2020-02-01 18:33:07.934 o.a.s.e.s.SpoutExecutor Thread-35-spout-executor[15, 15] [INFO] Activating spout spout:[15]
+2020-02-01 18:33:07.934 o.a.s.e.s.SpoutExecutor Thread-36-spout-executor[11, 11] [INFO] Opening spout spout:[11]
+2020-02-01 18:33:07.935 o.a.s.e.s.SpoutExecutor Thread-36-spout-executor[11, 11] [INFO] Opened spout spout:[11]
+2020-02-01 18:33:07.935 o.a.s.e.s.SpoutExecutor Thread-36-spout-executor[11, 11] [INFO] Activating spout spout:[11]
+2020-02-01 18:33:07.935 o.a.s.e.Executor main [INFO] Finished loading executor counter:[3, 3]
+2020-02-01 18:33:07.935 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[7, 7]
+2020-02-01 18:33:07.935 o.a.s.e.b.BoltExecutor Thread-37-counter-executor[3, 3] [INFO] Preparing bolt counter:[3]
+2020-02-01 18:33:07.935 o.a.s.e.b.BoltExecutor Thread-37-counter-executor[3, 3] [INFO] Prepared bolt counter:[3]
+2020-02-01 18:33:07.935 o.a.s.e.Executor main [INFO] Finished loading executor spout:[7, 7]
+2020-02-01 18:33:07.936 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[67, 67]
+2020-02-01 18:33:07.936 o.a.s.e.s.SpoutExecutor Thread-38-spout-executor[7, 7] [INFO] Opening spout spout:[7]
+2020-02-01 18:33:07.936 o.a.s.e.Executor main [INFO] Finished loading executor spout:[67, 67]
+2020-02-01 18:33:07.936 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[63, 63]
+2020-02-01 18:33:07.936 o.a.s.e.s.SpoutExecutor Thread-38-spout-executor[7, 7] [INFO] Opened spout spout:[7]
+2020-02-01 18:33:07.936 o.a.s.e.s.SpoutExecutor Thread-39-spout-executor[67, 67] [INFO] Opening spout spout:[67]
+2020-02-01 18:33:07.936 o.a.s.e.s.SpoutExecutor Thread-39-spout-executor[67, 67] [INFO] Opened spout spout:[67]
+2020-02-01 18:33:07.936 o.a.s.e.Executor main [INFO] Finished loading executor spout:[63, 63]
+2020-02-01 18:33:07.936 o.a.s.e.s.SpoutExecutor Thread-38-spout-executor[7, 7] [INFO] Activating spout spout:[7]
+2020-02-01 18:33:07.936 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[59, 59]
+2020-02-01 18:33:07.936 o.a.s.e.s.SpoutExecutor Thread-39-spout-executor[67, 67] [INFO] Activating spout spout:[67]
+2020-02-01 18:33:07.937 o.a.s.e.Executor main [INFO] Finished loading executor spout:[59, 59]
+2020-02-01 18:33:07.936 o.a.s.e.s.SpoutExecutor Thread-40-spout-executor[63, 63] [INFO] Opening spout spout:[63]
+2020-02-01 18:33:07.937 o.a.s.e.s.SpoutExecutor Thread-41-spout-executor[59, 59] [INFO] Opening spout spout:[59]
+2020-02-01 18:33:07.937 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[51, 51]
+2020-02-01 18:33:07.937 o.a.s.e.s.SpoutExecutor Thread-41-spout-executor[59, 59] [INFO] Opened spout spout:[59]
+2020-02-01 18:33:07.937 o.a.s.e.s.SpoutExecutor Thread-40-spout-executor[63, 63] [INFO] Opened spout spout:[63]
+2020-02-01 18:33:07.937 o.a.s.e.Executor main [INFO] Finished loading executor spout:[51, 51]
+2020-02-01 18:33:07.937 o.a.s.e.s.SpoutExecutor Thread-41-spout-executor[59, 59] [INFO] Activating spout spout:[59]
+2020-02-01 18:33:07.937 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[55, 55]
+2020-02-01 18:33:07.937 o.a.s.e.s.SpoutExecutor Thread-40-spout-executor[63, 63] [INFO] Activating spout spout:[63]
+2020-02-01 18:33:07.937 o.a.s.e.Executor main [INFO] Finished loading executor spout:[55, 55]
+2020-02-01 18:33:07.937 o.a.s.e.s.SpoutExecutor Thread-42-spout-executor[51, 51] [INFO] Opening spout spout:[51]
+2020-02-01 18:33:07.938 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[47, 47]
+2020-02-01 18:33:07.938 o.a.s.e.s.SpoutExecutor Thread-43-spout-executor[55, 55] [INFO] Opening spout spout:[55]
+2020-02-01 18:33:07.938 o.a.s.e.s.SpoutExecutor Thread-42-spout-executor[51, 51] [INFO] Opened spout spout:[51]
+2020-02-01 18:33:07.938 o.a.s.e.Executor main [INFO] Finished loading executor spout:[47, 47]
+2020-02-01 18:33:07.938 o.a.s.e.s.SpoutExecutor Thread-43-spout-executor[55, 55] [INFO] Opened spout spout:[55]
+2020-02-01 18:33:07.938 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[27, 27]
+2020-02-01 18:33:07.938 o.a.s.e.s.SpoutExecutor Thread-42-spout-executor[51, 51] [INFO] Activating spout spout:[51]
+2020-02-01 18:33:07.938 o.a.s.e.s.SpoutExecutor Thread-43-spout-executor[55, 55] [INFO] Activating spout spout:[55]
+2020-02-01 18:33:07.938 o.a.s.e.s.SpoutExecutor Thread-44-spout-executor[47, 47] [INFO] Opening spout spout:[47]
+2020-02-01 18:33:07.938 o.a.s.e.Executor main [INFO] Finished loading executor spout:[27, 27]
+2020-02-01 18:33:07.938 o.a.s.e.s.SpoutExecutor Thread-44-spout-executor[47, 47] [INFO] Opened spout spout:[47]
+2020-02-01 18:33:07.938 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[23, 23]
+2020-02-01 18:33:07.938 o.a.s.e.s.SpoutExecutor Thread-45-spout-executor[27, 27] [INFO] Opening spout spout:[27]
+2020-02-01 18:33:07.938 o.a.s.e.s.SpoutExecutor Thread-44-spout-executor[47, 47] [INFO] Activating spout spout:[47]
+2020-02-01 18:33:07.939 o.a.s.e.s.SpoutExecutor Thread-45-spout-executor[27, 27] [INFO] Opened spout spout:[27]
+2020-02-01 18:33:07.939 o.a.s.e.Executor main [INFO] Finished loading executor spout:[23, 23]
+2020-02-01 18:33:07.939 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[31, 31]
+2020-02-01 18:33:07.939 o.a.s.e.s.SpoutExecutor Thread-45-spout-executor[27, 27] [INFO] Activating spout spout:[27]
+2020-02-01 18:33:07.939 o.a.s.e.s.SpoutExecutor Thread-46-spout-executor[23, 23] [INFO] Opening spout spout:[23]
+2020-02-01 18:33:07.939 o.a.s.e.Executor main [INFO] Finished loading executor spout:[31, 31]
+2020-02-01 18:33:07.939 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[44, 44]
+2020-02-01 18:33:07.939 o.a.s.e.s.SpoutExecutor Thread-46-spout-executor[23, 23] [INFO] Opened spout spout:[23]
+2020-02-01 18:33:07.939 o.a.s.e.s.SpoutExecutor Thread-47-spout-executor[31, 31] [INFO] Opening spout spout:[31]
+2020-02-01 18:33:07.939 o.a.s.e.s.SpoutExecutor Thread-47-spout-executor[31, 31] [INFO] Opened spout spout:[31]
+2020-02-01 18:33:07.939 o.a.s.e.s.SpoutExecutor Thread-46-spout-executor[23, 23] [INFO] Activating spout spout:[23]
+2020-02-01 18:33:07.939 o.a.s.e.s.SpoutExecutor Thread-47-spout-executor[31, 31] [INFO] Activating spout spout:[31]
+2020-02-01 18:33:07.940 o.a.s.e.Executor main [INFO] Finished loading executor spout:[44, 44]
+2020-02-01 18:33:07.940 o.a.s.e.Executor main [INFO] Loading executor tasks __system:[-1, -1]
+2020-02-01 18:33:07.940 o.a.s.e.s.SpoutExecutor Thread-48-spout-executor[44, 44] [INFO] Opening spout spout:[44]
+2020-02-01 18:33:07.940 o.a.s.e.s.SpoutExecutor Thread-48-spout-executor[44, 44] [INFO] Opened spout spout:[44]
+2020-02-01 18:33:07.940 o.a.s.e.s.SpoutExecutor Thread-48-spout-executor[44, 44] [INFO] Activating spout spout:[44]
+2020-02-01 18:33:07.941 o.a.s.e.Executor main [INFO] Finished loading executor __system:[-1, -1]
+2020-02-01 18:33:07.941 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[12, 12]
+2020-02-01 18:33:07.941 o.a.s.e.b.BoltExecutor Thread-49-__system-executor[-1, -1] [INFO] Preparing bolt __system:[-1]
+2020-02-01 18:33:07.941 o.a.s.e.Executor main [INFO] Finished loading executor spout:[12, 12]
+2020-02-01 18:33:07.941 o.a.s.e.Executor main [INFO] Loading executor tasks reporter:[4, 4]
+2020-02-01 18:33:07.941 o.a.s.e.s.SpoutExecutor Thread-50-spout-executor[12, 12] [INFO] Opening spout spout:[12]
+2020-02-01 18:33:07.941 o.a.s.e.Executor main [INFO] Finished loading executor reporter:[4, 4]
+2020-02-01 18:33:07.941 o.a.s.e.s.SpoutExecutor Thread-50-spout-executor[12, 12] [INFO] Opened spout spout:[12]
+2020-02-01 18:33:07.941 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[8, 8]
+2020-02-01 18:33:07.941 o.a.s.e.s.SpoutExecutor Thread-50-spout-executor[12, 12] [INFO] Activating spout spout:[12]
+2020-02-01 18:33:07.941 o.a.s.e.b.BoltExecutor Thread-51-reporter-executor[4, 4] [INFO] Preparing bolt reporter:[4]
+2020-02-01 18:33:07.942 o.a.s.e.b.BoltExecutor Thread-51-reporter-executor[4, 4] [INFO] Prepared bolt reporter:[4]
+2020-02-01 18:33:07.945 o.a.s.e.Executor main [INFO] Finished loading executor spout:[8, 8]
+2020-02-01 18:33:07.945 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[60, 60]
+2020-02-01 18:33:07.945 o.a.s.e.s.SpoutExecutor Thread-52-spout-executor[8, 8] [INFO] Opening spout spout:[8]
+2020-02-01 18:33:07.945 o.a.s.e.Executor main [INFO] Finished loading executor spout:[60, 60]
+2020-02-01 18:33:07.945 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[68, 68]
+2020-02-01 18:33:07.945 o.a.s.e.s.SpoutExecutor Thread-52-spout-executor[8, 8] [INFO] Opened spout spout:[8]
+2020-02-01 18:33:07.945 o.a.s.e.s.SpoutExecutor Thread-53-spout-executor[60, 60] [INFO] Opening spout spout:[60]
+2020-02-01 18:33:07.945 o.a.s.e.s.SpoutExecutor Thread-52-spout-executor[8, 8] [INFO] Activating spout spout:[8]
+2020-02-01 18:33:07.945 o.a.s.e.s.SpoutExecutor Thread-53-spout-executor[60, 60] [INFO] Opened spout spout:[60]
+2020-02-01 18:33:07.945 o.a.s.e.s.SpoutExecutor Thread-53-spout-executor[60, 60] [INFO] Activating spout spout:[60]
+2020-02-01 18:33:08.026 o.a.s.e.Executor main [INFO] Finished loading executor spout:[68, 68]
+2020-02-01 18:33:08.026 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[64, 64]
+2020-02-01 18:33:08.026 o.a.s.e.s.SpoutExecutor Thread-54-spout-executor[68, 68] [INFO] Opening spout spout:[68]
+2020-02-01 18:33:08.026 o.a.s.e.Executor main [INFO] Finished loading executor spout:[64, 64]
+2020-02-01 18:33:08.026 o.a.s.e.s.SpoutExecutor Thread-54-spout-executor[68, 68] [INFO] Opened spout spout:[68]
+2020-02-01 18:33:08.026 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[52, 52]
+2020-02-01 18:33:08.026 o.a.s.e.s.SpoutExecutor Thread-54-spout-executor[68, 68] [INFO] Activating spout spout:[68]
+2020-02-01 18:33:08.026 o.a.s.e.Executor main [INFO] Finished loading executor spout:[52, 52]
+2020-02-01 18:33:08.026 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[56, 56]
+2020-02-01 18:33:08.026 o.a.s.e.s.SpoutExecutor Thread-55-spout-executor[64, 64] [INFO] Opening spout spout:[64]
+2020-02-01 18:33:08.027 o.a.s.e.Executor main [INFO] Finished loading executor spout:[56, 56]
+2020-02-01 18:33:08.027 o.a.s.e.s.SpoutExecutor Thread-55-spout-executor[64, 64] [INFO] Opened spout spout:[64]
+2020-02-01 18:33:08.026 o.a.s.e.s.SpoutExecutor Thread-56-spout-executor[52, 52] [INFO] Opening spout spout:[52]
+2020-02-01 18:33:08.027 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[48, 48]
+2020-02-01 18:33:08.027 o.a.s.e.s.SpoutExecutor Thread-56-spout-executor[52, 52] [INFO] Opened spout spout:[52]
+2020-02-01 18:33:08.027 o.a.s.e.s.SpoutExecutor Thread-55-spout-executor[64, 64] [INFO] Activating spout spout:[64]
+2020-02-01 18:33:08.027 o.a.s.e.Executor main [INFO] Finished loading executor spout:[48, 48]
+2020-02-01 18:33:08.027 o.a.s.e.s.SpoutExecutor Thread-56-spout-executor[52, 52] [INFO] Activating spout spout:[52]
+2020-02-01 18:33:08.027 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[28, 28]
+2020-02-01 18:33:08.027 o.a.s.e.s.SpoutExecutor Thread-57-spout-executor[56, 56] [INFO] Opening spout spout:[56]
+2020-02-01 18:33:08.027 o.a.s.e.s.SpoutExecutor Thread-57-spout-executor[56, 56] [INFO] Opened spout spout:[56]
+2020-02-01 18:33:08.027 o.a.s.e.s.SpoutExecutor Thread-58-spout-executor[48, 48] [INFO] Opening spout spout:[48]
+2020-02-01 18:33:08.028 o.a.s.e.Executor main [INFO] Finished loading executor spout:[28, 28]
+2020-02-01 18:33:08.028 o.a.s.e.s.SpoutExecutor Thread-57-spout-executor[56, 56] [INFO] Activating spout spout:[56]
+2020-02-01 18:33:08.028 o.a.s.e.s.SpoutExecutor Thread-58-spout-executor[48, 48] [INFO] Opened spout spout:[48]
+2020-02-01 18:33:08.028 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[20, 20]
+2020-02-01 18:33:08.028 o.a.s.e.s.SpoutExecutor Thread-59-spout-executor[28, 28] [INFO] Opening spout spout:[28]
+2020-02-01 18:33:08.028 o.a.s.e.s.SpoutExecutor Thread-58-spout-executor[48, 48] [INFO] Activating spout spout:[48]
+2020-02-01 18:33:08.028 o.a.s.e.s.SpoutExecutor Thread-59-spout-executor[28, 28] [INFO] Opened spout spout:[28]
+2020-02-01 18:33:08.028 o.a.s.e.Executor main [INFO] Finished loading executor spout:[20, 20]
+2020-02-01 18:33:08.028 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[16, 16]
+2020-02-01 18:33:08.028 o.a.s.e.s.SpoutExecutor Thread-59-spout-executor[28, 28] [INFO] Activating spout spout:[28]
+2020-02-01 18:33:08.028 o.a.s.e.s.SpoutExecutor Thread-60-spout-executor[20, 20] [INFO] Opening spout spout:[20]
+2020-02-01 18:33:08.029 o.a.s.e.Executor main [INFO] Finished loading executor spout:[16, 16]
+2020-02-01 18:33:08.029 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[24, 24]
+2020-02-01 18:33:08.029 o.a.s.e.s.SpoutExecutor Thread-60-spout-executor[20, 20] [INFO] Opened spout spout:[20]
+2020-02-01 18:33:08.029 o.a.s.e.s.SpoutExecutor Thread-61-spout-executor[16, 16] [INFO] Opening spout spout:[16]
+2020-02-01 18:33:08.029 o.a.s.e.s.SpoutExecutor Thread-61-spout-executor[16, 16] [INFO] Opened spout spout:[16]
+2020-02-01 18:33:08.029 o.a.s.e.s.SpoutExecutor Thread-60-spout-executor[20, 20] [INFO] Activating spout spout:[20]
+2020-02-01 18:33:08.029 o.a.s.e.s.SpoutExecutor Thread-61-spout-executor[16, 16] [INFO] Activating spout spout:[16]
+2020-02-01 18:33:08.029 o.a.s.e.Executor main [INFO] Finished loading executor spout:[24, 24]
+2020-02-01 18:33:08.029 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[36, 36]
+2020-02-01 18:33:08.029 o.a.s.e.s.SpoutExecutor Thread-62-spout-executor[24, 24] [INFO] Opening spout spout:[24]
+2020-02-01 18:33:08.030 o.a.s.e.s.SpoutExecutor Thread-62-spout-executor[24, 24] [INFO] Opened spout spout:[24]
+2020-02-01 18:33:08.030 o.a.s.e.s.SpoutExecutor Thread-62-spout-executor[24, 24] [INFO] Activating spout spout:[24]
+2020-02-01 18:33:08.032 o.a.s.e.Executor main [INFO] Finished loading executor spout:[36, 36]
+2020-02-01 18:33:08.032 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[32, 32]
+2020-02-01 18:33:08.032 o.a.s.e.s.SpoutExecutor Thread-63-spout-executor[36, 36] [INFO] Opening spout spout:[36]
+2020-02-01 18:33:08.032 o.a.s.e.s.SpoutExecutor Thread-63-spout-executor[36, 36] [INFO] Opened spout spout:[36]
+2020-02-01 18:33:08.032 o.a.s.e.s.SpoutExecutor Thread-63-spout-executor[36, 36] [INFO] Activating spout spout:[36]
+2020-02-01 18:33:08.032 o.a.s.e.Executor main [INFO] Finished loading executor spout:[32, 32]
+2020-02-01 18:33:08.032 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[40, 40]
+2020-02-01 18:33:08.032 o.a.s.e.s.SpoutExecutor Thread-64-spout-executor[32, 32] [INFO] Opening spout spout:[32]
+2020-02-01 18:33:08.033 o.a.s.e.Executor main [INFO] Finished loading executor spout:[40, 40]
+2020-02-01 18:33:08.033 o.a.s.e.s.SpoutExecutor Thread-64-spout-executor[32, 32] [INFO] Opened spout spout:[32]
+2020-02-01 18:33:08.033 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[37, 37]
+2020-02-01 18:33:08.033 o.a.s.e.s.SpoutExecutor Thread-64-spout-executor[32, 32] [INFO] Activating spout spout:[32]
+2020-02-01 18:33:08.033 o.a.s.e.s.SpoutExecutor Thread-65-spout-executor[40, 40] [INFO] Opening spout spout:[40]
+2020-02-01 18:33:08.033 o.a.s.e.s.SpoutExecutor Thread-65-spout-executor[40, 40] [INFO] Opened spout spout:[40]
+2020-02-01 18:33:08.033 o.a.s.e.Executor main [INFO] Finished loading executor spout:[37, 37]
+2020-02-01 18:33:08.033 o.a.s.e.Executor main [INFO] Loading executor tasks splitter:[5, 5]
+2020-02-01 18:33:08.033 o.a.s.e.s.SpoutExecutor Thread-65-spout-executor[40, 40] [INFO] Activating spout spout:[40]
+2020-02-01 18:33:08.033 o.a.s.e.Executor main [INFO] Finished loading executor splitter:[5, 5]
+2020-02-01 18:33:08.033 o.a.s.e.s.SpoutExecutor Thread-66-spout-executor[37, 37] [INFO] Opening spout spout:[37]
+2020-02-01 18:33:08.033 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[9, 9]
+2020-02-01 18:33:08.034 o.a.s.e.s.SpoutExecutor Thread-66-spout-executor[37, 37] [INFO] Opened spout spout:[37]
+2020-02-01 18:33:08.033 o.a.s.e.b.BoltExecutor Thread-67-splitter-executor[5, 5] [INFO] Preparing bolt splitter:[5]
+2020-02-01 18:33:08.034 o.a.s.e.b.BoltExecutor Thread-67-splitter-executor[5, 5] [INFO] Prepared bolt splitter:[5]
+2020-02-01 18:33:08.034 o.a.s.e.s.SpoutExecutor Thread-66-spout-executor[37, 37] [INFO] Activating spout spout:[37]
+2020-02-01 18:33:08.035 o.a.s.e.Executor main [INFO] Finished loading executor spout:[9, 9]
+2020-02-01 18:33:08.035 o.a.s.e.Executor main [INFO] Loading executor tasks __acker:[1, 1]
+2020-02-01 18:33:08.035 o.a.s.e.s.SpoutExecutor Thread-68-spout-executor[9, 9] [INFO] Opening spout spout:[9]
+2020-02-01 18:33:08.036 o.a.s.e.s.SpoutExecutor Thread-68-spout-executor[9, 9] [INFO] Opened spout spout:[9]
+2020-02-01 18:33:08.036 o.a.s.e.s.SpoutExecutor Thread-68-spout-executor[9, 9] [INFO] Activating spout spout:[9]
+2020-02-01 18:33:08.036 o.a.s.e.Executor main [INFO] Finished loading executor __acker:[1, 1]
+2020-02-01 18:33:08.036 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[13, 13]
+2020-02-01 18:33:08.036 o.a.s.e.b.BoltExecutor Thread-69-__acker-executor[1, 1] [INFO] Preparing bolt __acker:[1]
+2020-02-01 18:33:08.036 o.a.s.e.b.BoltExecutor Thread-69-__acker-executor[1, 1] [INFO] Prepared bolt __acker:[1]
+2020-02-01 18:33:08.038 o.a.s.m.c.CGroupMetricsBase Thread-49-__system-executor[-1, -1] [WARN] CGroupMemoryLimit is disabled /cgroup/storm_resources does not exist
+2020-02-01 18:33:08.039 o.a.s.m.c.CGroupMetricsBase Thread-49-__system-executor[-1, -1] [WARN] CGroupMemoryUsage is disabled /cgroup/storm_resources does not exist
+2020-02-01 18:33:08.040 o.a.s.m.c.CGroupMetricsBase Thread-49-__system-executor[-1, -1] [WARN] CGroupCpu is disabled /cgroup/storm_resources does not exist
+2020-02-01 18:33:08.040 o.a.s.m.c.CGroupMetricsBase Thread-49-__system-executor[-1, -1] [WARN] CGroupCpuGuarantee is disabled /cgroup/storm_resources does not exist
+2020-02-01 18:33:08.126 o.a.s.e.b.BoltExecutor Thread-49-__system-executor[-1, -1] [INFO] Prepared bolt __system:[-1]
+2020-02-01 18:33:08.126 o.a.s.e.Executor main [INFO] Finished loading executor spout:[13, 13]
+2020-02-01 18:33:08.126 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[21, 21]
+2020-02-01 18:33:08.126 o.a.s.e.Executor main [INFO] Finished loading executor spout:[21, 21]
+2020-02-01 18:33:08.126 o.a.s.e.s.SpoutExecutor Thread-70-spout-executor[13, 13] [INFO] Opening spout spout:[13]
+2020-02-01 18:33:08.126 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[17, 17]
+2020-02-01 18:33:08.126 o.a.s.e.s.SpoutExecutor Thread-71-spout-executor[21, 21] [INFO] Opening spout spout:[21]
+2020-02-01 18:33:08.126 o.a.s.e.s.SpoutExecutor Thread-71-spout-executor[21, 21] [INFO] Opened spout spout:[21]
+2020-02-01 18:33:08.126 o.a.s.e.s.SpoutExecutor Thread-70-spout-executor[13, 13] [INFO] Opened spout spout:[13]
+2020-02-01 18:33:08.127 o.a.s.e.Executor main [INFO] Finished loading executor spout:[17, 17]
+2020-02-01 18:33:08.127 o.a.s.e.s.SpoutExecutor Thread-71-spout-executor[21, 21] [INFO] Activating spout spout:[21]
+2020-02-01 18:33:08.127 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[69, 69]
+2020-02-01 18:33:08.127 o.a.s.e.s.SpoutExecutor Thread-70-spout-executor[13, 13] [INFO] Activating spout spout:[13]
+2020-02-01 18:33:08.127 o.a.s.e.s.SpoutExecutor Thread-72-spout-executor[17, 17] [INFO] Opening spout spout:[17]
+2020-02-01 18:33:08.127 o.a.s.e.Executor main [INFO] Finished loading executor spout:[69, 69]
+2020-02-01 18:33:08.127 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[65, 65]
+2020-02-01 18:33:08.127 o.a.s.e.s.SpoutExecutor Thread-72-spout-executor[17, 17] [INFO] Opened spout spout:[17]
+2020-02-01 18:33:08.127 o.a.s.e.s.SpoutExecutor Thread-73-spout-executor[69, 69] [INFO] Opening spout spout:[69]
+2020-02-01 18:33:08.127 o.a.s.e.Executor main [INFO] Finished loading executor spout:[65, 65]
+2020-02-01 18:33:08.127 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[61, 61]
+2020-02-01 18:33:08.127 o.a.s.e.s.SpoutExecutor Thread-73-spout-executor[69, 69] [INFO] Opened spout spout:[69]
+2020-02-01 18:33:08.127 o.a.s.e.s.SpoutExecutor Thread-72-spout-executor[17, 17] [INFO] Activating spout spout:[17]
+2020-02-01 18:33:08.127 o.a.s.e.Executor main [INFO] Finished loading executor spout:[61, 61]
+2020-02-01 18:33:08.127 o.a.s.e.s.SpoutExecutor Thread-74-spout-executor[65, 65] [INFO] Opening spout spout:[65]
+2020-02-01 18:33:08.128 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[53, 53]
+2020-02-01 18:33:08.128 o.a.s.e.s.SpoutExecutor Thread-73-spout-executor[69, 69] [INFO] Activating spout spout:[69]
+2020-02-01 18:33:08.128 o.a.s.e.s.SpoutExecutor Thread-74-spout-executor[65, 65] [INFO] Opened spout spout:[65]
+2020-02-01 18:33:08.128 o.a.s.e.s.SpoutExecutor Thread-74-spout-executor[65, 65] [INFO] Activating spout spout:[65]
+2020-02-01 18:33:08.128 o.a.s.e.Executor main [INFO] Finished loading executor spout:[53, 53]
+2020-02-01 18:33:08.128 o.a.s.e.s.SpoutExecutor Thread-75-spout-executor[61, 61] [INFO] Opening spout spout:[61]
+2020-02-01 18:33:08.128 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[57, 57]
+2020-02-01 18:33:08.128 o.a.s.e.s.SpoutExecutor Thread-75-spout-executor[61, 61] [INFO] Opened spout spout:[61]
+2020-02-01 18:33:08.128 o.a.s.e.s.SpoutExecutor Thread-76-spout-executor[53, 53] [INFO] Opening spout spout:[53]
+2020-02-01 18:33:08.128 o.a.s.e.Executor main [INFO] Finished loading executor spout:[57, 57]
+2020-02-01 18:33:08.128 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[45, 45]
+2020-02-01 18:33:08.129 o.a.s.e.s.SpoutExecutor Thread-76-spout-executor[53, 53] [INFO] Opened spout spout:[53]
+2020-02-01 18:33:08.129 o.a.s.e.s.SpoutExecutor Thread-75-spout-executor[61, 61] [INFO] Activating spout spout:[61]
+2020-02-01 18:33:08.129 o.a.s.e.s.SpoutExecutor Thread-77-spout-executor[57, 57] [INFO] Opening spout spout:[57]
+2020-02-01 18:33:08.129 o.a.s.e.s.SpoutExecutor Thread-76-spout-executor[53, 53] [INFO] Activating spout spout:[53]
+2020-02-01 18:33:08.129 o.a.s.e.Executor main [INFO] Finished loading executor spout:[45, 45]
+2020-02-01 18:33:08.129 o.a.s.e.s.SpoutExecutor Thread-77-spout-executor[57, 57] [INFO] Opened spout spout:[57]
+2020-02-01 18:33:08.129 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[41, 41]
+2020-02-01 18:33:08.129 o.a.s.e.s.SpoutExecutor Thread-77-spout-executor[57, 57] [INFO] Activating spout spout:[57]
+2020-02-01 18:33:08.129 o.a.s.e.s.SpoutExecutor Thread-78-spout-executor[45, 45] [INFO] Opening spout spout:[45]
+2020-02-01 18:33:08.129 o.a.s.e.s.SpoutExecutor Thread-78-spout-executor[45, 45] [INFO] Opened spout spout:[45]
+2020-02-01 18:33:08.129 o.a.s.e.s.SpoutExecutor Thread-78-spout-executor[45, 45] [INFO] Activating spout spout:[45]
+2020-02-01 18:33:08.129 o.a.s.e.Executor main [INFO] Finished loading executor spout:[41, 41]
+2020-02-01 18:33:08.130 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[49, 49]
+2020-02-01 18:33:08.130 o.a.s.e.s.SpoutExecutor Thread-79-spout-executor[41, 41] [INFO] Opening spout spout:[41]
+2020-02-01 18:33:08.130 o.a.s.e.s.SpoutExecutor Thread-79-spout-executor[41, 41] [INFO] Opened spout spout:[41]
+2020-02-01 18:33:08.130 o.a.s.e.s.SpoutExecutor Thread-79-spout-executor[41, 41] [INFO] Activating spout spout:[41]
+2020-02-01 18:33:08.131 o.a.s.e.Executor main [INFO] Finished loading executor spout:[49, 49]
+2020-02-01 18:33:08.131 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[29, 29]
+2020-02-01 18:33:08.131 o.a.s.e.s.SpoutExecutor Thread-80-spout-executor[49, 49] [INFO] Opening spout spout:[49]
+2020-02-01 18:33:08.131 o.a.s.e.Executor main [INFO] Finished loading executor spout:[29, 29]
+2020-02-01 18:33:08.132 o.a.s.e.s.SpoutExecutor Thread-80-spout-executor[49, 49] [INFO] Opened spout spout:[49]
+2020-02-01 18:33:08.132 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[33, 33]
+2020-02-01 18:33:08.132 o.a.s.e.s.SpoutExecutor Thread-81-spout-executor[29, 29] [INFO] Opening spout spout:[29]
+2020-02-01 18:33:08.132 o.a.s.e.s.SpoutExecutor Thread-80-spout-executor[49, 49] [INFO] Activating spout spout:[49]
+2020-02-01 18:33:08.132 o.a.s.e.Executor main [INFO] Finished loading executor spout:[33, 33]
+2020-02-01 18:33:08.132 o.a.s.e.s.SpoutExecutor Thread-81-spout-executor[29, 29] [INFO] Opened spout spout:[29]
+2020-02-01 18:33:08.132 o.a.s.e.Executor main [INFO] Loading executor tasks spout:[25, 25]
+2020-02-01 18:33:08.132 o.a.s.e.s.SpoutExecutor Thread-82-spout-executor[33, 33] [INFO] Opening spout spout:[33]
+2020-02-01 18:33:08.132 o.a.s.e.s.SpoutExecutor Thread-81-spout-executor[29, 29] [INFO] Activating spout spout:[29]
+2020-02-01 18:33:08.132 o.a.s.e.s.SpoutExecutor Thread-82-spout-executor[33, 33] [INFO] Opened spout spout:[33]
+2020-02-01 18:33:08.132 o.a.s.e.s.SpoutExecutor Thread-82-spout-executor[33, 33] [INFO] Activating spout spout:[33]
+2020-02-01 18:33:08.133 o.a.s.e.Executor main [INFO] Finished loading executor spout:[25, 25]
+2020-02-01 18:33:08.133 o.a.s.e.s.SpoutExecutor Thread-83-spout-executor[25, 25] [INFO] Opening spout spout:[25]
+2020-02-01 18:33:08.133 o.a.s.e.s.SpoutExecutor Thread-83-spout-executor[25, 25] [INFO] Opened spout spout:[25]
+2020-02-01 18:33:08.133 o.a.s.e.s.SpoutExecutor Thread-83-spout-executor[25, 25] [INFO] Activating spout spout:[25]
+2020-02-01 18:33:08.229 o.a.s.d.w.Worker main [INFO] Flush tuple will be generated every 1 millis
+2020-02-01 18:33:08.229 o.a.s.d.w.Worker main [INFO] BackPressure change checking is disabled as there is only one worker
+2020-02-01 18:33:08.230 o.a.s.d.w.Worker main [INFO] Worker has topology config {storm.messaging.netty.min_wait_ms=100, topology.backpressure.wait.strategy=org.apache.storm.policy.WaitStrategyProgressive, topology.submitter.principal=, storm.resource.isolation.plugin=org.apache.storm.container.cgroup.CgroupManager, storm.zookeeper.auth.user=null, storm.messaging.netty.buffer_size=5242880, topology.name=WordCountTopo, storm.exhibitor.port=8080, topology.bolt.wait.progressive.level1.count=1, pacemaker.auth.method=NONE, splitter.task=1, ui.filter=null, worker.profiler.enabled=false, executor.metrics.frequency.secs=60, storm.id=WordCountTopo-1-1580581974, supervisor.thrift.threads=16, ui.http.creds.plugin=org.apache.storm.security.auth.DefaultHttpCredentialsPlugin, supervisor.supervisors.commands=[], supervisor.queue.size=128, logviewer.cleanup.age.mins=10080, topology.tuple.serializer=org.apache.storm.serialization.types.ListDelegateSerializer, storm.cgroup.memory.enforcement.enable=false, drpc.port=3772, topology.max.spout.pending=1, topology.transfer.buffer.size=1000, nimbus.worker.heartbeats.recovery.strategy.class=org.apache.storm.nimbus.TimeOutWorkerHeartbeatsRecoveryStrategy, worker.metrics={CGroupMemoryLimit=org.apache.storm.metric.cgroup.CGroupMemoryLimit, CGroupMemory=org.apache.storm.metric.cgroup.CGroupMemoryUsage, CGroupCpu=org.apache.storm.metric.cgroup.CGroupCpu, CGroupCpuGuarantee=org.apache.storm.metric.cgroup.CGroupCpuGuarantee}, logviewer.port=8000, worker.childopts=-Xmx%HEAP-MEM%m -XX:+PrintGCDetails -Xloggc:artifacts/gc.log -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 -XX:GCLogFileSize=1M -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=artifacts/heapdump, topology.component.cpu.pcore.percent=10.0, storm.daemon.metrics.reporter.plugins=[org.apache.storm.daemon.metrics.reporters.JmxPreparableReporter], blacklist.scheduler.resume.time.secs=1800, drpc.childopts=-Xmx768m, nimbus.task.launch.secs=120, logviewer.childopts=-Xmx128m, storm.supervisor.hard.memory.limit.overage.mb=2024, storm.zookeeper.servers=[zookeeper], storm.messaging.transport=org.apache.storm.messaging.netty.Context, storm.messaging.netty.authentication=false, topology.localityaware.higher.bound=0.8, storm.cgroup.memory.limit.tolerance.margin.mb=0.0, storm.cgroup.hierarchy.name=storm, storm.metricprocessor.class=org.apache.storm.metricstore.NimbusMetricProcessor, topology.kryo.factory=org.apache.storm.serialization.DefaultKryoFactory, nimbus.assignments.service.threads=10, reporter.count=1, worker.heap.memory.mb=768, storm.network.topography.plugin=org.apache.storm.networktopography.DefaultRackDNSToSwitchMapping, supervisor.slots.ports=[6700, 6701, 6702, 6703], spout.count=64, topology.stats.sample.rate=5.0E-4, storm.local.dir=/data, topology.backpressure.wait.park.microsec=100, topology.ras.constraint.max.state.search=10000, topology.testing.always.try.serialize=false, nimbus.assignments.service.thread.queue.size=100, storm.principal.tolocal=org.apache.storm.security.auth.DefaultPrincipalToLocal, java.library.path=/usr/local/lib:/opt/local/lib:/usr/lib:/usr/lib64, nimbus.local.assignments.backend.class=org.apache.storm.assignments.InMemoryAssignmentBackend, worker.gc.childopts=, storm.group.mapping.service.cache.duration.secs=120, topology.multilang.serializer=org.apache.storm.multilang.JsonSerializer, topology.kryo.register={}, drpc.request.timeout.secs=600, nimbus.blobstore.class=org.apache.storm.blobstore.LocalFsBlobStore, topology.state.synchronization.timeout.secs=60, metric.count=1, topology.bolt.wait.progressive.level2.count=1000, topology.kryo.decorators=[], topology.worker.shared.thread.pool.size=4, topology.submitter.user=storm, topology.executor.receive.buffer.size=32768, pacemaker.servers=[], supervisor.monitor.frequency.secs=3, storm.nimbus.retry.times=5, topology.transfer.batch.size=1, transactional.zookeeper.port=null, storm.auth.simple-white-list.users=[], topology.scheduler.strategy=org.apache.storm.scheduler.resource.strategies.scheduling.DefaultResourceAwareStrategy, storm.zookeeper.port=2181, storm.zookeeper.retry.intervalceiling.millis=30000, storm.cluster.state.store=org.apache.storm.cluster.ZKStateStorageFactory, nimbus.thrift.port=6627, blacklist.scheduler.tolerance.count=3, nimbus.thrift.threads=64, supervisor.supervisors=[], nimbus.seeds=[nimbus], storm.cluster.metrics.consumer.publish.interval.secs=60, logviewer.filter.params=null, topology.min.replication.count=1, nimbus.blobstore.expiration.secs=600, storm.group.mapping.service=org.apache.storm.security.auth.ShellBasedGroupsMapping, storm.nimbus.retry.interval.millis=2000, topology.max.task.parallelism=null, topology.backpressure.wait.progressive.level2.count=1000, drpc.https.keystore.password=, resource.aware.scheduler.constraint.max.state.search=100000, supervisor.heartbeat.frequency.secs=5, splitter.count=1, nimbus.credential.renewers.freq.secs=600, storm.supervisor.medium.memory.grace.period.ms=30000, storm.thrift.transport=org.apache.storm.security.auth.SimpleTransportPlugin, storm.cgroup.hierarchy.dir=/cgroup/storm_resources, storm.zookeeper.auth.password=null, ui.port=8080, drpc.authorizer.acl.strict=false, topology.message.timeout.secs=30, topology.error.throttle.interval.secs=10, topology.backpressure.check.millis=50, drpc.https.keystore.type=JKS, supervisor.memory.capacity.mb=4096.0, storm.metricstore.class=org.apache.storm.metricstore.rocksdb.RocksDbStore, topology.doubler=0, drpc.authorizer.acl.filename=drpc-auth-acl.yaml, topology.builtin.metrics.bucket.size.secs=60, topology.spout.wait.park.microsec=100, storm.local.mode.zmq=false, pacemaker.client.max.threads=2, ui.header.buffer.bytes=4096, counter.count=1, topology.shellbolt.max.pending=100, topology.serialized.message.size.metrics=false, topology.metrics.consumer.register=[{argument=null, class=org.apache.storm.metric.LoggingMetricsConsumer, parallelism.hint=1}], drpc.max_buffer_size=1048576, drpc.disable.http.binding=true, storm.codedistributor.class=org.apache.storm.codedistributor.LocalFileSystemCodeDistributor, worker.profiler.childopts=-XX:+UnlockCommercialFeatures -XX:+FlightRecorder, nimbus.supervisor.timeout.secs=60, storm.supervisor.cgroup.rootdir=storm, topology.worker.max.heap.size.mb=768.0, storm.zookeeper.root=/storm, topology.disable.loadaware.messaging=true, storm.supervisor.hard.memory.limit.multiplier=2.0, nimbus.topology.validator=org.apache.storm.nimbus.DefaultTopologyValidator, worker.heartbeat.frequency.secs=1, storm.messaging.netty.max_wait_ms=1000, topology.backpressure.wait.progressive.level1.count=1, topology.max.error.report.per.interval=5, spout.task=64, nimbus.thrift.max_buffer_size=1048576, storm.metricstore.rocksdb.location=storm_rocks, storm.supervisor.low.memory.threshold.mb=1024, pacemaker.max.threads=50, ui.pagination=20, ui.disable.http.binding=true, supervisor.blobstore.download.max_retries=3, topology.enable.message.timeouts=true, logviewer.disable.http.binding=true, storm.messaging.netty.transfer.batch.size=262144, topology.spout.wait.progressive.level2.count=0, blacklist.scheduler.strategy=org.apache.storm.scheduler.blacklist.strategies.DefaultBlacklistStrategy, storm.metricstore.rocksdb.retention_hours=240, supervisor.run.worker.as.user=false, storm.messaging.netty.client_worker_threads=1, topology.tasks=null, supervisor.thrift.socket.timeout.ms=5000, storm.group.mapping.service.params=null, drpc.http.port=3774, transactional.zookeeper.root=/transactional, supervisor.blobstore.download.thread.count=5, logviewer.filter=null, pacemaker.kerberos.users=[], topology.spout.wait.strategy=org.apache.storm.policy.WaitStrategyProgressive, storm.blobstore.inputstream.buffer.size.bytes=65536, supervisor.worker.heartbeats.max.timeout.secs=600, supervisor.worker.timeout.secs=30, topology.worker.receiver.thread.count=1, logviewer.max.sum.worker.logs.size.mb=4096, topology.executor.overflow.limit=0, topology.batch.flush.interval.millis=1, nimbus.file.copy.expiration.secs=600, pacemaker.port=6699, topology.worker.logwriter.childopts=-Xmx64m, drpc.http.creds.plugin=org.apache.storm.security.auth.DefaultHttpCredentialsPlugin, nimbus.topology.blobstore.deletion.delay.ms=300000, storm.blobstore.acl.validation.enabled=false, ui.filter.params=null, topology.workers=1, blacklist.scheduler.tolerance.time.secs=300, storm.supervisor.medium.memory.threshold.mb=1536, topology.environment=null, drpc.invocations.port=3773, storm.metricstore.rocksdb.create_if_missing=true, nimbus.cleanup.inbox.freq.secs=600, client.blobstore.class=org.apache.storm.blobstore.NimbusBlobStore, topology.fall.back.on.java.serialization=true, storm.nimbus.retry.intervalceiling.millis=60000, storm.nimbus.zookeeper.acls.fixup=true, logviewer.appender.name=A1, ui.users=null, pacemaker.childopts=-Xmx1024m, storm.messaging.netty.server_worker_threads=1, scheduler.display.resource=false, ui.actions.enabled=true, storm.thrift.socket.timeout.ms=600000, storm.topology.classpath.beginning.enabled=false, storm.zookeeper.connection.timeout=15000, topology.tick.tuple.freq.secs=null, nimbus.inbox.jar.expiration.secs=3600, topology.debug=false, storm.zookeeper.retry.interval=1000, storm.messaging.netty.buffer.high.watermark=16777216, storm.blobstore.dependency.jar.upload.chunk.size.bytes=1048576, worker.log.level.reset.poll.secs=30, storm.exhibitor.poll.uripath=/exhibitor/v1/cluster/list, storm.zookeeper.retry.times=5, nimbus.code.sync.freq.secs=120, topology.component.resources.offheap.memory.mb=0.0, topology.spout.wait.progressive.level1.count=0, topology.state.checkpoint.interval.ms=1000, topology.priority=29, supervisor.localizer.cleanup.interval.ms=30000, storm.health.check.dir=healthchecks, supervisor.cpu.capacity=400.0, topology.backpressure.wait.progressive.level3.sleep.millis=1, storm.cgroup.resources=[cpu, memory], storm.worker.min.cpu.pcore.percent=0.0, topology.classpath=null, storm.nimbus.zookeeper.acls.check=true, num.stat.buckets=20, topology.spout.wait.progressive.level3.sleep.millis=1, supervisor.localizer.cache.target.size.mb=10240, topology.worker.childopts=null, drpc.https.port=-1, topology.bolt.wait.park.microsec=0, topology.max.replication.wait.time.sec=60, storm.cgroup.cgexec.cmd=/bin/cgexec, topology.users=[null], topology.acker.executors=null, topology.bolt.wait.progressive.level3.sleep.millis=1, supervisor.worker.start.timeout.secs=120, supervisor.worker.shutdown.sleep.secs=3, logviewer.max.per.worker.logs.size.mb=2048, topology.trident.batch.emit.interval.millis=500, task.heartbeat.frequency.secs=3, supervisor.enable=true, supervisor.thrift.max_buffer_size=1048576, supervisor.blobstore.class=org.apache.storm.blobstore.NimbusBlobStore, topology.producer.batch.size=1000, drpc.worker.threads=64, resource.aware.scheduler.priority.strategy=org.apache.storm.scheduler.resource.strategies.priority.DefaultSchedulingPriorityStrategy, blacklist.scheduler.reporter=org.apache.storm.scheduler.blacklist.reporters.LogReporter, storm.messaging.netty.socket.backlog=500, storm.cgroup.inherit.cpuset.configs=false, nimbus.queue.size=100000, drpc.queue.size=128, ui.disable.spout.lag.monitoring=true, topology.eventlogger.executors=0, pacemaker.base.threads=10, nimbus.childopts=-Xmx1024m, storm.log.dir=/logs, topology.spout.recvq.skips=3, storm.zookeeper.superACL=null, storm.resource.isolation.plugin.enable=false, nimbus.monitor.freq.secs=10, storm.supervisor.memory.limit.tolerance.margin.mb=128.0, storm.disable.symlinks=false, counter.task=1, topology.localityaware.lower.bound=0.2, transactional.zookeeper.servers=null, nimbus.task.timeout.secs=30, logs.users=null, pacemaker.thrift.message.size.max=10485760, ui.host=0.0.0.0, supervisor.thrift.port=6628, topology.bolt.wait.strategy=org.apache.storm.policy.WaitStrategyPark, pacemaker.thread.timeout=10, storm.meta.serialization.delegate=org.apache.storm.serialization.GzipThriftSerializationDelegate, dev.zookeeper.path=/tmp/dev-storm-zookeeper, topology.skip.missing.kryo.registrations=false, drpc.invocations.threads=64, storm.zookeeper.session.timeout=20000, storm.metricstore.rocksdb.metadata_string_cache_capacity=4000, storm.workers.artifacts.dir=workers-artifacts, topology.component.resources.onheap.memory.mb=128.0, storm.log4j2.conf.dir=log4j2, storm.cluster.mode=distributed, ui.childopts=-Xmx768m, task.refresh.poll.secs=10, supervisor.childopts=-Xmx256m, task.credentials.poll.secs=30, storm.health.check.timeout.ms=5000, storm.blobstore.replication.factor=3, worker.profiler.command=flight.bash, storm.messaging.netty.buffer.low.watermark=8388608}
+2020-02-01 18:33:08.231 o.a.s.d.w.Worker main [INFO] Worker 929a28e4-4427-4027-96ec-0cddeb6e5e20 for storm WordCountTopo-1-1580581974 on 32b8fb66-fb60-4548-997f-9dc548e4f909-172.18.0.6:6700  has finished loading
+2020-02-01 18:33:08.231 o.a.s.d.w.Worker main [INFO] Adding shutdown hook with kill in 3 secs
+2020-02-01 18:44:55.538 o.a.s.u.Utils Thread-84 [INFO] Halting after 3 seconds
+2020-02-01 18:44:55.538 o.a.s.d.w.Worker Thread-85 [INFO] Shutting down worker WordCountTopo-1-1580581974 32b8fb66-fb60-4548-997f-9dc548e4f909-172.18.0.6 6700
+2020-02-01 18:44:55.539 o.a.s.d.w.Worker Thread-85 [INFO] Terminating messaging context
+2020-02-01 18:44:55.539 o.a.s.d.w.Worker Thread-85 [INFO] Shutting down executors
+2020-02-01 18:44:55.539 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[26, 26]
+2020-02-01 18:44:55.540 o.a.s.u.Utils Thread-13-spout-executor[26, 26] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.540 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[26, 26]
+2020-02-01 18:44:55.540 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[42, 42]
+2020-02-01 18:44:55.540 o.a.s.u.Utils Thread-14-spout-executor[42, 42] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.540 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[42, 42]
+2020-02-01 18:44:55.540 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[50, 50]
+2020-02-01 18:44:55.541 o.a.s.u.Utils Thread-15-spout-executor[50, 50] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.541 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[50, 50]
+2020-02-01 18:44:55.541 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[54, 54]
+2020-02-01 18:44:55.626 o.a.s.u.Utils Thread-16-spout-executor[54, 54] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.626 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[54, 54]
+2020-02-01 18:44:55.626 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[46, 46]
+2020-02-01 18:44:55.626 o.a.s.u.Utils Thread-17-spout-executor[46, 46] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.626 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[46, 46]
+2020-02-01 18:44:55.627 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[10, 10]
+2020-02-01 18:44:55.627 o.a.s.u.Utils Thread-18-spout-executor[10, 10] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.627 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[10, 10]
+2020-02-01 18:44:55.627 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor __metrics_org.apache.storm.metric.LoggingMetricsConsumer:[2, 2]
+2020-02-01 18:44:55.627 o.a.s.u.Utils Thread-19-__metrics_org.apache.storm.metric.LoggingMetricsConsumer-executor[2, 2] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.628 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor __metrics_org.apache.storm.metric.LoggingMetricsConsumer:[2, 2]
+2020-02-01 18:44:55.628 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[6, 6]
+2020-02-01 18:44:55.628 o.a.s.u.Utils Thread-20-spout-executor[6, 6] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.628 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[6, 6]
+2020-02-01 18:44:55.628 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[58, 58]
+2020-02-01 18:44:55.629 o.a.s.u.Utils Thread-21-spout-executor[58, 58] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.629 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[58, 58]
+2020-02-01 18:44:55.629 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[66, 66]
+2020-02-01 18:44:55.629 o.a.s.u.Utils Thread-22-spout-executor[66, 66] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.629 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[66, 66]
+2020-02-01 18:44:55.629 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[62, 62]
+2020-02-01 18:44:55.630 o.a.s.u.Utils Thread-23-spout-executor[62, 62] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.630 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[62, 62]
+2020-02-01 18:44:55.630 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[34, 34]
+2020-02-01 18:44:55.630 o.a.s.u.Utils Thread-24-spout-executor[34, 34] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.630 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[34, 34]
+2020-02-01 18:44:55.631 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[30, 30]
+2020-02-01 18:44:55.631 o.a.s.u.Utils Thread-25-spout-executor[30, 30] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.631 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[30, 30]
+2020-02-01 18:44:55.631 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[38, 38]
+2020-02-01 18:44:55.632 o.a.s.u.Utils Thread-26-spout-executor[38, 38] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.632 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[38, 38]
+2020-02-01 18:44:55.632 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[18, 18]
+2020-02-01 18:44:55.632 o.a.s.u.Utils Thread-27-spout-executor[18, 18] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.632 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[18, 18]
+2020-02-01 18:44:55.632 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[14, 14]
+2020-02-01 18:44:55.633 o.a.s.u.Utils Thread-29-spout-executor[14, 14] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.633 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[14, 14]
+2020-02-01 18:44:55.633 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[22, 22]
+2020-02-01 18:44:55.633 o.a.s.u.Utils Thread-30-spout-executor[22, 22] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.633 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[22, 22]
+2020-02-01 18:44:55.633 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[35, 35]
+2020-02-01 18:44:55.634 o.a.s.u.Utils Thread-31-spout-executor[35, 35] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.634 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[35, 35]
+2020-02-01 18:44:55.634 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[43, 43]
+2020-02-01 18:44:55.634 o.a.s.u.Utils Thread-32-spout-executor[43, 43] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.634 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[43, 43]
+2020-02-01 18:44:55.634 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[39, 39]
+2020-02-01 18:44:55.635 o.a.s.u.Utils Thread-33-spout-executor[39, 39] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.635 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[39, 39]
+2020-02-01 18:44:55.635 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[19, 19]
+2020-02-01 18:44:55.635 o.a.s.u.Utils Thread-34-spout-executor[19, 19] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.636 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[19, 19]
+2020-02-01 18:44:55.636 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[15, 15]
+2020-02-01 18:44:55.636 o.a.s.u.Utils Thread-35-spout-executor[15, 15] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.636 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[15, 15]
+2020-02-01 18:44:55.636 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[11, 11]
+2020-02-01 18:44:55.636 o.a.s.u.Utils Thread-36-spout-executor[11, 11] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.636 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[11, 11]
+2020-02-01 18:44:55.636 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor counter:[3, 3]
+2020-02-01 18:44:55.636 o.a.s.u.Utils Thread-37-counter-executor[3, 3] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.637 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor counter:[3, 3]
+2020-02-01 18:44:55.637 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[7, 7]
+2020-02-01 18:44:55.637 o.a.s.u.Utils Thread-38-spout-executor[7, 7] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.637 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[7, 7]
+2020-02-01 18:44:55.637 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[67, 67]
+2020-02-01 18:44:55.637 o.a.s.u.Utils Thread-39-spout-executor[67, 67] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.637 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[67, 67]
+2020-02-01 18:44:55.637 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[63, 63]
+2020-02-01 18:44:55.637 o.a.s.u.Utils Thread-40-spout-executor[63, 63] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.638 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[63, 63]
+2020-02-01 18:44:55.638 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[59, 59]
+2020-02-01 18:44:55.638 o.a.s.u.Utils Thread-41-spout-executor[59, 59] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.638 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[59, 59]
+2020-02-01 18:44:55.638 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[51, 51]
+2020-02-01 18:44:55.638 o.a.s.u.Utils Thread-42-spout-executor[51, 51] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.638 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[51, 51]
+2020-02-01 18:44:55.638 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[55, 55]
+2020-02-01 18:44:55.638 o.a.s.u.Utils Thread-43-spout-executor[55, 55] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.638 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[55, 55]
+2020-02-01 18:44:55.638 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[47, 47]
+2020-02-01 18:44:55.638 o.a.s.u.Utils Thread-44-spout-executor[47, 47] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.638 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[47, 47]
+2020-02-01 18:44:55.639 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[27, 27]
+2020-02-01 18:44:55.639 o.a.s.u.Utils Thread-45-spout-executor[27, 27] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.639 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[27, 27]
+2020-02-01 18:44:55.639 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[23, 23]
+2020-02-01 18:44:55.639 o.a.s.u.Utils Thread-46-spout-executor[23, 23] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.639 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[23, 23]
+2020-02-01 18:44:55.639 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[31, 31]
+2020-02-01 18:44:55.639 o.a.s.u.Utils Thread-47-spout-executor[31, 31] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.639 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[31, 31]
+2020-02-01 18:44:55.639 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[44, 44]
+2020-02-01 18:44:55.639 o.a.s.u.Utils Thread-48-spout-executor[44, 44] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.640 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[44, 44]
+2020-02-01 18:44:55.640 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor __system:[-1, -1]
+2020-02-01 18:44:55.640 o.a.s.u.Utils Thread-49-__system-executor[-1, -1] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.640 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor __system:[-1, -1]
+2020-02-01 18:44:55.640 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[12, 12]
+2020-02-01 18:44:55.640 o.a.s.u.Utils Thread-50-spout-executor[12, 12] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.640 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[12, 12]
+2020-02-01 18:44:55.640 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor reporter:[4, 4]
+2020-02-01 18:44:55.640 o.a.s.u.Utils Thread-51-reporter-executor[4, 4] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.641 T.ReportBolt Thread-85 [INFO] --- FINAL COUNTS ---
+2020-02-01 18:44:55.641 T.ReportBolt Thread-85 [INFO] --------------
+2020-02-01 18:44:55.641 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor reporter:[4, 4]
+2020-02-01 18:44:55.641 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[8, 8]
+2020-02-01 18:44:55.641 o.a.s.u.Utils Thread-52-spout-executor[8, 8] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.726 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[8, 8]
+2020-02-01 18:44:55.726 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[60, 60]
+2020-02-01 18:44:55.726 o.a.s.u.Utils Thread-53-spout-executor[60, 60] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.726 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[60, 60]
+2020-02-01 18:44:55.726 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[68, 68]
+2020-02-01 18:44:55.726 o.a.s.u.Utils Thread-54-spout-executor[68, 68] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.726 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[68, 68]
+2020-02-01 18:44:55.726 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[64, 64]
+2020-02-01 18:44:55.726 o.a.s.u.Utils Thread-55-spout-executor[64, 64] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.727 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[64, 64]
+2020-02-01 18:44:55.727 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[52, 52]
+2020-02-01 18:44:55.727 o.a.s.u.Utils Thread-56-spout-executor[52, 52] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.727 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[52, 52]
+2020-02-01 18:44:55.727 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[56, 56]
+2020-02-01 18:44:55.727 o.a.s.u.Utils Thread-57-spout-executor[56, 56] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.728 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[56, 56]
+2020-02-01 18:44:55.728 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[48, 48]
+2020-02-01 18:44:55.728 o.a.s.u.Utils Thread-58-spout-executor[48, 48] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.728 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[48, 48]
+2020-02-01 18:44:55.728 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[28, 28]
+2020-02-01 18:44:55.728 o.a.s.u.Utils Thread-59-spout-executor[28, 28] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.728 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[28, 28]
+2020-02-01 18:44:55.728 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[20, 20]
+2020-02-01 18:44:55.728 o.a.s.u.Utils Thread-60-spout-executor[20, 20] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.728 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[20, 20]
+2020-02-01 18:44:55.729 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[16, 16]
+2020-02-01 18:44:55.729 o.a.s.u.Utils Thread-61-spout-executor[16, 16] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.729 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[16, 16]
+2020-02-01 18:44:55.729 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[24, 24]
+2020-02-01 18:44:55.729 o.a.s.u.Utils Thread-62-spout-executor[24, 24] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.729 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[24, 24]
+2020-02-01 18:44:55.729 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[36, 36]
+2020-02-01 18:44:55.729 o.a.s.u.Utils Thread-63-spout-executor[36, 36] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.729 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[36, 36]
+2020-02-01 18:44:55.729 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[32, 32]
+2020-02-01 18:44:55.729 o.a.s.u.Utils Thread-64-spout-executor[32, 32] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.730 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[32, 32]
+2020-02-01 18:44:55.730 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[40, 40]
+2020-02-01 18:44:55.730 o.a.s.u.Utils Thread-65-spout-executor[40, 40] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.730 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[40, 40]
+2020-02-01 18:44:55.730 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[37, 37]
+2020-02-01 18:44:55.730 o.a.s.u.Utils Thread-66-spout-executor[37, 37] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.730 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[37, 37]
+2020-02-01 18:44:55.730 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor splitter:[5, 5]
+2020-02-01 18:44:55.730 o.a.s.u.Utils Thread-67-splitter-executor[5, 5] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.730 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor splitter:[5, 5]
+2020-02-01 18:44:55.730 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[9, 9]
+2020-02-01 18:44:55.730 o.a.s.u.Utils Thread-68-spout-executor[9, 9] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.731 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[9, 9]
+2020-02-01 18:44:55.731 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor __acker:[1, 1]
+2020-02-01 18:44:55.731 o.a.s.u.Utils Thread-69-__acker-executor[1, 1] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.731 o.a.s.d.Acker Thread-85 [INFO] Acker: cleanup successfully
+2020-02-01 18:44:55.731 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor __acker:[1, 1]
+2020-02-01 18:44:55.731 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[13, 13]
+2020-02-01 18:44:55.731 o.a.s.u.Utils Thread-70-spout-executor[13, 13] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.731 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[13, 13]
+2020-02-01 18:44:55.731 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[21, 21]
+2020-02-01 18:44:55.731 o.a.s.u.Utils Thread-71-spout-executor[21, 21] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.731 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[21, 21]
+2020-02-01 18:44:55.731 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[17, 17]
+2020-02-01 18:44:55.732 o.a.s.u.Utils Thread-72-spout-executor[17, 17] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.732 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[17, 17]
+2020-02-01 18:44:55.732 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[69, 69]
+2020-02-01 18:44:55.732 o.a.s.u.Utils Thread-73-spout-executor[69, 69] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.732 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[69, 69]
+2020-02-01 18:44:55.732 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[65, 65]
+2020-02-01 18:44:55.732 o.a.s.u.Utils Thread-74-spout-executor[65, 65] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.732 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[65, 65]
+2020-02-01 18:44:55.732 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[61, 61]
+2020-02-01 18:44:55.732 o.a.s.u.Utils Thread-75-spout-executor[61, 61] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.732 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[61, 61]
+2020-02-01 18:44:55.732 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[53, 53]
+2020-02-01 18:44:55.733 o.a.s.u.Utils Thread-76-spout-executor[53, 53] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.733 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[53, 53]
+2020-02-01 18:44:55.733 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[57, 57]
+2020-02-01 18:44:55.733 o.a.s.u.Utils Thread-77-spout-executor[57, 57] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.733 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[57, 57]
+2020-02-01 18:44:55.733 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[45, 45]
+2020-02-01 18:44:55.733 o.a.s.u.Utils Thread-78-spout-executor[45, 45] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.733 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[45, 45]
+2020-02-01 18:44:55.733 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[41, 41]
+2020-02-01 18:44:55.734 o.a.s.u.Utils Thread-79-spout-executor[41, 41] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.734 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[41, 41]
+2020-02-01 18:44:55.734 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[49, 49]
+2020-02-01 18:44:55.734 o.a.s.u.Utils Thread-80-spout-executor[49, 49] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.734 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[49, 49]
+2020-02-01 18:44:55.734 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[29, 29]
+2020-02-01 18:44:55.734 o.a.s.u.Utils Thread-81-spout-executor[29, 29] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.734 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[29, 29]
+2020-02-01 18:44:55.734 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[33, 33]
+2020-02-01 18:44:55.734 o.a.s.u.Utils Thread-82-spout-executor[33, 33] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.734 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[33, 33]
+2020-02-01 18:44:55.734 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shutting down executor spout:[25, 25]
+2020-02-01 18:44:55.735 o.a.s.u.Utils Thread-83-spout-executor[25, 25] [INFO] Async loop interrupted!
+2020-02-01 18:44:55.735 o.a.s.e.ExecutorShutdown Thread-85 [INFO] Shut down executor spout:[25, 25]
+2020-02-01 18:44:55.735 o.a.s.d.w.Worker Thread-85 [INFO] Shut down executors
+2020-02-01 18:44:55.735 o.a.s.d.w.Worker Thread-85 [INFO] Shutting down transfer thread
