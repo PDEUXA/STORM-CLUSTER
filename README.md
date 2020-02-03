@@ -216,6 +216,7 @@ Nous choisissons de prendre 4 Spouts, pour les mêmes raisons.
 <img src="imgs/Bolts and spout impact/BOLTSIMPACTwith2SPOUT.png"/>
 </p>
 
+___
 
 <p>
 <img src="imgs/Bolts and spout impact/SPOUTIMPACTwith4bolts.png"/>
@@ -271,8 +272,9 @@ Nous avons abordé différents aspect:
 
 ####  Augmentation du nombre de worker sur 1 superviseur
 Le seul superviseur à accès à 1 CPU.
+
 Nous sommes sur une topologie dynamique 
-(à savoir que plus le nombre de worker augmente, plus la topologie grossie.)
+(à savoir que plus le nombre de worker augmente, plus la topologie grossie).
 <p>Avec 2 workers, on peut voir qu'ils possèdent 
 la même cadence au niveau du Bolt Split et Spout Count.
 En revanche l'un compte plus que l'autre. 
@@ -284,35 +286,47 @@ est pourquoi on ne voit pas ce palier pour 1 worker.</p>
 <img src="imgs/Worker impact/Dynamique/WORKERSIMPACTdyna2.png"/>
 </p>
 
-<p>Avec 3 workers, on retrouve la même tendance au niveau du comptage.</p>
+___
+
+<p>
+Avec 3 workers, on retrouve la même tendance au niveau du comptage.
+</p>
+
 <p>
 <img src="imgs/Worker impact/Dynamique/WORKERSIMPACTdyna3.png"/>
 </p>
+
+___
 
 <p>Idem pour 4 workers</p>
 <p>
 <img src="imgs/Worker impact/Dynamique/WORKERSIMPACTdyna4.png"/>
 </p>
 
+___
+
 <p> 
-On peut en conclure, que plus le nombre de worker augmente, plus le WordCount est efficace.
+On peut en conclure, que sur une topologie dynamique,
+plus le nombre de worker augmente, plus le WordCount est efficace.
 </p>
 <p>
 <img src="imgs/Worker impact/Dynamique/WORKERSIMPACTdyna.png"/>
 </p>
 
-La même chose avec une topologie statique (qui n'est pas fonction du nombre de worker).
+___
 
-4 Workers (comparaison des workers sur une même tâche)
+La même chose avec une topologie statique (qui n'est pas fonction du nombre de worker).
+4 Workers (comparaison des workers sur une même tâche):
 <p>
 <img src="imgs/Worker impact/Statique/WORKERSIMPACTstatique4.png"/>
 </p>
 
-Comparaison de 1,2,3 et 4 worker. On peut voir que pour une topologie statique, les performances de notre word count baisse.
-Les workers supplémentaires provoquent un overhead conséquent, qui n'est pas avantageux pour des "petites" tolologie.
+Comparaison de 1,2,3 et 4 worker:
 <p>
 <img src="imgs/Worker impact/Statique/WORKERSIMPACTstatique.png"/>
 </p>
+On peut voir que pour une topologie statique, les performances de notre word count baisse.
+Les workers supplémentaires provoquent un overhead conséquent, qui n'est pas avantageux pour des "petites" tolologie.
 
 ####  Augmentation du nombre de superviseur
 
