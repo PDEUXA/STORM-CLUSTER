@@ -368,7 +368,16 @@ Notamment on ajustant les paramètres au niveau des spouts et de bolts (Mémoire
 Nombre max. de spouts en attente, 
 Délai d’expiration de tuple)
 
+
+
 ## Annexes
+### Sources
+
+- https://docs.microsoft.com/fr-fr/azure/storage/blobs/data-lake-storage-performance-tuning-storm
+- http://storm.apache.org/releases/1.2.3/Understanding-the-parallelism-of-a-Storm-topology.html
+- https://github.com/apache/storm/tree/master/examples/storm-perf
+
+
 ### Portainer
 
 Afin de faciliter la gestion des dockers, nous nous sommes servi d'un container de gestion 'Portainer'. La facilité d'utilisation, nous invite à vous partager ceci:
