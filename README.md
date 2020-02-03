@@ -28,8 +28,18 @@ CONTNAME=UI
 docker run -d -p 8080:8080 --restart always --net haginet --name ui --link nimbus:nimbus storm storm ui
 ```
 Les containers seront directement reliés entre eux (via link) et partageront un repertoire commun avec l'host.
+Chaque superviseur va gérer des workers, qui travailleront sur des tâches et sur la gestion de Bolts et Spouts.
+
+<p>
+<img src="http://storm.apache.org/releases/1.2.3/images/relationships-worker-processes-executors-tasks.png">
+</p>
+
+<p>
+<img src="http://storm.apache.org/releases/1.2.3/images/example-of-a-running-topology.png">
+</p>
 
 ## LANCER SA TOPOLOGIE
+
 1. Aller dans la console bash du Nimbus avec le commande suivante:
 ```bash
 docker exec -it nimbus bash
@@ -110,6 +120,14 @@ builder.setBolt(REPORT_ID, new ReportBolt(), rptBoltNum).shuffleGrouping(COUNT_I
     
     `Build Artifacts`
     
+Notre topologie est paramétrée de manière suivante:
+- TOPOLOGY_PRODUCER_BATCH_SIZE = 1000 --> Nombre de tuples à envoyer ensemble
+- TOPOLOGY_BOLT_WAIT_STRATEGY = WaitStrategyPark --> Stratégie des bolts, quand ils ne recoivent rien.
+- TOPOLOGY_BOLT_WAIT_PARK_MICROSEC = 0
+- TOPOLOGY_DISABLE_LOADAWARE_MESSAGING = true
+- TOPOLOGY_STATS_SAMPLE_RATE = 0.0005 --> Echantillonnage tout les 
+- TOPOLOGY_MAX_SPOUT_PENDING = 1 --> Nombre de tuples pending sur un spout.
+
 ## MISE EN PLACE DE MÉTRIQUE
 
 Trois métriques ont été mises en place pour pouvoir comparer les différentes configuration du cluster (composantes de la topologie et nombre de worker).
@@ -205,7 +223,7 @@ Cette fois la machine qui effectuera les tests possède:
 Nous avons abordé différents aspect:
 - Augmentation du nombre de worker sur 1 superviseur (sur une topologie fixe 4 bolts, 2 spouts).
 - Augmentation du nombre de worker sur 1 superviseur (sur une topologie dynamique 4 bolts, 2 spouts par worker).
-- Augmentation du nombre de superviseur (1superviseur = 1 CPU = 1 worker), sur une topologie fixe.
+- Augmentation du nombre de superviseur (1superviseur = 1 CPU = 1 worker), sur une topologie statique.
 - Augmentation du nombre de superviseur (1superviseur = 1 CPU = 1 worker), sur une topologie dynamique.
 
 ####  Augmentation du nombre de worker sur 1 superviseur
@@ -254,12 +272,14 @@ Comparaison de 1,2,3 et 4 worker.
 ####  Augmentation du nombre de superviseur
 Nous avons pour cette partie, créé plusieurs container superviseur, en allouant à chaque fois 1 CPU.
 Ceci est censé représenté le cas ou on ajoute plusieurs machine à notre cluster.
-En enlevant cette courbe rouge, on observe bien un speedup (topologie dynamique).
+Sur une topologie "statique on peut voir que le nombre de superviseur provoque un 
+overhead important, en effet chaque superviseur va posséder un petit 
+nombre de bolts et spout. Par conséquant, il y à plus de coordination entre les différents superviseurs.
 <p>
-<img src="imgs/SUPERVISOR 1 CPU STACK DYNAMIC.png"/>
+<img src="imgs/Superviseur impact/SUPERVISORIMPACTstatique.png"/>
 </p>
 
-Dans le cas d'une topologie statique:
+Dans le cas d'une topologie dynamique:
 <p>
 <img src="imgs/SUPERVISOR 1 CPU STACK STATIC.png"/>
 </p>
